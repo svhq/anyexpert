@@ -1,0 +1,368 @@
+{
+  "timestamp": "2025-07-30T16:45:40.316Z",
+  "total_questions": 10,
+  "results": [
+    {
+      "question_number": 1,
+      "category": "math",
+      "question": "Patricia's annual starting salary at her new job is $20,000. After one year on the job, her salary increases by 10%; after her second year on the job, her salary increases by 10% more over the previous year's salary. After these two years have passed, what would her salary be?",
+      "options": [
+        "A) $22,200",
+        "B) $24,000",
+        "C) $25,200",
+        "D) $24,200",
+        "E) $23,000",
+        "F) $26,000",
+        "G) $20,200",
+        "H) $4,000",
+        "I) $21,000",
+        "J) $22,000"
+      ],
+      "correct_answer": "D",
+      "expected_explanation": "Year 1: $20,000 × 1.10 = $22,000. Year 2: $22,000 × 1.10 = $24,200",
+      "query_sent": "Patricia's annual starting salary at her new job is $20,000. After one year on the job, her salary increases by 10%; after her second year on the job, her salary increases by 10% more over the previous year's salary. After these two years have passed, what would her salary be?\n\nOptions:\nA) $22,200\nB) $24,000\nC) $25,200\nD) $24,200\nE) $23,000\nF) $26,000\nG) $20,200\nH) $4,000\nI) $21,000\nJ) $22,000\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:45:40.317Z",
+      "response": {
+        "content": "Patricia's starting salary is $20,000. After the first year, her salary increases by 10%, so the new salary is:\n\n\\[20,000 + 20,000 \\times 0.10 = 20,000 \\times 1.10 = 22,000\n\\]\n\nAfter the second year, her salary increases by another 10% on this new salary:\n\n\\[22,000 + 22,000 \\times 0.10 = 22,000 \\times 1.10 = 24,200\n\\]\n\nTherefore, after two years, Patricia's salary would be **$24,200**.\n\nThe correct answer is **D) $24,200**.\n\nThis calculation follows the standard method of applying percentage increases successively to the updated salary each year[1][2][3][4].",
+        "expert_persona": "$24,200",
+        "response_length": 564,
+        "duration_ms": 8916,
+        "search_performed": false,
+        "contains_correct_answer": true,
+        "answer_detection_methods": [
+          "option_format",
+          "answer_format"
+        ],
+        "status": "CORRECT"
+      }
+    },
+    {
+      "question_number": 2,
+      "category": "physics",
+      "question": "A light wave is traveling in glass of index of refraction 1.5. If the amplitude of the electric field of the light wave is 100 volts/meter, what is the magnitude of the Poynting vector?",
+      "options": [
+        "A) 19.9 W/m²",
+        "B) 45 W/m²",
+        "C) 60 W/m²",
+        "D) 39.8 W/m²",
+        "E) 12.5 W/m²",
+        "F) 50 W/m²",
+        "G) 10 W/m²",
+        "H) 30 W/m²",
+        "I) 25 W/m²",
+        "J) 75 W/m²"
+      ],
+      "correct_answer": "A",
+      "expected_explanation": "Poynting vector magnitude S = (E²)/(2μ₀c/n) where n=1.5, E=100 V/m",
+      "query_sent": "A light wave is traveling in glass of index of refraction 1.5. If the amplitude of the electric field of the light wave is 100 volts/meter, what is the magnitude of the Poynting vector?\n\nOptions:\nA) 19.9 W/m²\nB) 45 W/m²\nC) 60 W/m²\nD) 39.8 W/m²\nE) 12.5 W/m²\nF) 50 W/m²\nG) 10 W/m²\nH) 30 W/m²\nI) 25 W/m²\nJ) 75 W/m²\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:45:51.250Z",
+      "response": {
+        "content": "I am Dr. Emily Carter, PhD in Electromagnetism and Photonics.\n\nTo find the magnitude of the **Poynting vector** (which corresponds to the intensity or energy flux density of the electromagnetic wave), we use the relationship between the electric field amplitude \\(E\\) and the time-averaged Poynting vector magnitude \\(S\\).\n\nFor a plane electromagnetic wave in a medium with refractive index \\(n\\), the intensity \\(S\\) is given by:\n\n\\[S = \\frac{1}{2} n \\epsilon_0 c E^2\n\\]\n\nwhere  \n- \\(n = 1.5\\) (index of refraction of glass),  \n- \\(\\epsilon_0 = 8.854 \\times 10^{-12} \\, \\text{F/m}\\) (vacuum permittivity),  \n- \\(c = 3 \\times 10^8 \\, \\text{m/s}\\) (speed of light in vacuum),  \n- \\(E = 100 \\, \\text{V/m}\\) (amplitude of electric field).\n\n**Derivation / Explanation:**\n\n- The speed of light in the medium is \\(v = \\frac{c}{n}\\).\n- The magnetic permeability in non-magnetic media like glass is approximately \\(\\mu_0\\) (vacuum permeability).\n- The average intensity (time-averaged magnitude of Poynting vector) for a harmonic wave is \\(\\frac{1}{2} \\text{(peak magnitude)}\\).\n- The relation between intensity and electric field amplitude in a medium is \\(S = \\frac{1}{2} n \\epsilon_0 c E^2\\).\n\n**Calculation:**\n\n\\[S = \\frac{1}{2} \\times 1.5 \\times 8.854 \\times 10^{-12} \\times 3 \\times 10^8 \\times (100)^2\n\\]\n\nCalculate stepwise:\n\n- \\(E^2 = 100^2 = 10,000\\)\n- \\(\\epsilon_0 c = 8.854 \\times 10^{-12} \\times 3 \\times 10^8 = 2.656 \\times 10^{-3}\\)\n- Multiplying by \\(n = 1.5\\): \\(1.5 \\times 2.656 \\times 10^{-3} = 3.984 \\times 10^{-3}\\)\n- Now multiply by \\(\\frac{1}{2} = 0.5\\): \\(0.5 \\times 3.984 \\times 10^{-3} = 1.992 \\times 10^{-3}\\)\n- Finally multiply by \\(E^2 = 10,000\\): \\(1.992 \\times 10^{-3} \\times 10,000 = 19.92 \\, \\text{W/m}^2\\)\n\nThis rounds to approximately **19.9 W/m²**.\n\n**Answer: A) 19.9 W/m²**\n\nThis matches option A exactly.\n\n---\n\n**Summary:** The magnitude of the Poynting vector in glass (n=1.5) with an electric field amplitude of 100 V/m is approximately **19.9 W/m²**. This is found by applying the formula \\(S = \\frac{1}{2} n \\epsilon_0 c E^2\\) for time-averaged intensity in a dielectric medium.",
+        "expert_persona": "Poynting vector",
+        "response_length": 2112,
+        "duration_ms": 13653,
+        "search_performed": false,
+        "contains_correct_answer": true,
+        "answer_detection_methods": [
+          "exact_answer",
+          "option_format",
+          "option_reference"
+        ],
+        "status": "CORRECT"
+      }
+    },
+    {
+      "question_number": 3,
+      "category": "business",
+      "question": "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.",
+      "options": [
+        "A) Safe practices, Fear, Jealousy, Trivial",
+        "B) Unsafe practices, Distress, Joy, Trivial",
+        "C) Safe practices, Wants, Jealousy, Trivial",
+        "D) Safe practices, Distress, Fear, Trivial",
+        "E) Unsafe practices, Wants, Jealousy, Serious",
+        "F) Safe practices, Distress, Jealousy, Serious",
+        "G) Safe practices, Wants, Fear, Serious",
+        "H) Unsafe practices, Wants, Fear, Trivial",
+        "I) Unsafe practices, Distress, Fear, Serious"
+      ],
+      "correct_answer": "I",
+      "expected_explanation": "Advertising should not encourage unsafe practices, cause unnecessary distress or fear, and must not cause serious offence.",
+      "query_sent": "Typical advertising regulatory bodies suggest, for example that adverts must not: encourage _________, cause unnecessary ________ or _____, and must not cause _______ offence.\n\nOptions:\nA) Safe practices, Fear, Jealousy, Trivial\nB) Unsafe practices, Distress, Joy, Trivial\nC) Safe practices, Wants, Jealousy, Trivial\nD) Safe practices, Distress, Fear, Trivial\nE) Unsafe practices, Wants, Jealousy, Serious\nF) Safe practices, Distress, Jealousy, Serious\nG) Safe practices, Wants, Fear, Serious\nH) Unsafe practices, Wants, Fear, Trivial\nI) Unsafe practices, Distress, Fear, Serious\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:46:06.920Z",
+      "response": {
+        "content": "The correct answer is: **I) Unsafe practices, Distress, Fear, Serious**.\n\nReasoning:\n\nTypical advertising regulatory bodies require that adverts must not:\n\n- Encourage **unsafe practices** (to prevent harm to consumers),\n- Cause unnecessary **distress** or **fear** (to avoid emotional harm or exploitation),\n- And must not cause **serious** offence (meaning offence that is significant or harmful rather than trivial).\n\nThis aligns with standard advertising codes of practice, such as those from major platforms and regulatory bodies, which emphasize safety, avoidance of distress or fear, and preventing serious offence to the public or specific groups.\n\nThe other options either incorrectly suggest encouraging safe practices (which is not prohibited), or include terms like \"joy,\" \"wants,\" \"jealousy,\" or \"trivial\" offence, which do not fit the typical regulatory language. For example:\n\n- \"Safe practices\" are encouraged, so adverts must not *encourage unsafe practices* (ruling out options that say \"Safe practices\"),\n- Regulatory concerns focus on avoiding \"distress\" and \"fear,\" not \"joy\" or \"wants,\"\n- Offence is generally qualified as \"serious\" rather than \"trivial\" to signal the threshold for regulatory concern.\n\nThus, option I precisely matches the typical phrasing used in advertising regulations.",
+        "expert_persona": "I) Unsafe practices, Distress, Fear, Serious",
+        "response_length": 1312,
+        "duration_ms": 9348,
+        "search_performed": false,
+        "contains_correct_answer": true,
+        "answer_detection_methods": [
+          "option_format",
+          "option_reference",
+          "answer_format"
+        ],
+        "status": "CORRECT"
+      }
+    },
+    {
+      "question_number": 4,
+      "category": "history",
+      "question": "The Hanseatic League was a commercial and defensive confederation of merchant guilds and their towns that dominated the Baltic maritime trade from the 13th to 17th centuries. Which of the following cities was NOT a major member of the Hanseatic League?",
+      "options": [
+        "A) Lübeck",
+        "B) Hamburg",
+        "C) Bergen",
+        "D) Novgorod",
+        "E) Amsterdam",
+        "F) Riga",
+        "G) Danzig (Gdansk)",
+        "H) Visby",
+        "I) Cologne",
+        "J) Stockholm"
+      ],
+      "correct_answer": "J",
+      "expected_explanation": "Stockholm was not a major member of the Hanseatic League, unlike the other Baltic and North Sea trading cities listed.",
+      "query_sent": "The Hanseatic League was a commercial and defensive confederation of merchant guilds and their towns that dominated the Baltic maritime trade from the 13th to 17th centuries. Which of the following cities was NOT a major member of the Hanseatic League?\n\nOptions:\nA) Lübeck\nB) Hamburg\nC) Bergen\nD) Novgorod\nE) Amsterdam\nF) Riga\nG) Danzig (Gdansk)\nH) Visby\nI) Cologne\nJ) Stockholm\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:46:18.272Z",
+      "response": {
+        "content": "I am Dr. Erik Müller, Historian specializing in Medieval European Trade Networks.\n\nThe city that was **NOT** a major member of the Hanseatic League among the options provided is **E) Amsterdam**.\n\n**Reasoning:**\n\n- The Hanseatic League was dominated by cities around the Baltic Sea and the North Sea mainly from Northern Germany, the Baltic States, Scandinavia, and parts of Northwestern Russia. Many important Hanseatic cities included Lübeck, Hamburg, Bergen, Novgorod, Riga, Danzig (Gdansk), Visby, Cologne, and Stockholm[1][3][5].\n\n- **Amsterdam**, while a major trading city in the Low Countries, was historically *not* a major member of the Hanseatic League. It developed into a dominant trading hub later, during the Dutch Golden Age in the 17th century, but it was not a central Hanseatic city. The League’s influence in the Netherlands was more focused on cities like Bruges and other Flemish ports[3].\n\n- Other cities listed here were well-known Hanseatic members:\n\n  - **Lübeck**: Often called the “Queen of the Hanse” and central to the League’s foundation[1][2].\n  \n  - **Hamburg**: A key port and trading center in the League[1].\n  \n  - **Bergen**: The main Norwegian Hanseatic port on the North Atlantic[1].\n  \n  - **Novgorod**: The easternmost major Hanseatic trade city in Russia[1][4].\n  \n  - **Riga**, **Danzig (Gdansk)**, **Visby**, and **Stockholm**: Important Baltic Hanseatic cities[1][2][3].\n  \n  - **Cologne**: A Hanseatic city in the Rhineland quarter despite some conflicts during the Anglo-Hanseatic War, still considered a member[3].\n\nThus, **Amsterdam** was *not* a major member of the Hanseatic League.\n\n**Final answer:** E) Amsterdam",
+        "expert_persona": "NOT",
+        "response_length": 1665,
+        "duration_ms": 10013,
+        "search_performed": false,
+        "contains_correct_answer": false,
+        "answer_detection_methods": [],
+        "status": "INCORRECT"
+      }
+    },
+    {
+      "question_number": 5,
+      "category": "psychology",
+      "question": "According to Piaget's theory of cognitive development, a child who can think logically about concrete objects and events but struggles with abstract hypothetical thinking is most likely in which stage?",
+      "options": [
+        "A) Sensorimotor stage",
+        "B) Preoperational stage",
+        "C) Concrete operational stage",
+        "D) Formal operational stage",
+        "E) Postformal operational stage",
+        "F) Symbolic stage",
+        "G) Intuitive stage",
+        "H) Schematic stage",
+        "I) Abstract stage",
+        "J) Logical stage"
+      ],
+      "correct_answer": "C",
+      "expected_explanation": "The concrete operational stage (ages 7-11) is characterized by logical thinking about concrete objects but difficulty with abstract hypothetical reasoning.",
+      "query_sent": "According to Piaget's theory of cognitive development, a child who can think logically about concrete objects and events but struggles with abstract hypothetical thinking is most likely in which stage?\n\nOptions:\nA) Sensorimotor stage\nB) Preoperational stage\nC) Concrete operational stage\nD) Formal operational stage\nE) Postformal operational stage\nF) Symbolic stage\nG) Intuitive stage\nH) Schematic stage\nI) Abstract stage\nJ) Logical stage\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:46:30.298Z",
+      "response": {
+        "content": "The child described is most likely in the **Concrete operational stage (Option C)** according to Piaget's theory. This stage is characterized by the ability to think logically about concrete objects and events but still struggling with abstract, hypothetical thinking[1][2][4].\n\nHere's the reasoning:\n\n- **Sensorimotor stage (0-2 years):** Infants learn through sensory experiences and motor actions; they do not yet use symbolic thought or logical reasoning[1][2].\n- **Preoperational stage (2-7 years):** Children develop symbolic thought and language but are egocentric and intuitive, lacking logical operations[1][2].\n- **Concrete operational stage (7-11 years):** Children gain the ability to think logically about tangible, concrete objects and events. They can perform operational thought such as classification, reversibility, and cause-effect relationships but struggle with abstract or hypothetical reasoning[1][2][3][4].\n- **Formal operational stage (12+ years):** Adolescents develop the capacity for abstract thinking, hypotheticals, and scientific reasoning[1][2][4].\n\nOther options like the postformal stage (E) are debated and typically considered beyond Piaget's original four stages; symbolic, intuitive, schematic, abstract, and logical stages (F-J) are not standard Piagetian stages.\n\nThus, since the child can think logically about concrete things but struggles with abstract hypothetical thinking, this fits perfectly with the **Concrete operational stage (C)**.",
+        "expert_persona": "Concrete operational stage (Option C)",
+        "response_length": 1483,
+        "duration_ms": 9111,
+        "search_performed": false,
+        "contains_correct_answer": true,
+        "answer_detection_methods": [
+          "option_format",
+          "option_reference"
+        ],
+        "status": "CORRECT"
+      }
+    },
+    {
+      "question_number": 6,
+      "category": "biology",
+      "question": "In molecular biology, the process by which genetic information flows from DNA to RNA to protein is known as the central dogma. Which enzyme is primarily responsible for the transcription step?",
+      "options": [
+        "A) DNA polymerase",
+        "B) RNA polymerase",
+        "C) DNA ligase",
+        "D) Reverse transcriptase",
+        "E) Ribozyme",
+        "F) Helicase",
+        "G) Primase",
+        "H) Topoisomerase",
+        "I) Exonuclease",
+        "J) Endonuclease"
+      ],
+      "correct_answer": "B",
+      "expected_explanation": "RNA polymerase is the enzyme responsible for transcription, synthesizing RNA from a DNA template.",
+      "query_sent": "In molecular biology, the process by which genetic information flows from DNA to RNA to protein is known as the central dogma. Which enzyme is primarily responsible for the transcription step?\n\nOptions:\nA) DNA polymerase\nB) RNA polymerase\nC) DNA ligase\nD) Reverse transcriptase\nE) Ribozyme\nF) Helicase\nG) Primase\nH) Topoisomerase\nI) Exonuclease\nJ) Endonuclease\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:46:41.427Z",
+      "response": {
+        "content": "The enzyme **primarily responsible for the transcription step** in the flow of genetic information from DNA to RNA is **RNA polymerase** (Option B).\n\n**Reasoning:**\n\n- Transcription is the process where RNA polymerase synthesizes RNA from a DNA template by reading the DNA sequence and assembling a complementary RNA strand[1][2][3][4].\n- RNA polymerase binds to specific DNA sequences called promoters to initiate transcription, then elongates the RNA strand by adding nucleotides complementary to the DNA template strand, and finally terminates transcription upon reaching termination signals[1][3][4].\n- Other enzymes listed have different functions:\n  - DNA polymerase synthesizes DNA during replication, not RNA in transcription.\n  - DNA ligase joins DNA fragments.\n  - Reverse transcriptase synthesizes DNA from RNA (reverse transcription).\n  - Ribozymes are RNA molecules with catalytic activity, not enzymes for transcription.\n  - Helicase unwinds DNA but does not synthesize RNA.\n  - Primase synthesizes RNA primers during DNA replication.\n  - Topoisomerase relieves DNA supercoiling.\n  - Exonuclease and endonuclease cut DNA/RNA strands.\n  \nTherefore, **RNA polymerase (B)** is the enzyme that catalyzes the transcription step in the central dogma of molecular biology[1][2][3][4].",
+        "expert_persona": "primarily responsible for the transcription step",
+        "response_length": 1291,
+        "duration_ms": 8683,
+        "search_performed": false,
+        "contains_correct_answer": true,
+        "answer_detection_methods": [
+          "option_format",
+          "option_reference"
+        ],
+        "status": "CORRECT"
+      }
+    },
+    {
+      "question_number": 7,
+      "category": "economics",
+      "question": "In microeconomics, when a firm operates at the point where marginal cost equals marginal revenue (MC = MR), this represents:",
+      "options": [
+        "A) Maximum total revenue",
+        "B) Minimum average cost",
+        "C) Maximum profit or minimum loss",
+        "D) Break-even point",
+        "E) Maximum marginal utility",
+        "F) Minimum marginal cost",
+        "G) Economic equilibrium",
+        "H) Price ceiling",
+        "I) Consumer surplus maximization",
+        "J) Market failure"
+      ],
+      "correct_answer": "C",
+      "expected_explanation": "When MC = MR, the firm maximizes profit (or minimizes loss) because producing one more unit would cost more than it generates in revenue.",
+      "query_sent": "In microeconomics, when a firm operates at the point where marginal cost equals marginal revenue (MC = MR), this represents:\n\nOptions:\nA) Maximum total revenue\nB) Minimum average cost\nC) Maximum profit or minimum loss\nD) Break-even point\nE) Maximum marginal utility\nF) Minimum marginal cost\nG) Economic equilibrium\nH) Price ceiling\nI) Consumer surplus maximization\nJ) Market failure\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:46:52.127Z",
+      "response": {
+        "content": "The correct answer is **C) Maximum profit or minimum loss**.\n\nWhen a firm produces at the output level where **marginal cost (MC) equals marginal revenue (MR)**, it is operating at the point that maximizes its profit or minimizes its loss. This is because:\n\n- If MR > MC, producing more increases profit since each additional unit adds more to revenue than cost.\n- If MC > MR, producing more reduces profit since the cost of an additional unit exceeds the revenue it generates.\n- Therefore, at **MC = MR**, the firm cannot increase profit by changing output; this is the profit-maximizing (or loss-minimizing) output level[1][2][3][4].\n\nOther options explained briefly:\n\n- A) Maximum total revenue: Occurs where MR = 0, not where MR = MC.\n- B) Minimum average cost: Related to cost curves, not directly to MR=MC.\n- D) Break-even point: Where total revenue equals total cost, not specifically MR=MC.\n- E) Maximum marginal utility: A consumer concept, not firm production.\n- F) Minimum marginal cost: Refers to cost minimization, not profit maximization.\n- G) Economic equilibrium: Broader market concept, not just firm output decision.\n- H) Price ceiling: Government price control, unrelated to MR=MC.\n- I) Consumer surplus maximization: Consumer-side concept, not firm production.\n- J) Market failure: Economic inefficiency, unrelated to MR=MC.\n\nThus, **MC = MR** is the fundamental condition for a firm to maximize profit or minimize losses in microeconomic theory.",
+        "expert_persona": "C) Maximum profit or minimum loss",
+        "response_length": 1466,
+        "duration_ms": 10470,
+        "search_performed": false,
+        "contains_correct_answer": true,
+        "answer_detection_methods": [
+          "option_format",
+          "answer_format"
+        ],
+        "status": "CORRECT"
+      }
+    },
+    {
+      "question_number": 8,
+      "category": "computer science",
+      "question": "In algorithm analysis, what is the time complexity of the merge sort algorithm in the worst case?",
+      "options": [
+        "A) O(n)",
+        "B) O(n log n)",
+        "C) O(n²)",
+        "D) O(log n)",
+        "E) O(n³)",
+        "F) O(2^n)",
+        "G) O(n!)",
+        "H) O(1)",
+        "I) O(n^k)",
+        "J) O(√n)"
+      ],
+      "correct_answer": "B",
+      "expected_explanation": "Merge sort has O(n log n) time complexity in all cases (best, average, and worst) due to its divide-and-conquer approach.",
+      "query_sent": "In algorithm analysis, what is the time complexity of the merge sort algorithm in the worst case?\n\nOptions:\nA) O(n)\nB) O(n log n)\nC) O(n²)\nD) O(log n)\nE) O(n³)\nF) O(2^n)\nG) O(n!)\nH) O(1)\nI) O(n^k)\nJ) O(√n)\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:47:04.606Z",
+      "response": {
+        "content": "The **worst-case time complexity of the merge sort algorithm is \\(O(n \\log n)\\)**.\n\nMerge sort works by recursively dividing the array into halves until each subarray has one element, then merging these subarrays back together in sorted order. Each level of recursion involves merging all elements, which takes linear time \\(O(n)\\), and the number of levels of recursion is proportional to \\(\\log n\\) because the array is repeatedly halved. Therefore, the total time complexity is the product of these two factors: \\(O(n) \\times O(\\log n) = O(n \\log n)\\).\n\nThis complexity holds in the worst case because merge sort always performs the same divide-and-merge steps regardless of the initial order of elements, including the worst-case scenarios such as reverse-sorted arrays or interleaved subarrays requiring maximum comparisons during merging[1][2][3][4].\n\nAmong the given options, the correct answer is:\n\n**B) O(n log n)**",
+        "expert_persona": "worst-case time complexity of the merge sort algorithm is \\(O(n \\log n)\\)",
+        "response_length": 924,
+        "duration_ms": 5916,
+        "search_performed": false,
+        "contains_correct_answer": true,
+        "answer_detection_methods": [
+          "option_format",
+          "answer_format"
+        ],
+        "status": "CORRECT"
+      }
+    },
+    {
+      "question_number": 9,
+      "category": "philosophy",
+      "question": "According to Kant's categorical imperative, which of the following best describes the principle of universalizability?",
+      "options": [
+        "A) Act only according to maxims that produce the greatest happiness for the greatest number",
+        "B) Act only according to maxims that you could will to become universal laws",
+        "C) Act only according to your natural inclinations and desires",
+        "D) Act only according to the consequences of your actions",
+        "E) Act only according to social conventions and norms",
+        "F) Act only according to divine command",
+        "G) Act only according to personal virtue and character",
+        "H) Act only according to rational self-interest",
+        "I) Act only according to cultural relativism",
+        "J) Act only according to emotional intuition"
+      ],
+      "correct_answer": "B",
+      "expected_explanation": "Kant's categorical imperative states that one should act only according to maxims that could become universal laws for everyone.",
+      "query_sent": "According to Kant's categorical imperative, which of the following best describes the principle of universalizability?\n\nOptions:\nA) Act only according to maxims that produce the greatest happiness for the greatest number\nB) Act only according to maxims that you could will to become universal laws\nC) Act only according to your natural inclinations and desires\nD) Act only according to the consequences of your actions\nE) Act only according to social conventions and norms\nF) Act only according to divine command\nG) Act only according to personal virtue and character\nH) Act only according to rational self-interest\nI) Act only according to cultural relativism\nJ) Act only according to emotional intuition\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:47:12.538Z",
+      "response": {
+        "content": "The correct answer is **B) Act only according to maxims that you could will to become universal laws**.\n\nThis option precisely states Kant's principle of universalizability, which is the core of the first formulation of his categorical imperative. According to Kant, a moral action is one whose guiding maxim (or principle) can be consistently willed to be a universal law — meaning everyone could follow the same rule without contradiction or undermining the practice itself[1][2][3][4].\n\nTo clarify why the others are incorrect:\n\n- A) Reflects utilitarianism, focusing on greatest happiness, not Kantian ethics.\n- C) Refers to acting on natural desires, which Kant rejects as a moral basis.\n- D) Suggests consequentialism, which Kant contrasts with his deontological approach.\n- E) Emphasizes social conventions, but Kant’s principle is independent of social norms.\n- F) Divine command theory is a different moral framework.\n- G) Personal virtue and character ethics are more Aristotelian than Kantian.\n- H) Rational self-interest aligns with ethical egoism, not Kant’s universal law.\n- I) Cultural relativism denies universal moral laws, opposite to Kant’s universalizability.\n- J) Emotional intuition is a non-rational basis, which Kant excludes from morality.\n\nHence, only option B captures Kant’s universalizability principle faithfully.",
+        "expert_persona": "B) Act only according to maxims that you could will to become universal laws",
+        "response_length": 1343,
+        "duration_ms": 11163,
+        "search_performed": false,
+        "contains_correct_answer": true,
+        "answer_detection_methods": [
+          "option_format",
+          "option_reference",
+          "answer_format"
+        ],
+        "status": "CORRECT"
+      }
+    },
+    {
+      "question_number": 10,
+      "category": "engineering",
+      "question": "In structural engineering, the modulus of elasticity (Young's modulus) is a measure of a material's:",
+      "options": [
+        "A) Ability to conduct heat",
+        "B) Resistance to plastic deformation",
+        "C) Stiffness or resistance to elastic deformation",
+        "D) Maximum stress before failure",
+        "E) Density per unit volume",
+        "F) Thermal expansion coefficient",
+        "G) Electrical conductivity",
+        "H) Corrosion resistance",
+        "I) Hardness on the Mohs scale",
+        "J) Magnetic permeability"
+      ],
+      "correct_answer": "C",
+      "expected_explanation": "Young's modulus measures a material's stiffness - its resistance to elastic (reversible) deformation under stress.",
+      "query_sent": "In structural engineering, the modulus of elasticity (Young's modulus) is a measure of a material's:\n\nOptions:\nA) Ability to conduct heat\nB) Resistance to plastic deformation\nC) Stiffness or resistance to elastic deformation\nD) Maximum stress before failure\nE) Density per unit volume\nF) Thermal expansion coefficient\nG) Electrical conductivity\nH) Corrosion resistance\nI) Hardness on the Mohs scale\nJ) Magnetic permeability\n\nPlease select the correct answer and explain your reasoning.",
+      "timestamp": "2025-07-30T16:47:25.719Z",
+      "response": {
+        "content": "The correct answer is **C) Stiffness or resistance to elastic deformation**.\n\nYoung's modulus (modulus of elasticity) is a fundamental mechanical property that measures a material's stiffness—how much it resists elastic (reversible) deformation when subjected to tensile or compressive stress. It is defined as the ratio of stress (force per unit area) to strain (proportional deformation) within the material's linear elastic region, meaning the deformation is temporary and the material returns to its original shape once the load is removed[1][2][3][5].\n\nThis property does *not* measure:\n\n- Heat conduction (A),\n- Plastic deformation resistance (B) — which relates to yield strength or hardness,\n- Maximum stress before failure (D) — which is the ultimate tensile strength,\n- Density (E),\n- Thermal expansion (F),\n- Electrical conductivity (G),\n- Corrosion resistance (H),\n- Hardness on the Mohs scale (I),\n- Magnetic permeability (J).\n\nIn summary, Young's modulus is specifically about **how stiff a material is in its elastic range**, quantifying its resistance to elastic deformation under axial loading[1][2][3][5].",
+        "expert_persona": "C) Stiffness or resistance to elastic deformation",
+        "response_length": 1123,
+        "duration_ms": 10308,
+        "search_performed": false,
+        "contains_correct_answer": true,
+        "answer_detection_methods": [
+          "option_format",
+          "answer_format"
+        ],
+        "status": "CORRECT"
+      }
+    }
+  ],
+  "summary": {
+    "correct_answers": 9,
+    "total_questions": 10,
+    "accuracy_percentage": 90,
+    "errors": 0,
+    "named_personas": 10,
+    "search_usage": 0,
+    "average_duration_ms": 9758,
+    "total_response_length": 13283,
+    "categories_tested": [
+      "math",
+      "physics",
+      "business",
+      "history",
+      "psychology",
+      "biology",
+      "economics",
+      "computer science",
+      "philosophy",
+      "engineering"
+    ],
+    "test_completion_time": "2025-07-30T16:47:36.033Z"
+  }
+}
