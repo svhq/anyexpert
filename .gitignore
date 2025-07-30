@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment files
+.env
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+test-*.js
+temp/
+*.tmp
+
+# E2B template builds
+microservices/run-code/*.tar.gz
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+build/
+dist/

@@ -1,0 +1,41 @@
+{
+  "name": "askanyexpert",
+  "version": "1.0.0",
+  "description": "Ask Any Expert - Web-Augmented Expert System",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test-api": "node test-api.js",
+    "test-prompt": "node test-with-system-prompt.js",
+    "test-search": "node test-web-search.js",
+    "test-integrated": "node test-integrated.js",
+    "test-workflow": "node test-workflow.js",
+    "start": "node index.js",
+    "dev": "NODE_ENV=development node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "pino": "^8.0.0",
+    "pino-pretty": "^10.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "supertest": "^6.3.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js",
+      "**/tests/**/*.spec.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js"
+    ]
+  },
+  "author": "",
+  "license": "MIT"
+}
