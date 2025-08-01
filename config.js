@@ -22,7 +22,14 @@ const config = {
     timeout: parseInt(process.env.CODE_EXECUTION_TIMEOUT || '30000', 10),
     maxIterations: parseInt(process.env.CODE_MAX_ITERATIONS || '2', 10)
   },
-  systemPrompt: SYSTEM_PROMPT
+  systemPrompt: SYSTEM_PROMPT,
+  // E2B specific settings
+  E2B_API_KEY: process.env.E2B_API_KEY,
+  E2B_TEMPLATE_ID: process.env.E2B_TEMPLATE_ID,
+  E2B_TIMEOUT: parseInt(process.env.E2B_TIMEOUT || '120000', 10),
+  // Model settings
+  MODEL: process.env.OPENROUTER_MODEL || 'google/gemini-2.5-flash-lite',
+  OPENROUTER_API_KEY: process.env.OPENROUTER_API_KEY
 };
 
 module.exports = config;

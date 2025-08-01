@@ -1,0 +1,5 @@
+{"type":"session_start","questionId":"q-1754024249019","timestamp":"2025-08-01T04:57:29.020Z"}
+{"type":"question","questionId":"q-1754024249019","question":"Question: Two quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they can be clearly resolved?\n\nOptions:\nA) 10^-9 eV\nB) 10^-8 eV\nC) 10^-11 eV\nD) 10^-4 eV\n","timestamp":"2025-08-01T04:57:29.023Z"}
+{"type":"log","level":"info","message":"Loading workflow engine...","timestamp":"2025-08-01T04:57:29.024Z"}
+{"type":"log","level":"info","message":"Workflow engine loaded","timestamp":"2025-08-01T04:57:29.071Z"}
+{"type":"log","level":"info","message":"Calling workflow engine...","timestamp":"2025-08-01T04:57:29.071Z"}

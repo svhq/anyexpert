@@ -1,0 +1,92 @@
+{
+  "model": "openai/o4-mini-high",
+  "timestamp": "2025-07-31T04:18:49.889Z",
+  "results": [
+    {
+      "question_number": 1,
+      "category": "business",
+      "correct_answer": "F",
+      "selected_answer": "F",
+      "is_correct": true,
+      "duration_ms": 26049
+    },
+    {
+      "question_number": 2,
+      "category": "business",
+      "correct_answer": "J",
+      "selected_answer": "J",
+      "is_correct": true,
+      "duration_ms": 34505
+    },
+    {
+      "question_number": 3,
+      "category": "law",
+      "correct_answer": "D",
+      "selected_answer": "D",
+      "is_correct": true,
+      "duration_ms": 22204
+    },
+    {
+      "question_number": 4,
+      "category": "law",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "duration_ms": 20261
+    },
+    {
+      "question_number": 5,
+      "category": "psychology",
+      "correct_answer": "E",
+      "selected_answer": "E",
+      "is_correct": true,
+      "duration_ms": 25546
+    },
+    {
+      "question_number": 6,
+      "category": "psychology",
+      "correct_answer": "I",
+      "selected_answer": "H",
+      "is_correct": false,
+      "duration_ms": 22771
+    },
+    {
+      "question_number": 7,
+      "category": "biology",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "duration_ms": 23611
+    },
+    {
+      "question_number": 8,
+      "category": "biology",
+      "correct_answer": "D",
+      "selected_answer": "D",
+      "is_correct": true,
+      "duration_ms": 21256
+    },
+    {
+      "question_number": 9,
+      "category": "chemistry",
+      "correct_answer": "C",
+      "selected_answer": "C",
+      "is_correct": true,
+      "duration_ms": 14047
+    },
+    {
+      "question_number": 10,
+      "category": "chemistry",
+      "correct_answer": "D",
+      "selected_answer": "D",
+      "is_correct": true,
+      "duration_ms": 16793
+    }
+  ],
+  "status": "complete",
+  "summary": {
+    "total": 10,
+    "correct": 9,
+    "accuracy": 90
+  }
+}

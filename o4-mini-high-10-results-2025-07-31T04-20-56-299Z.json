@@ -1,0 +1,142 @@
+{
+  "model": "o4-mini-high",
+  "timestamp": "2025-07-31T04:20:56.299Z",
+  "test_duration_seconds": 290,
+  "results": [
+    {
+      "question_number": 1,
+      "category": "business",
+      "question": "Managers are entrusted to run the company in the best interest of ________. Specifically, they have ...",
+      "correct_answer": "F",
+      "selected_answer": "B",
+      "is_correct": false,
+      "contains_correct": false,
+      "expert_persona": "Professor Eleanor Chambers",
+      "duration_ms": 43752,
+      "response_preview": "Professor Eleanor Chambers, Corporate Governance Scholar\n\nAnswer: B) Shareholders, Self-interest, Care and Skill\n\nReasoning:\n\n1. Principal–Agent Framework  \n   • Managers (agents) owe fiduciary duties to run the company in the best interest of the principal, namely the shareholders.\n\n2. Two Core Fid..."
+    },
+    {
+      "question_number": 2,
+      "category": "business",
+      "question": "There are two main issues associated with _____ sizing. _______ is a key issue as due to the informa...",
+      "correct_answer": "J",
+      "selected_answer": "J",
+      "is_correct": true,
+      "contains_correct": true,
+      "expert_persona": "Dr. Laura Mitchell",
+      "duration_ms": 69022,
+      "response_preview": "Dr. Laura Mitchell, Professor of Human Resource Management\n\nAnswer: J) Down, Involvement, Remuneration, Compensation.\n\nExplanation:\n\n1. “Down sizing” is the common term for planned staff reductions.  \n2. The first issue—Involvement—refers to employees’ right to be informed and consulted under corpor..."
+    },
+    {
+      "question_number": 3,
+      "category": "law",
+      "question": "A woman was standing in the aisle of a subway car and put her purse on the seat next to her. A man a...",
+      "correct_answer": "D",
+      "selected_answer": "D",
+      "is_correct": true,
+      "contains_correct": true,
+      "expert_persona": "Professor Laura Bennett",
+      "duration_ms": 20085,
+      "response_preview": "Professor Laura Bennett, Criminal Law Scholar\n\nThis question tests the common‐law distinction between larceny, robbery, and burglary.\n\n1.   Larceny (theft) is the wrongful taking and carrying away of another’s personal property with intent to permanently deprive.  \n     –  Here, the man did more tha..."
+    },
+    {
+      "question_number": 4,
+      "category": "law",
+      "question": "A federal grand jury was investigating a corporation whose tanker ship had spilled crude oil into en...",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "contains_correct": true,
+      "expert_persona": "Professor Alexandra Pierce",
+      "duration_ms": 29651,
+      "response_preview": "Professor Alexandra Pierce, Constitutional Law Scholar\n\nAnswer: Option B) Yes, because a corporation has no Fifth Amendment privilege.\n\nReasoning:\n\n1. Fifth Amendment Scope  \n   The Self-Incrimination Clause of the Fifth Amendment protects “any person” from being “compelled in any criminal case to b..."
+    },
+    {
+      "question_number": 5,
+      "category": "psychology",
+      "question": "A person who received a Level 4 rating on the Rancho Los Amigos Scale of Cognitive Functioning:...",
+      "correct_answer": "E",
+      "selected_answer": "E",
+      "is_correct": true,
+      "contains_correct": true,
+      "expert_persona": "Dr. Laura Mitchell",
+      "duration_ms": 24964,
+      "response_preview": "Dr. Laura Mitchell, Neurologist & Rehabilitation Medicine Specialist\n\nAnswer: E) “is confused and incoherent, may exhibit bizarre behavior, and is unable to care for him/herself.”\n\nReasoning:\n 1. The Rancho Los Amigos Levels of Cognitive Functioning are:\n    1 • No Response  \n    2 • Generalized Res..."
+    },
+    {
+      "question_number": 6,
+      "category": "psychology",
+      "question": "You receive a phone call from Hermann H., age 28, who says he is “totally miserable” because of the ...",
+      "correct_answer": "I",
+      "selected_answer": "H",
+      "is_correct": false,
+      "contains_correct": false,
+      "expert_persona": "Dr. Emily Carter",
+      "duration_ms": 12606,
+      "response_preview": "Dr. Emily Carter, Licensed Clinical Psychologist\n\nThe APA Ethical Code (Standard 2.01 on Boundaries of Competence and Standard 3.10 on Ineligible Clients) makes clear that if a therapist’s personal values or reactions prevent them from providing effective, nonjudgmental care, the therapist must decl..."
+    },
+    {
+      "question_number": 7,
+      "category": "biology",
+      "question": "Which of the following would most likely provide examples of mitotic cell divisions?...",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "contains_correct": true,
+      "expert_persona": "Dr. Emily Rogers",
+      "duration_ms": 20492,
+      "response_preview": "I’m Dr. Emily Rogers, Plant Developmental Biologist.\n\nAnalysis by first principles:  \n- Mitotic divisions in multicellular organisms occur chiefly in regions of active growth (meristems in plants; stem-cell compartments in animals), not in fully differentiated tissues.  \n- In plants, the shoot apica..."
+    },
+    {
+      "question_number": 8,
+      "category": "biology",
+      "question": "The light reactions of photosynthesis supply the Calvin cycle with which of the following?...",
+      "correct_answer": "D",
+      "selected_answer": "D",
+      "is_correct": true,
+      "contains_correct": true,
+      "expert_persona": "Dr. Emily Carter",
+      "duration_ms": 8262,
+      "response_preview": "Dr. Emily Carter, Plant Physiologist\n\nAnswer: D) ATP and NADPH provide the power and raw materials for the Calvin cycle.\n\nExplanation:\n\n1. Overview of Photosynthesis Stages  \n   - Light-dependent reactions (thylakoid membranes) capture sunlight to split H₂O, producing O₂, ATP and NADPH.  \n   - Light..."
+    },
+    {
+      "question_number": 9,
+      "category": "chemistry",
+      "question": "An unknown substance is found to have a high melting point. In addition, it is a poor conductor of e...",
+      "correct_answer": "C",
+      "selected_answer": "C",
+      "is_correct": true,
+      "contains_correct": true,
+      "expert_persona": "Dr. Emily Carter",
+      "duration_ms": 15897,
+      "response_preview": "Dr. Emily Carter, Professor of Physical Chemistry\n\nAnswer: C) covalent network bonding\n\nReasoning:\n\n1. High melting point  \n   – Only very strong bonds can withstand high thermal energy.  \n   – Ionic lattices and metallic crystals also have high Tₘ, but so do covalent network solids (e.g. diamond, S..."
+    },
+    {
+      "question_number": 10,
+      "category": "chemistry",
+      "question": "Which of the following has an octet of electrons around the central atom?...",
+      "correct_answer": "D",
+      "selected_answer": "D",
+      "is_correct": true,
+      "contains_correct": true,
+      "expert_persona": "Dr. Emily Chen",
+      "duration_ms": 18139,
+      "response_preview": "Dr. Emily Chen, Professor of Inorganic Chemistry\n\nAnswer: D) NH₄⁺\n\nReasoning (first-principles Lewis‐structure analysis):\n\n1. Define “octet”: the central atom should be surrounded by exactly eight electrons (bonding + lone-pair).\n\n2. Examine each molecule/ion:\n\n  A) BF₃  \n   – B has 3 B–F bonds ⇒ 3 ..."
+    }
+  ],
+  "summary": {
+    "total_questions": 10,
+    "correct": 8,
+    "incorrect": 2,
+    "errors": 0,
+    "accuracy_percentage": 80,
+    "average_response_time_ms": 26287,
+    "categories_tested": [
+      "business",
+      "law",
+      "psychology",
+      "biology",
+      "chemistry"
+    ]
+  }
+}

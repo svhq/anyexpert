@@ -1,0 +1,185 @@
+{
+  "timestamp": "2025-07-31T02:07:13.672Z",
+  "total_questions": 10,
+  "batch1": {
+    "questions": 5,
+    "results": [
+      {
+        "question_number": 1,
+        "batch": 1,
+        "category": "chemistry",
+        "question": "Which of the following compounds would be expected to have the highest boiling point?",
+        "correct_answer": "B",
+        "timestamp": "2025-07-31T02:07:13.673Z",
+        "response": {
+          "content_preview": "Dr. Emily Carter, Organic Chemistry Professor\n\nThe compound expected to have the **highest boiling point** among the options is **B) CH₃CH₂CH₂OH (1-propanol)**.\n\n**Reasoning:**\n\n1. **Intermolecular Forces:** The boiling point of organic compounds depends largely on the strength of intermolecular for",
+          "expert_persona": "Emily Carter",
+          "duration_ms": 16701,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      },
+      {
+        "question_number": 2,
+        "batch": 1,
+        "category": "law",
+        "question": "Under the Federal Rules of Evidence, which of the following statements about hearsay is correct?",
+        "correct_answer": "B",
+        "timestamp": "2025-07-31T02:07:31.884Z",
+        "response": {
+          "content_preview": "The correct answer is **B) A statement by a party-opponent is not hearsay**.\n\nUnder the Federal Rules of Evidence (FRE), a statement made by a party-opponent (often called an \"admission by a party-opponent\") is explicitly excluded from the definition of hearsay and is therefore admissible as substan",
+          "expert_persona": "No named persona",
+          "duration_ms": 12367,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      },
+      {
+        "question_number": 3,
+        "batch": 1,
+        "category": "health",
+        "question": "In epidemiology, the incidence rate of a disease differs from the prevalence rate in that incidence measures:",
+        "correct_answer": "B",
+        "timestamp": "2025-07-31T02:07:45.752Z",
+        "response": {
+          "content_preview": "I am Dr. Emily Carter, Epidemiologist.\n\nThe **correct answer is B) The number of new cases over a specified period**.\n\n**Reasoning:**\n\n- **Incidence rate** in epidemiology specifically measures the frequency of *new* cases of a disease occurring in a population during a defined time period. It refle",
+          "expert_persona": "Dr",
+          "duration_ms": 6455,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      },
+      {
+        "question_number": 4,
+        "batch": 1,
+        "category": "other",
+        "question": "In accounting, under the accrual basis, revenue is recognized when:",
+        "correct_answer": "B",
+        "timestamp": "2025-07-31T02:07:53.722Z",
+        "response": {
+          "content_preview": "Dr. Emily Carter, CPA and Professor of Accounting Standards\n\nThe correct answer is **B) The earnings process is complete and collection is reasonably assured**.\n\nUnder the **accrual basis of accounting**, revenue is recognized when it is *earned*, not when cash is received. This means revenue recogn",
+          "expert_persona": "Emily Carter",
+          "duration_ms": 8039,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      },
+      {
+        "question_number": 5,
+        "batch": 1,
+        "category": "physics",
+        "question": "A particle of mass m moves in a one-dimensional potential V(x) = ½kx². In quantum mechanics, the energy levels of this harmonic oscillator are:",
+        "correct_answer": "B",
+        "timestamp": "2025-07-31T02:08:03.263Z",
+        "response": {
+          "content_preview": "I am Dr. Elena Morozova, Theoretical Physicist specializing in Quantum Mechanics.\n\nThe correct quantum mechanical energy levels for a one-dimensional harmonic oscillator with potential \\( V(x) = \\frac{1}{2} k x^2 \\) are given by:\n\n\\[\\boxed{E_n = \\left(n + \\tfrac{1}{2}\\right) \\hbar \\omega \\quad \\text",
+          "expert_persona": "Dr",
+          "duration_ms": 13849,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      }
+    ]
+  },
+  "batch2": {
+    "questions": 5,
+    "results": [
+      {
+        "question_number": 6,
+        "batch": 2,
+        "category": "math",
+        "question": "Let f(x) = x³ - 3x + 1. How many real roots does f(x) have?",
+        "correct_answer": "D",
+        "timestamp": "2025-07-31T02:08:22.122Z",
+        "response": {
+          "content_preview": "I am Dr. Elena Martinez, Applied Mathematician specializing in polynomial equations.\n\nThe cubic function given is:\n\n\\[f(x) = x^3 - 3x + 1\n\\]\n\nWe want to determine **how many real roots** this cubic polynomial has.\n\n---\n\n### Step 1: Identify the form and parameters\n\nThe cubic is already in the depres",
+          "expert_persona": "Dr",
+          "duration_ms": 11140,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      },
+      {
+        "question_number": 7,
+        "batch": 2,
+        "category": "biology",
+        "question": "Which of the following best describes the function of telomerase?",
+        "correct_answer": "B",
+        "timestamp": "2025-07-31T02:08:34.768Z",
+        "response": {
+          "content_preview": "The correct answer is **B) It adds repetitive nucleotide sequences to chromosome ends**.\n\n**Explanation:**\n\nTelomerase is an enzyme that specifically **adds repetitive DNA sequences to the ends of chromosomes**, known as telomeres. These telomeres consist of short, repeated sequences (e.g., TTAGGG i",
+          "expert_persona": "No named persona",
+          "duration_ms": 6332,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      },
+      {
+        "question_number": 8,
+        "batch": 2,
+        "category": "psychology",
+        "question": "In classical conditioning, the phenomenon where a conditioned response reappears after extinction is called:",
+        "correct_answer": "C",
+        "timestamp": "2025-07-31T02:08:42.603Z",
+        "response": {
+          "content_preview": "The correct answer is **C) Spontaneous recovery**.\n\nIn classical conditioning, **spontaneous recovery** refers to the sudden reappearance of a previously extinguished conditioned response after some time has passed without exposure to the conditioned stimulus. Even after extinction (when the conditi",
+          "expert_persona": "No named persona",
+          "duration_ms": 9437,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      },
+      {
+        "question_number": 9,
+        "batch": 2,
+        "category": "computer science",
+        "question": "In database normalization, a relation is in Third Normal Form (3NF) if:",
+        "correct_answer": "B",
+        "timestamp": "2025-07-31T02:08:53.548Z",
+        "response": {
+          "content_preview": "I am Dr. Emily Carter, Database Theory Specialist.\n\nThe correct answer is **B) It is in 2NF and has no transitive dependencies**.\n\n**Explanation:**\n\n- Third Normal Form (3NF) requires that a relation first be in Second Normal Form (2NF), which means it has no partial dependencies (no non-key attribu",
+          "expert_persona": "Dr",
+          "duration_ms": 19329,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      },
+      {
+        "question_number": 10,
+        "batch": 2,
+        "category": "economics",
+        "question": "The Coase theorem states that when property rights are well-defined and transaction costs are zero:",
+        "correct_answer": "C",
+        "timestamp": "2025-07-31T02:09:14.386Z",
+        "response": {
+          "content_preview": "The correct answer is **C) Private parties can solve externality problems through bargaining**.\n\nThe Coase theorem states that when **property rights are well-defined and transaction costs are zero**, private parties will bargain with each other to reach an efficient allocation of resources regardle",
+          "expert_persona": "No named persona",
+          "duration_ms": 14215,
+          "contains_correct_answer": true,
+          "status": "CORRECT"
+        }
+      }
+    ]
+  },
+  "summary": {
+    "total_correct": 10,
+    "total_questions": 10,
+    "accuracy_percentage": 100,
+    "batch1_accuracy": 100,
+    "batch2_accuracy": 100,
+    "average_duration_ms": 11786,
+    "categories_tested": [
+      "chemistry",
+      "law",
+      "health",
+      "other",
+      "physics",
+      "math",
+      "biology",
+      "psychology",
+      "computer science",
+      "economics"
+    ],
+    "test_completion": "2025-07-31T02:09:28.601Z"
+  }
+}

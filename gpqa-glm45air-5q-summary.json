@@ -1,0 +1,37 @@
+{
+  "test_date": "2025-08-01T04:12:33.440Z",
+  "model": "z-ai/glm-4.5-air:free",
+  "total_questions": 5,
+  "correct": 1,
+  "incorrect": 2,
+  "errors": 2,
+  "accuracy": "20.0%",
+  "results_summary": [
+    {
+      "question_id": "gpqa-1",
+      "is_correct": false,
+      "extracted_answer": "B",
+      "correct_answer": "D"
+    },
+    {
+      "question_id": "gpqa-2",
+      "error": "Unexpected end of JSON input"
+    },
+    {
+      "question_id": "gpqa-3",
+      "error": "Unexpected end of JSON input"
+    },
+    {
+      "question_id": "gpqa-4",
+      "is_correct": false,
+      "extracted_answer": null,
+      "correct_answer": "B"
+    },
+    {
+      "question_id": "gpqa-5",
+      "is_correct": true,
+      "extracted_answer": "A",
+      "correct_answer": "A"
+    }
+  ]
+}

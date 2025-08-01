@@ -1,0 +1,36 @@
+{
+  "questionNumber": 1,
+  "questionData": {
+    "id": "gpqa-1",
+    "category": "Molecular Biology",
+    "question": "A large gene has dozens of exons, of which the central ones code for folded triple helical repeats that connect the cytoskeleton with sarcolemma and extracellular space. Each exon usually codes for one folded triple alpha helix. The most common mutations of the gene are central exon deletions that create out-of-frame peptides and progressive degenerative organ waste. A solution is to deliver a Morpholino that recognizes the 5' end of the out-of-frame exon in pre-mRNA. The molecule prevents binding of the spliceosome and creates exon skipping and in-frame joining. Several missing exons are well tolerated by an organism. Which structure below is not involved in the proposed therapy?",
+    "options": {
+      "A": "antisense",
+      "B": "polyA tail",
+      "C": "lariat",
+      "D": "R-loops"
+    },
+    "correct_answer": "D",
+    "metadata": {
+      "domain": "Biology",
+      "subdomain": "Molecular Biology",
+      "difficulty": "Hard undergraduate level (could be a question on a hard undergraduate exam for students majoring in the subject)",
+      "source_file": "GPQA dataset/gpqa_main.csv",
+      "explanation": "The text describes the dystrophin gene and the FDA-approved oligonucleotide therapy that causes exon skipping by creating a functional, albeit shorter, dystrophin protein. Morpholino is bound to the pre-mRNA in an antisense orientation. Every splicing mechanism creates the lariat molecule that is circular with a 3' tail and soon degraded. The spliced RNA is polyadenylated at the 3' end. R-loops are triple helix of DNA and the pre-mRNA and a consequence of the RNA transcription, not splicing and RNA maturation."
+    }
+  },
+  "formattedQuestion": "A large gene has dozens of exons, of which the central ones code for folded triple helical repeats that connect the cytoskeleton with sarcolemma and extracellular space. Each exon usually codes for one folded triple alpha helix. The most common mutations of the gene are central exon deletions that create out-of-frame peptides and progressive degenerative organ waste. A solution is to deliver a Morpholino that recognizes the 5' end of the out-of-frame exon in pre-mRNA. The molecule prevents binding of the spliceosome and creates exon skipping and in-frame joining. Several missing exons are well tolerated by an organism. Which structure below is not involved in the proposed therapy?\n\nOptions:\n(A) antisense\n(B) polyA tail\n(C) lariat\n(D) R-loops",
+  "response": {
+    "answer": "As Dr. Evelyn Reed, a molecular biologist specializing in gene therapy and RNA processing, I can address your question about the proposed therapy.\n\nThe therapy described involves delivering a Morpholino to a pre-mRNA molecule. Morpholinos are synthetic nucleic acid analogs that bind to specific RNA sequences. Their mechanism of action in this context is to prevent the spliceosome from binding to the 5' splice site of an out-of-frame exon. This binding event is crucial for the splicing process, which removes introns and splices exons together to form mature mRNA. By blocking this interaction, the Morpholino effectively causes \"exon skipping.\" The goal is to skip the mutated exon, thereby restoring the reading frame and preventing the production of a non-functional or harmful peptide.\n\nLet's analyze the options provided in relation to this therapeutic strategy:\n\n*   **(A) Antisense:** The Morpholino molecule, by binding to a specific sequence on the pre-mRNA, acts as an antisense molecule. Antisense technology targets specific RNA sequences to modulate gene expression, often by blocking translation or promoting degradation. In this case, the Morpholino is designed to be antisense to the target pre-mRNA sequence. Therefore, antisense is directly involved.\n\n*   **(B) PolyA tail:** The polyadenylation signal (polyA tail) is a sequence at the 3' end of pre-mRNA that signals for the addition of a polyadenine (polyA) tail. This tail is important for mRNA stability, nuclear export, and translation. However, the proposed therapy focuses on manipulating splicing at the 5' end of an exon, specifically by preventing spliceosome binding. The polyA tail is located at the 3' end of the transcript and is not directly involved in the splicing of internal exons or the mechanism of the Morpholino in this scenario.\n\n*   **(C) Lariat:** The formation of a lariat structure is a hallmark of intron removal during splicing. The spliceosome, a complex of proteins and small nuclear RNAs (snRNAs), catalyzes the splicing reaction. A key step involves the formation of a 2'-5' phosphodiester bond within the intron, creating a lariat structure that is subsequently removed along with the exon junction. Since the therapy aims to *prevent* splicing of a specific exon by interfering with spliceosome binding, the splicing machinery, and thus the lariat formation, is directly relevant to the process being modulated. The therapy *prevents* the normal splicing pathway, which would otherwise involve lariat formation.\n\n*   **(D) R-loops:** R-loops are three-stranded nucleic acid structures formed when an RNA molecule hybridizes with a DNA strand, while the complementary DNA strand remains displaced. While R-loops can form during transcription and have been implicated in various cellular processes and diseases, they are not a direct component or target of the described Morpholino-based exon-skipping therapy. The therapy operates at the RNA level, specifically on pre-mRNA, and targets the splicing machinery.\n\nBased on this analysis, the structure not directly involved in the proposed therapy's mechanism of action is the polyA tail. The therapy manipulates the splicing process, which involves the spliceosome and lariat formation, and the Morpholino itself acts in an antisense manner.\n\nRegarding a \"mathematical solution with Python code to compute the exact answer,\" this question is biological and conceptual, not mathematical. There are no numerical values or calculations to perform. The answer is derived from understanding the molecular mechanisms of gene expression, RNA splicing, and the function of Morpholino oligonucleotides. Therefore, a computational approach is not applicable here.\n\nThe structure not involved in the proposed therapy is the **(B) polyA tail**.",
+    "agent": "math-complex",
+    "metadata": {
+      "requestId": "req-1754060835994-u9y5jnri6",
+      "agent": "math-complex",
+      "tokensUsed": 2185,
+      "fallback": true
+    }
+  },
+  "extractedAnswer": "D",
+  "responseTime": 3481,
+  "timestamp": "2025-08-01T15:07:19.449Z"
+}

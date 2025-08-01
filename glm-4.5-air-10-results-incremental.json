@@ -1,0 +1,92 @@
+{
+  "model": "z-ai/glm-4.5-air:free",
+  "timestamp": "2025-07-31T04:24:02.412Z",
+  "results": [
+    {
+      "question_number": 1,
+      "category": "business",
+      "correct_answer": "F",
+      "selected_answer": "F",
+      "is_correct": true,
+      "duration_ms": 21285
+    },
+    {
+      "question_number": 2,
+      "category": "business",
+      "correct_answer": "J",
+      "selected_answer": "J",
+      "is_correct": true,
+      "duration_ms": 51275
+    },
+    {
+      "question_number": 3,
+      "category": "law",
+      "correct_answer": "D",
+      "selected_answer": "A",
+      "is_correct": false,
+      "duration_ms": 52282
+    },
+    {
+      "question_number": 4,
+      "category": "law",
+      "correct_answer": "B",
+      "selected_answer": "H",
+      "is_correct": false,
+      "duration_ms": 13160
+    },
+    {
+      "question_number": 5,
+      "category": "psychology",
+      "correct_answer": "E",
+      "selected_answer": "E",
+      "is_correct": true,
+      "duration_ms": 202995
+    },
+    {
+      "question_number": 6,
+      "category": "psychology",
+      "correct_answer": "I",
+      "selected_answer": "H",
+      "is_correct": false,
+      "duration_ms": 11613
+    },
+    {
+      "question_number": 7,
+      "category": "biology",
+      "correct_answer": "B",
+      "selected_answer": "H",
+      "is_correct": false,
+      "duration_ms": 12772
+    },
+    {
+      "question_number": 8,
+      "category": "biology",
+      "correct_answer": "D",
+      "selected_answer": "D",
+      "is_correct": true,
+      "duration_ms": 8798
+    },
+    {
+      "question_number": 9,
+      "category": "chemistry",
+      "correct_answer": "C",
+      "selected_answer": "C",
+      "is_correct": true,
+      "duration_ms": 13241
+    },
+    {
+      "question_number": 10,
+      "category": "chemistry",
+      "correct_answer": "D",
+      "selected_answer": "E",
+      "is_correct": false,
+      "duration_ms": 11556
+    }
+  ],
+  "status": "complete",
+  "summary": {
+    "total": 10,
+    "correct": 5,
+    "accuracy": 50
+  }
+}

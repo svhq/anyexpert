@@ -43,7 +43,7 @@ class MathAgent {
     const messages = [
       {
         role: 'system',
-        content: `${SYSTEM_PROMPT}\n\nSolve mathematical problems step-by-step, showing your work clearly. For simple arithmetic, compute the answer directly.`
+        content: SYSTEM_PROMPT
       }
     ];
 
@@ -78,18 +78,14 @@ class MathAgent {
         role: 'system',
         content: `${SYSTEM_PROMPT}
 
-For mathematical queries requiring precision or complex calculations, write Python code using appropriate libraries:
-- Basic math and high precision: math, decimal, fractions
-- Symbolic math: sympy
-- Numerical computing: numpy, scipy
-- Statistics: scipy.stats, pandas
-- Plotting: matplotlib
-
-Always:
-1. Explain the mathematical approach
-2. Write clean Python code to compute the answer
-3. Show the exact result
-4. Provide interpretation of the result`
+Available Python libraries for calculations:
+- math, decimal, fractions, mpmath (mathematical operations)
+- numpy, scipy (numerical computing)
+- sympy (symbolic math)
+- pandas, statistics, statsmodels (data analysis)
+- matplotlib, seaborn, plotly (visualization)
+- scikit-learn (machine learning)
+- rdkit, rdchiral (chemistry, molecular structures, reactions)`
       }
     ];
 
@@ -99,7 +95,7 @@ Always:
 
     messages.push({
       role: 'user',
-      content: `${userQuery}\n\nProvide the mathematical solution with Python code to compute the exact answer.`
+      content: userQuery
     });
 
     const llmResponse = await this.callLLM(messages, metadata);
@@ -256,7 +252,8 @@ Always:
       body: JSON.stringify({
         model: this.config.openrouter.model,
         messages,
-        temperature: 0.1  // Low temperature for consistent mathematical reasoning
+        temperature: 0.1,  // Low temperature for consistent mathematical reasoning
+        max_tokens: 1000000  // Very high limit to capture full responses
       })
     });
 
@@ -264,7 +261,37 @@ Always:
       throw new Error(`OpenRouter API error: ${response.status}`);
     }
 
-    const data = await response.json();
+    let data;
+    try {
+      let text = await response.text();
+      if (!text) {
+        throw new Error('Empty response from OpenRouter');
+      }
+      
+      // GLM-4.5-air sometimes pads responses with whitespace
+      text = text.trim();
+      
+      // Find the start of JSON (GLM sometimes prepends whitespace)
+      const jsonStart = text.indexOf('{');
+      if (jsonStart > 0) {
+        console.log(`Trimming ${jsonStart} bytes of padding from response`);
+        text = text.substring(jsonStart);
+      }
+      
+      data = JSON.parse(text);
+    } catch (parseError) {
+      console.error('Failed to parse response:', parseError.message);
+      console.error('Response text length:', text ? text.length : 0);
+      if (text) {
+        console.error('First 500 chars:', text.substring(0, 500));
+      }
+      throw new Error(`JSON parse error: ${parseError.message}`);
+    }
+    
+    if (!data.choices || !data.choices[0]) {
+      throw new Error('Invalid response structure');
+    }
+    
     return {
       content: data.choices[0].message.content,
       tokensUsed: data.usage?.total_tokens || 0

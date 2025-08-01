@@ -1,0 +1,265 @@
+{
+  "timestamp": "2025-07-31T13:31:55.540Z",
+  "total_questions": 17,
+  "questions": [
+    {
+      "question_id": 7695,
+      "category": "math",
+      "question": "Statement 1 | The external direct product of cyclic groups is cyclic. Statement 2 | The external direct product of D_3 and D_4 is isomorphic to D_12.",
+      "options": [
+        "A) ['Statement 1 is an example of Statement 2, False' 'True, True'",
+        "B) 'True, False' 'Both statements are true, but unrelated'",
+        "C) 'True, Statement 2 is an example of Statement 1'",
+        "D) 'Both statements are true, but Statement 1 is sometimes false'",
+        "E) 'False, True'",
+        "F) 'Statement 1 is dependent on the conditions of Statement 2, False'",
+        "G) 'False, False'",
+        "H) 'Both statements are false, but Statement 2 is occasionally true']"
+      ],
+      "correct_answer": "I",
+      "answer_index": 8
+    },
+    {
+      "question_id": 7701,
+      "category": "math",
+      "question": "A company with offices in five different countries is interested in estimating the proportion of its employees in favor of banning smoking on the office premises. It is known that the views of people from different countries on issues like smoking tend to vary due to the influence of different local social structures. Which of the following is an appropriate sampling technique to use in this situation, and why?",
+      "options": [
+        "A) [\"Convenience sample, because it's the easiest method to execute\"",
+        "B) \"Cluster sample, because it's cheaper and easier to conduct than a stratified sample\"",
+        "C) 'Multi-stage sample, because it allows the company to randomly select offices, then employees within those offices'",
+        "D) \"Non-probability sample, because it doesn't require the company to know the overall population size.\"",
+        "E) 'Simple random sample, because this is the simplest sampling method'",
+        "F) 'Stratified sample, because the population is divided into five strata—namely, five offices in five different countries'",
+        "G) 'Cluster sample, because the population is divided into five clusters—namely, five offices in five different countries'",
+        "H) 'Systematic sample, because the company can select every nth employee from each country'",
+        "I) 'Quota sample, because the company wants to ensure that the sample accurately represents the population in terms of the proportion of employees from each country'",
+        "J) 'Simple random sample, because this is the only method that gives unbiased results']"
+      ],
+      "correct_answer": "F",
+      "answer_index": 5
+    },
+    {
+      "question_id": 8215,
+      "category": "physics",
+      "question": "Let X_1, X_2,... be independent variables each taking values +1 or -1 with probabilities 1/2 and 1/2. It is know that $\\sqrt{3/n^3}*\\sum_{k=1}^n k*X_k$ converges in distribution normal distribution N(a,b) as n goes to infinity. Here a is the expectation and b is the variance. What are the values of a and b? Return the answers as a list. For example, if a=2, b=100, return [2,100].",
+      "options": [
+        "A) ['[2, 0]' '[0, 1]' '[2, 1]' '[1, 1]' '[1, 0]' '[0, 0]' '[0, 1/2]' '[1, 2]'",
+        "B) '[0, 2]' '[0, 3]']"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 3531,
+      "category": "chemistry",
+      "question": "The simplest alkene has",
+      "options": [
+        "A) ['cis-trans isomers' 'at least four sigma bonds' 'no sigma bonds'",
+        "B) 'a trigonal planar configuration' 'a tetrahedral configuration'",
+        "C) 'at least three pi bonds' 'at least two pi bonds' 'aromatic properties'",
+        "D) 'at least six sigma bonds']"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 2811,
+      "category": "biology",
+      "question": "The principle inorganic compound found in living things is",
+      "options": [
+        "A) ['oxygen' 'calcium' 'carbon' 'potassium' 'phosphorus' 'water' 'sulfur'",
+        "B) 'hydrogen' 'nitrogen' 'glucose']"
+      ],
+      "correct_answer": "F",
+      "answer_index": 5
+    },
+    {
+      "question_id": 2815,
+      "category": "biology",
+      "question": "A reaction that includes energy as one of its reactants is called a(n)",
+      "options": [
+        "A) ['endergonic reaction.' 'catabolic reaction.' 'redox reaction.'",
+        "B) 'anabolic reaction.' 'exergonic reaction.' 'exothermic reaction.'",
+        "C) 'photolytic reaction.' 'hydrolysis reaction.' 'thermogenic reaction.'",
+        "D) 'enthalpy reaction.']"
+      ],
+      "correct_answer": "A",
+      "answer_index": 0
+    },
+    {
+      "question_id": 2989,
+      "category": "computer science",
+      "question": "Which of the following is the direct energy source that allows ATP synthase to produce ATP in mitochondria?",
+      "options": [
+        "A) ['The combination of acetyl-CoA with oxaloacetate in the citric acid cycle'",
+        "B) 'The reduction of NAD+ during the conversion of pyruvate to acetyl-CoA'",
+        "C) 'The reduction of FAD+ during the conversion of succinate to fumarate in the citric acid cycle'",
+        "D) 'ATP molecules directly providing energy for the process'",
+        "E) 'ADP molecules flowing down a gradient across the mitochondrial inner membrane'",
+        "F) 'The energy of glucose breaking down into pyruvate during glycolysis'",
+        "G) 'The energy of electrons passing along the electron transport chain'",
+        "H) 'NADH diffusing from the mitochondrial intermembrane space to the matrix'",
+        "I) 'The oxidation of FADH2 during the electron transport chain'",
+        "J) 'H+ ions flowing down a gradient across the mitochondrial inner membrane']"
+      ],
+      "correct_answer": "J",
+      "answer_index": 9
+    },
+    {
+      "question_id": 2995,
+      "category": "computer science",
+      "question": "A healthy person sitting at rest consciously begins to breathe too fast. Which of the following describes the change in the person’s blood caused by this hyperventilation?",
+      "options": [
+        "A) ['No change in both partial pressure of carbon dioxide and concentration of hydrogen ions'",
+        "B) 'A decrease in partial pressure of carbon dioxide and a decrease in concentration of hydrogen ions'",
+        "C) 'No change in partial pressure of carbon dioxide and an increase in concentration of hydrogen ions'",
+        "D) 'A decrease in partial pressure of carbon dioxide and an increase in concentration of hydrogen ions'",
+        "E) 'An increase in partial pressure of carbon dioxide and a decrease in concentration of hydrogen ions'",
+        "F) 'A decrease in partial pressure of carbon dioxide and no change in concentration of hydrogen ions'",
+        "G) 'An increase in both partial pressure of carbon dioxide and concentration of hydrogen ions, but at different rates'",
+        "H) 'An increase in partial pressure of carbon dioxide and no change in concentration of hydrogen ions'",
+        "I) 'No change in partial pressure of carbon dioxide and a decrease in concentration of hydrogen ions'",
+        "J) 'An increase in partial pressure of carbon dioxide and an increase in concentration of hydrogen ions']"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 1995,
+      "category": "psychology",
+      "question": "An examinee who makes a number of confabulatory responses on the Rorschach has overgeneralized from a part of the inkblot to the whole. Such responses suggest which of the following?",
+      "options": [
+        "A) ['an inability to perceive abstract concepts'",
+        "B) 'high level of stress or anxiety' 'a low level of self-esteem'",
+        "C) 'high intelligence and creativity' 'a lack of attention to detail'",
+        "D) 'a need for immediate gratification'",
+        "E) 'brain damage, intellectual disability, or emotional disturbance'",
+        "F) 'a high degree of defensiveness or denial'",
+        "G) 'a highly imaginative personality'",
+        "H) 'a high degree of introversion or social withdrawal']"
+      ],
+      "correct_answer": "G",
+      "answer_index": 6
+    },
+    {
+      "question_id": 2001,
+      "category": "psychology",
+      "question": "__________ memory is the aspect of memory that is involved in the recall of information acquired within the past few hours to days.",
+      "options": [
+        "A) ['Episodic' 'Declarative' 'Semantic' 'Working' 'Echoic' 'Sensory'",
+        "B) 'Prospective' 'Implicit' 'Long-term']"
+      ],
+      "correct_answer": "I",
+      "answer_index": 8
+    },
+    {
+      "question_id": 6831,
+      "category": "economics",
+      "question": "Which of the following would shift the aggregate demand curve to the right?",
+      "options": [
+        "A) ['An increase in unemployment rates' 'A decrease in government spending'",
+        "B) 'A decrease in the supply of money' 'An increase in savings'",
+        "C) 'An increase in interest rates'",
+        "D) 'Depreciation in the international value of the dollar'",
+        "E) 'An increase in the price level' 'A decrease in consumer confidence'",
+        "F) 'An increase in personal income tax rates']"
+      ],
+      "correct_answer": "F",
+      "answer_index": 5
+    },
+    {
+      "question_id": 4675,
+      "category": "history",
+      "question": "In primates, the location of which of the following determines if it is a quadruped or biped?",
+      "options": [
+        "A) ['the foramen magnum' 'the skull' 'the feet' 'the femur' 'the spine'",
+        "B) 'the pelvis' 'the clavicle' 'the vertebrae' 'the ulna' 'the radius']"
+      ],
+      "correct_answer": "A",
+      "answer_index": 0
+    },
+    {
+      "question_id": 4681,
+      "category": "history",
+      "question": "This question refers to the following information.\r\n\"Those whose condition is such that their function is the use of their bodies and nothing better can be expected of them, those, I say, are slaves of nature. It is better for them to be ruled thus.\"\r\nJuan de Sepulveda, Politics, 1522\r\n\"When Latin American nations gained independence in the 19th century, those two strains converged, and merged with an older, more universalist, natural law tradition. The result was a distinctively Latin American form of rights discourse. Paolo Carozza traces the roots of that discourse to a distinctive application, and extension, of Thomistic moral philosophy to the injustices of Spanish conquests in the New World. The key figure in that development seems to have been Bartolomé de Las Casas, a 16th-century Spanish bishop who condemned slavery and championed the cause of Indians on the basis of a natural right to liberty grounded in their membership in a single common humanity. 'All the peoples of the world are humans,' Las Casas wrote, and 'all the races of humankind are one.' According to Brian Tierney, Las Casas and other Spanish Dominican philosophers laid the groundwork for a doctrine of natural rights that was independent of religious revelation 'by drawing on a juridical tradition that derived natural rights and natural law from human rationality and free will, and by appealing to Aristotelian philosophy.'\"\r\nMary Ann Glendon, \"The Forgotten Crucible: The Latin American Influence on the Universal Human Rights Idea,” 2003\r\nWhich one of the following statements about the Spanish conquest of the Americas is most accurate?",
+      "options": [
+        "A) ['African slavery was a direct result of Spanish settlements in Florida.'",
+        "B) 'The Spanish conquest of the Americas was motivated by a desire to spread Aristotelian philosophy.'",
+        "C) 'Due to racial prejudice, Spanish explorers shunned intermarriage with native people.'",
+        "D) 'The Spanish conquest of the Americas was universally condemned by the Catholic Church.'",
+        "E) 'Juan de Sepulveda was a major critic of the Spanish conquest, due to his belief in natural law.'",
+        "F) 'Bartolomé de Las Casas supported the Spanish conquest because he believed it would improve the lives of the indigenous people.'",
+        "G) 'Early native civilizations in Mexico introduced Spanish explorers to cattle ranching and wheat cultivation.'",
+        "H) 'The Spanish conquest of the Americas led directly to the abolition of slavery.'",
+        "I) 'Christopher Columbus was not the first European to have explored North America.'",
+        "J) 'Spanish conquerors were influenced by the Native American belief in natural rights.']"
+      ],
+      "correct_answer": "I",
+      "answer_index": 8
+    },
+    {
+      "question_id": 4350,
+      "category": "philosophy",
+      "question": "Suppose a nanostructure is modelled by an electron confined to a rectangular region with sides of lengths $L_1=1.0 \\mathrm{~nm}$ and $L_2=2.0 \\mathrm{~nm}$ and is subjected to thermal motion with a typical energy equal to $k T$, where $k$ is Boltzmann's constant. How low should the temperature be for the thermal energy to be comparable to the zero-point energy？",
+      "options": [
+        "A) ['2.0 $10^2 \\\\mathrm{~K}$' ' 5.5 $10^3 \\\\mathrm{~K}$'",
+        "B) '2.5 $10^3 \\\\mathrm{~K}$' '7.0 $10^3 \\\\mathrm{~K}$'",
+        "C) '1.2 $10^4 \\\\mathrm{~K}$' '6.5 $10^3 \\\\mathrm{~K}$'",
+        "D) '9.5 $10^3 \\\\mathrm{~K}$' '1.5 $10^4 \\\\mathrm{~K}$'",
+        "E) '8.0 $10^3 \\\\mathrm{~K}$' '3.0 $10^3 \\\\mathrm{~K}$']"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 4355,
+      "category": "philosophy",
+      "question": "A proton and a negatively charged $\\mu$ meson (called a muon) can form a short-lived species called a mesonic atom. The charge of a muon is the same as that on an electron and the mass of a muon is $207 m_{\\mathrm{e}}$. Assume that the Bohr theory can be applied to such a mesonic atom and calculate the ground-state energy, the radius of the first Bohr orbit, and the energy and frequency associated with the $n=1$ to $n=2$ transition in a mesonic atom.",
+      "options": [
+        "A) ['1.50 $10^{-28} \\\\mathrm{~kg}$' '1.55 $10^{-28} \\\\mathrm{~kg}$'",
+        "B) '1.95 $10^{-28} \\\\mathrm{~kg}$' '2.15 $10^{-28} \\\\mathrm{~kg}$'",
+        "C) '2.07 $10^{-28} \\\\mathrm{~kg}$' ' 1.69 $10^{-28} \\\\mathrm{~kg}$'",
+        "D) '1.35 $10^{-28} \\\\mathrm{~kg}$' '1.80 $10^{-28} \\\\mathrm{~kg}$'",
+        "E) '2.00 $10^{-28} \\\\mathrm{~kg}$' '1.87 $10^{-28} \\\\mathrm{~kg}$']"
+      ],
+      "correct_answer": "F",
+      "answer_index": 5
+    },
+    {
+      "question_id": 875,
+      "category": "law",
+      "question": "A defendant, on trial for robbery, took the stand and testified in his own behalf. On cross-examination, the prosecuting attorney asked the defendant whether he had committed false pretenses by making long-distance telephone calls by the unauthorized use of a credit card number. The defendant replied, \"That's a lie, I never did. \" In rebuttal, the prosecuting attorney called the court officer to testif' that the defendant admitted committing false pretenses. The court officer further testified, however, that the defendant was granted immunity from prosecution in exchange for his testimony against others. The court officer's testimony is",
+      "options": [
+        "A) ['inadmissible, because the court order is thebest evidence.'",
+        "B) \"admissible, as bearing on the defendant's credibility.\"",
+        "C) 'admissible, as it is relevant to the case at hand.'",
+        "D) 'inadmissible, as the defendant was granted immunity for his testimony.'",
+        "E) \"admissible, as bearing on the defendant's guilt.\"",
+        "F) 'inadmissible, because it is hearsay evidence.'",
+        "G) \"admissible, as it contradicts the defendant's statement on the stand.\"",
+        "H) 'inadmissible, because it is irrelevant to the case at hand.'",
+        "I) \"admissible, as it provides direct evidence of the defendant's guilt.\"",
+        "J) 'inadmissible, because the testimony is extrinsic evidence.']"
+      ],
+      "correct_answer": "J",
+      "answer_index": 9
+    },
+    {
+      "question_id": 881,
+      "category": "law",
+      "question": "A teenage male was on trial on charges of illegally entering an owner's property and stealing a car. The witness can only confirm for the prosecution that a car was stolen, the model and type of car, and that it was missing from the property on a certain date. The defense asks witness \"isn't it possible that my client did not steal the car, that someone else did it, and that the police are lying about the charges against him? The prosecution objected to the question. Will the court likely sustain the objection?",
+      "options": [
+        "A) ['No, as it is essential for the defense to create reasonable doubt in the minds of the jury.'",
+        "B) 'Yes, because the question is not directly related to the charges against the defendant.'",
+        "C) 'Yes, because this is an objectionable question based on pure speculation.'",
+        "D) 'No, because the defense is merely suggesting a possibility, not stating it as fact.'",
+        "E) \"No, because the defense has the right to question every aspect of the prosecution's case.\"",
+        "F) 'Yes, because it is not permissible to question the credibility of the police without substantial supporting evidence.'",
+        "G) 'No, questioning about the possibility of other perpetrators, or about police misconduct, is always permissible.'",
+        "H) 'No, because the witness may know something that he is not revealing and for that reason, a cross-examiner is given wide latitude in questioning.']"
+      ],
+      "correct_answer": "C",
+      "answer_index": 2
+    }
+  ]
+}

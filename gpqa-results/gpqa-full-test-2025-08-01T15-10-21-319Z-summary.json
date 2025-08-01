@@ -1,0 +1,69 @@
+{
+  "sessionId": "gpqa-full-test-2025-08-01T15-10-21-319Z",
+  "startTime": "2025-08-01T15:10:21.322Z",
+  "questions": [
+    {
+      "number": 6,
+      "category": "Chemistry (general)",
+      "expectedAnswer": "B",
+      "extractedAnswer": "D",
+      "isCorrect": false,
+      "responseTime": 27940,
+      "responseLength": 30605,
+      "agent": "unknown",
+      "mathExecuted": false
+    },
+    {
+      "number": 7,
+      "category": "Genetics",
+      "expectedAnswer": "D",
+      "extractedAnswer": "A",
+      "isCorrect": false,
+      "responseTime": 7213,
+      "responseLength": 8131,
+      "agent": "unknown",
+      "mathExecuted": false
+    },
+    {
+      "number": 8,
+      "category": "Electromagnetism and Photonics",
+      "expectedAnswer": "C",
+      "extractedAnswer": null,
+      "isCorrect": false,
+      "responseTime": 5852,
+      "responseLength": 5349,
+      "agent": "unknown",
+      "mathExecuted": false
+    },
+    {
+      "number": 9,
+      "category": "Organic Chemistry",
+      "expectedAnswer": "A",
+      "extractedAnswer": "C",
+      "isCorrect": false,
+      "responseTime": 122188,
+      "responseLength": 149314,
+      "agent": "math-complex",
+      "mathExecuted": false
+    },
+    {
+      "number": 10,
+      "category": "Genetics",
+      "expectedAnswer": "D",
+      "extractedAnswer": "D",
+      "isCorrect": true,
+      "responseTime": 22057,
+      "responseLength": 28647,
+      "agent": "math-complex",
+      "mathExecuted": false
+    }
+  ],
+  "endTime": "2025-08-01T15:13:46.670Z",
+  "summary": {
+    "totalQuestions": 10,
+    "attempted": 5,
+    "correct": 1,
+    "accuracy": "20.0%",
+    "avgResponseTime": "37.0s"
+  }
+}

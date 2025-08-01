@@ -54,6 +54,14 @@ class QueryAnalyzer {
       'prove', 'verify', 'integrate', 'differentiate'
     ];
     
+    // Chemistry keywords that should route to math agent
+    const chemistryKeywords = [
+      'reaction', 'cycloaddition', 'diels-alder', 'synthesis',
+      'mechanism', 'product', 'reagent', 'stereochemistry',
+      'organic', 'chemistry', 'molecule', 'compound',
+      'smiles', 'rdkit', 'cyclohexene', 'bicyclo'
+    ];
+    
     // Check if it's simple arithmetic
     const isSimple = simplePatterns.some(pattern => pattern.test(queryLower));
     
@@ -67,8 +75,13 @@ class QueryAnalyzer {
        queryLower.includes('result') || /\d/.test(queryLower))
     );
     
+    // Check for chemistry keywords
+    const hasChemistryKeyword = chemistryKeywords.some(keyword => 
+      queryLower.includes(keyword)
+    );
+    
     // Determine if it's math and complexity
-    const isMath = isSimple || isComplex || hasMathKeyword;
+    const isMath = isSimple || isComplex || hasMathKeyword || hasChemistryKeyword;
     let complexity = 'none';
     let needsExecution = false;
     
@@ -77,6 +90,12 @@ class QueryAnalyzer {
         complexity = 'simple';
         needsExecution = false;
       } else {
+        complexity = 'complex';
+        needsExecution = true;
+      }
+      
+      // Chemistry always needs execution
+      if (hasChemistryKeyword) {
         complexity = 'complex';
         needsExecution = true;
       }

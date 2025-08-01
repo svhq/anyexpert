@@ -1,0 +1,5 @@
+{"type":"session_start","questionId":"q-1754023829616","timestamp":"2025-08-01T04:50:29.616Z"}
+{"type":"question","questionId":"q-1754023829616","question":"Question: Two quantum states with energies E1 and E2 have a lifetime of 10^-9 sec and 10^-8 sec, respectively. We want to clearly distinguish these two energy levels. Which one of the following options could be their energy difference so that they can be clearly resolved?\n\nOptions:\n\nA) 10^-9 eV\nB) 10^-8 eV\nC) 10^-11 eV\nD) 10^-4 eV\n","timestamp":"2025-08-01T04:50:29.619Z"}
+{"type":"log","level":"error","message":"Math agent error: Error: OpenRouter API error: 401","timestamp":"2025-08-01T04:50:30.180Z"}
+{"type":"log","level":"error","message":"Error: Error: OpenRouter API error: 401","timestamp":"2025-08-01T04:50:30.485Z"}
+{"type":"error","error":"OpenRouter API error: 401","timestamp":"2025-08-01T04:50:30.485Z"}

@@ -1,0 +1,124 @@
+{
+  "sessionId": "gpqa-full-test-2025-08-01T15-07-15-942Z",
+  "startTime": "2025-08-01T15:07:15.945Z",
+  "questions": [
+    {
+      "number": 1,
+      "category": "Molecular Biology",
+      "expectedAnswer": "D",
+      "extractedAnswer": "D",
+      "isCorrect": true,
+      "responseTime": 3481,
+      "responseLength": 3789,
+      "agent": "math-complex",
+      "mathExecuted": false
+    },
+    {
+      "number": 2,
+      "category": "Physics (general)",
+      "expectedAnswer": "D",
+      "extractedAnswer": null,
+      "isCorrect": false,
+      "responseTime": 5844,
+      "responseLength": 3999,
+      "agent": "math-complex",
+      "mathExecuted": false
+    },
+    {
+      "number": 3,
+      "category": "Organic Chemistry",
+      "expectedAnswer": "A",
+      "extractedAnswer": "C",
+      "isCorrect": false,
+      "responseTime": 21529,
+      "responseLength": 18496,
+      "agent": "math-complex",
+      "mathExecuted": false
+    },
+    {
+      "number": 4,
+      "category": "Molecular Biology",
+      "expectedAnswer": "B",
+      "extractedAnswer": null,
+      "isCorrect": false,
+      "responseTime": 7618,
+      "responseLength": 11174,
+      "agent": "unknown",
+      "mathExecuted": false
+    },
+    {
+      "number": 5,
+      "category": "Quantum Mechanics",
+      "expectedAnswer": "A",
+      "extractedAnswer": null,
+      "isCorrect": false,
+      "responseTime": 7924,
+      "responseLength": 7828,
+      "agent": "unknown",
+      "mathExecuted": false
+    },
+    {
+      "number": 6,
+      "category": "Chemistry (general)",
+      "expectedAnswer": "B",
+      "extractedAnswer": null,
+      "isCorrect": false,
+      "responseTime": 72857,
+      "responseLength": 38186,
+      "agent": "unknown",
+      "mathExecuted": false
+    },
+    {
+      "number": 7,
+      "category": "Genetics",
+      "expectedAnswer": "D",
+      "extractedAnswer": null,
+      "isCorrect": false,
+      "responseTime": 8193,
+      "responseLength": 10515,
+      "agent": "unknown",
+      "mathExecuted": false
+    },
+    {
+      "number": 8,
+      "category": "Electromagnetism and Photonics",
+      "expectedAnswer": "C",
+      "extractedAnswer": null,
+      "isCorrect": false,
+      "responseTime": 8362,
+      "responseLength": 9585,
+      "agent": "unknown",
+      "mathExecuted": false
+    },
+    {
+      "number": 9,
+      "category": "Organic Chemistry",
+      "expectedAnswer": "A",
+      "extractedAnswer": null,
+      "isCorrect": false,
+      "responseTime": 135733,
+      "responseLength": 240236,
+      "agent": "math-complex",
+      "mathExecuted": false
+    },
+    {
+      "number": 10,
+      "category": "Genetics",
+      "expectedAnswer": "D",
+      "extractedAnswer": "D",
+      "isCorrect": true,
+      "responseTime": 21307,
+      "responseLength": 16560,
+      "agent": "math-complex",
+      "mathExecuted": false
+    }
+  ],
+  "endTime": "2025-08-01T15:12:53.959Z",
+  "summary": {
+    "totalQuestions": 10,
+    "attempted": 10,
+    "correct": 2,
+    "accuracy": "20.0%",
+    "avgResponseTime": "29.3s"
+  }
+}

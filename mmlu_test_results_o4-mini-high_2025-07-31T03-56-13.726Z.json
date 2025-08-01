@@ -1,0 +1,55 @@
+{
+  "model": "o4-mini-high",
+  "timestamp": "2025-07-31T03:56:13.726Z",
+  "questions_tested": 5,
+  "correct_answers": 0,
+  "accuracy_percentage": "0.0",
+  "average_response_time_ms": "12278",
+  "detailed_results": [
+    {
+      "question_number": 1,
+      "category": "chemistry",
+      "correct_answer": "B",
+      "selected_answer": "NOT_FOUND",
+      "is_correct": false,
+      "response_time_ms": 16124,
+      "response_preview": "To determine which compound has the **highest boiling point**, the key factor is the **strength of intermolecular forces** present. Among common organ..."
+    },
+    {
+      "question_number": 2,
+      "category": "law",
+      "correct_answer": "B",
+      "selected_answer": "NOT_FOUND",
+      "is_correct": false,
+      "response_time_ms": 8193,
+      "response_preview": "I am Professor Emily Carter, Evidence Law Scholar.\n\nUnder the Federal Rules of Evidence (FRE), **hearsay is defined as an out-of-court statement offer..."
+    },
+    {
+      "question_number": 3,
+      "category": "health",
+      "correct_answer": "B",
+      "selected_answer": "NOT_FOUND",
+      "is_correct": false,
+      "response_time_ms": 7624,
+      "response_preview": "Dr. Emily Carter, Epidemiologist\n\nThe **incidence rate** in epidemiology measures the frequency of *new cases* of a disease occurring in a specified p..."
+    },
+    {
+      "question_number": 4,
+      "category": "other",
+      "correct_answer": "B",
+      "selected_answer": "NOT_FOUND",
+      "is_correct": false,
+      "response_time_ms": 8883,
+      "response_preview": "In accounting under the **accrual basis**, revenue is recognized **when it is earned**, meaning when the company has performed the service or delivere..."
+    },
+    {
+      "question_number": 5,
+      "category": "physics",
+      "correct_answer": "B",
+      "selected_answer": "NOT_FOUND",
+      "is_correct": false,
+      "response_time_ms": 20566,
+      "response_preview": "I am Dr. Elena Martinez, Theoretical Physicist specializing in Quantum Mechanics.\n\nFor a particle of mass \\(m\\) moving in a one-dimensional harmonic o..."
+    }
+  ]
+}

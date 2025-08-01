@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple GPQA Tester with Logging</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        button {
+            background: #00ff88;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            margin: 10px 0;
+        }
+        .status {
+            padding: 10px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            margin: 10px 0;
+        }
+        .logs {
+            background: #0a0a0a;
+            border: 1px solid #444;
+            padding: 10px;
+            height: 400px;
+            overflow-y: auto;
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+        .response {
+            background: #2a2a2a;
+            border: 1px solid #444;
+            padding: 10px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+        .error { color: #ff6b6b; }
+        .success { color: #00ff88; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple GPQA Tester (Port 3005)</h1>
+        
+        <select id="questionSelect">
+            <option value="">Select a question...</option>
+            <option value="test">Test: What is 2+2?</option>
+        </select>
+        
+        <button id="askBtn" onclick="askQuestion()">Ask Question</button>
+        
+        <div class="status" id="status">Ready</div>
+        
+        <h3>Response:</h3>
+        <div class="response" id="response">No response yet</div>
+        
+        <h3>Logs:</h3>
+        <div class="logs" id="logs"></div>
+    </div>
+    
+    <script>
+        let ws = null;
+        let questions = [];
+        
+        // Load questions
+        fetch('/gpqa-questions.json')
+            .then(r => r.json())
+            .then(data => {
+                questions = data.questions;
+                const select = document.getElementById('questionSelect');
+                questions.forEach((q, i) => {
+                    const opt = document.createElement('option');
+                    opt.value = i;
+                    opt.text = `${q.id}: ${q.question.substring(0, 60)}...`;
+                    select.add(opt);
+                });
+            })
+            .catch(err => {
+                addLog('Failed to load questions: ' + err, 'error');
+            });
+        
+        // Connect WebSocket
+        function connect() {
+            ws = new WebSocket('ws://localhost:3005');
+            
+            ws.onopen = () => {
+                addLog('Connected to server', 'success');
+                document.getElementById('status').textContent = 'Connected';
+            };
+            
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                handleMessage(data);
+            };
+            
+            ws.onclose = () => {
+                addLog('Disconnected from server', 'error');
+                document.getElementById('status').textContent = 'Disconnected - Reconnecting...';
+                setTimeout(connect, 2000);
+            };
+            
+            ws.onerror = (err) => {
+                addLog('WebSocket error', 'error');
+            };
+        }
+        
+        function handleMessage(data) {
+            switch(data.type) {
+                case 'log':
+                    addLog(`[LOG] ${data.message}`, data.level);
+                    break;
+                case 'question':
+                    addLog(`[QUESTION] ${data.question.substring(0, 100)}...`, 'info');
+                    break;
+                case 'response':
+                    document.getElementById('response').textContent = data.content;
+                    addLog(`[RESPONSE] Completed in ${(data.duration/1000).toFixed(2)}s`, 'success');
+                    document.getElementById('askBtn').disabled = false;
+                    document.getElementById('status').textContent = 'Complete';
+                    break;
+                case 'error':
+                    addLog(`[ERROR] ${data.error}`, 'error');
+                    document.getElementById('askBtn').disabled = false;
+                    document.getElementById('status').textContent = 'Error';
+                    break;
+                default:
+                    addLog(`[${data.type}] ${JSON.stringify(data)}`, 'info');
+            }
+        }
+        
+        function addLog(message, level = 'info') {
+            const logs = document.getElementById('logs');
+            const time = new Date().toLocaleTimeString();
+            const entry = document.createElement('div');
+            entry.className = level;
+            entry.textContent = `${time} - ${message}`;
+            logs.appendChild(entry);
+            logs.scrollTop = logs.scrollHeight;
+        }
+        
+        async function askQuestion() {
+            const select = document.getElementById('questionSelect');
+            const value = select.value;
+            
+            if (!value) {
+                alert('Please select a question');
+                return;
+            }
+            
+            let questionText;
+            if (value === 'test') {
+                questionText = 'What is 2+2?';
+            } else {
+                const q = questions[value];
+                questionText = `Question: ${q.question}\n\nOptions:\n`;
+                Object.entries(q.options).forEach(([k, v]) => {
+                    questionText += `${k}) ${v}\n`;
+                });
+            }
+            
+            document.getElementById('askBtn').disabled = true;
+            document.getElementById('status').textContent = 'Processing...';
+            document.getElementById('response').textContent = 'Waiting for response...';
+            
+            try {
+                const response = await fetch('/api/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question: questionText })
+                });
+                
+                const result = await response.json();
+                if (!result.success) {
+                    throw new Error(result.error);
+                }
+                
+                addLog(`Log file saved: ${result.logFile}`, 'success');
+                
+            } catch (error) {
+                addLog('Failed to send: ' + error.message, 'error');
+                document.getElementById('askBtn').disabled = false;
+                document.getElementById('status').textContent = 'Failed';
+            }
+        }
+        
+        // Start connection
+        connect();
+    </script>
+</body>
+</html>

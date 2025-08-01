@@ -1,0 +1,6 @@
+{"timestamp":"2025-08-01T06:05:17.557Z","type":"info","message":"Starting test for question gpqa-2"}
+{"timestamp":"2025-08-01T06:05:17.560Z","type":"info","message":"Correct answer: D"}
+{"timestamp":"2025-08-01T06:05:17.562Z","type":"log","message":"\nProcessing gpqa-2..."}
+{"timestamp":"2025-08-01T06:13:29.824Z","type":"error","message":"Math agent error: SyntaxError: Unexpected end of JSON input"}
+{"timestamp":"2025-08-01T06:14:35.941Z","type":"error","message":"Error: SyntaxError: Unexpected end of JSON input"}
+{"timestamp":"2025-08-01T06:14:35.945Z","type":"error","message":"SyntaxError: Unexpected end of JSON input\n    at JSON.parse (<anonymous>)\n    at parseJSONFromBytes (node:internal/deps/undici/undici:6251:19)\n    at successSteps (node:internal/deps/undici/undici:6232:27)\n    at readAllBytes (node:internal/deps/undici/undici:5201:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)"}

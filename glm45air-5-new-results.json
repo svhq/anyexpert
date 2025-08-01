@@ -1,0 +1,110 @@
+{
+  "test_name": "GLM-4.5-air 5 New Questions",
+  "model": "z-ai/glm-4.5-air:free",
+  "test_date": "2025-07-31T13:36:39.594Z",
+  "total_questions": 5,
+  "questions_tested": [
+    {
+      "test_id": 7695,
+      "category": "math",
+      "question": "Statement 1 | The external direct product of cyclic groups is cyclic. Statement 2 | The external direct product of D_3 and D_4 is isomorphic to D_12.",
+      "options": [
+        "A) True, True",
+        "B) False, False",
+        "C) True, False",
+        "D) False, True"
+      ],
+      "expected_answer": "B",
+      "error": "Unexpected end of JSON input",
+      "timestamp": "2025-07-31T13:41:31.142Z"
+    },
+    {
+      "test_id": 7701,
+      "category": "math",
+      "question": "A company with offices in five different countries is interested in estimating the proportion of its employees in favor of banning smoking on the office premises. It is known that the views of people from different countries on issues like smoking tend to vary due to the influence of different local social structures. Which of the following is an appropriate sampling technique to use in this situation, and why?",
+      "options": [
+        "A) Convenience sample, because it's the easiest method to execute",
+        "B) Cluster sample, because it's cheaper and easier to conduct than a stratified sample",
+        "C) Stratified sample, because it ensures representation from each country",
+        "D) Simple random sample, because it is unbiased",
+        "E) Systematic sample, because it ensures even distribution"
+      ],
+      "expected_answer": "C",
+      "model_response": "\n**Dr. Eleanor Vance, Research Statistician**\n\nAfter analyzing this sampling scenario, I can determine the most appropriate technique for this company's situation.\n\nThe key factors in this problem are:\n1. The company has employees across 5 different countries\n2. Views on smoking vary by country due to different social structures\n3. We need to estimate the overall proportion in favor of banning smoking\n\nLet me evaluate each option:\n\nA) Convenience sample - While easy to implement, this method risks bias by only including easily accessible employees, which may not represent all countries adequately.\n\nB) Cluster sample - This would involve treating each country as a cluster and randomly selecting some countries to sample from. While potentially cheaper, it could miss important variations between countries if not all are included.\n\nC) Stratified sample - This involves dividing the population into strata (countries) and sampling from each stratum. This ensures representation from each country, which is crucial given the known variation in views by country.\n\nD) Simple random sample - This randomly selects employees from the entire population without regard to country. While unbiased in theory, it might not ensure adequate representation from each country, especially if some countries have fewer employees.\n\nE) Systematic sample - This selects every kth employee from a list. Like simple random sampling, it doesn't guarantee representation from each country.\n\nGiven that views on smoking vary by country, the most appropriate technique is stratified sampling, which ensures representation from each country.\n\nHere's Python code demonstrating how stratified sampling would work in this context:\n\n```python\nimport numpy as np\n\n# Define the scenario\ncountries = ['Country A', 'Country B', 'Country C', 'Country D', 'Country E']\ntotal_employees = [1000, 1500, 800, 1200, 900]  # Total employees in each country\nproportions = [0.6, 0.7, 0.5, 0.65, 0.55]  # True proportion in favor of smoking ban in each country\n\n# Calculate total number of employees and true overall proportion\ntotal_population = sum(total_employees)\ntrue_proportion = sum(p * n for p, n in zip(proportions, total_employees)) / total_population\n\nprint(f\"Total employees across all countries: {total_population}\")\nprint(f\"True proportion in favor of smoking ban: {true_proportion:.4f}\")\n\n# Stratified sampling demonstration\nnp.random.seed(42)  # For reproducibility\nsample_size = 500  # Total sample size\n\n# Allocate sample size proportionally to each country's population\nstrata_sizes = [int(round(n * sample_size / total_population)) for n in total_employees]\nstratified_estimates = []\n\nprint(\"\\nStratified Sampling Results:\")\nfor i, (country, size, prop) in enumerate(zip(countries, strata_sizes, proportions)):\n    # Sample from each stratum\n    stratum_sample = np.random.choice([0, 1], size=size, p=[1-prop, prop])\n    stratum_estimate = np.mean(stratum_sample)\n    stratified_estimates.append(stratum_estimate)\n    print(f\"{country}: {stratum_estimate:.4f} (based on {size} samples)\")\n\n# Calculate weighted average of stratum estimates\nstratified_estimate = sum(est * size for est, size in zip(stratified_estimates, strata_sizes)) / sum(strata_sizes)\nprint(f\"\\nStratified sample estimate: {stratified_estimate:.4f}\")\nprint(f\"Error from true proportion: {abs(stratified_estimate - true_proportion):.4f}\")\n```\n\nThe stratified sample ensures that each country is represented in the sample according to its proportion in the population, which leads to a more accurate estimate of the overall proportion. This is particularly important when there are known differences between subgroups (countries) in the population.\n\nTherefore, the correct answer is:\n\n**C) Stratified sample, because it ensures representation from each country**",
+      "response_length": 3811,
+      "response_time_ms": 20240,
+      "timestamp": "2025-07-31T13:41:56.388Z"
+    },
+    {
+      "test_id": 8215,
+      "category": "physics",
+      "question": "For a quantum harmonic oscillator in its ground state, what are the expectation values of position and momentum [<x>, <p>]?",
+      "options": [
+        "A) [0, 0]",
+        "B) [1, 0]",
+        "C) [0, 1]",
+        "D) [1, 1]",
+        "E) [0.5, 0.5]"
+      ],
+      "expected_answer": "A",
+      "model_response": "\n# Dr. Elena Rodriguez, Quantum Physicist\n\nI'll solve this quantum mechanics problem step by step.\n\n## Understanding the Quantum Harmonic Oscillator\n\nThe quantum harmonic oscillator is a fundamental system in quantum mechanics where a particle experiences a restoring force proportional to its displacement from equilibrium. The potential energy is given by V(x) = ½mω²x², where m is mass and ω is the angular frequency.\n\n## Ground State Wavefunction\n\nFor the ground state (n=0), the wavefunction is:\nψ₀(x) = (mω/πħ)^(1/4) × exp(-mωx²/2ħ)\n\nThis is a Gaussian function centered at x = 0.\n\n## Expectation Value of Position <x>\n\nThe expectation value is calculated as:\n<x> = ∫ψ₀*(x) x ψ₀(x) dx from -∞ to ∞\n\nSince ψ₀(x) is real-valued:\n<x> = ∫x|ψ₀(x)|² dx\n\nThe probability density |ψ₀(x)|² is a symmetric Gaussian function centered at x = 0. The function x|ψ₀(x)|² is odd (x is odd, |ψ₀(x)|² is even), and the integral of an odd function over symmetric limits (-∞ to ∞) is 0.\n\nTherefore, <x> = 0.\n\n## Expectation Value of Momentum <p>\n\nThe momentum operator is -iħ(d/dx), so:\n<p> = ∫ψ₀*(x) (-iħ d/dx) ψ₀(x) dx\n\nAgain, since ψ₀(x) is real:\n<p> = -iħ∫ψ₀(x)(dψ₀/dx) dx\n\nThe derivative of the wavefunction is:\ndψ₀/dx = (-mωx/ħ)ψ₀(x)\n\nSubstituting this in:\n<p> = -iħ∫ψ₀(x)(-mωx/ħ)ψ₀(x) dx\n<p> = imω∫x|ψ₀(x)|² dx\n\nAs with position, the integral ∫x|ψ₀(x)|² dx is the integral of an odd function over symmetric limits, which equals 0.\n\nTherefore, <p> = 0.\n\n## Conclusion\n\nBoth expectation values are zero for the ground state of the quantum harmonic oscillator.\n\n**Final Answer: A) [0, 0]**",
+      "response_length": 1579,
+      "response_time_ms": 14708,
+      "timestamp": "2025-07-31T13:42:16.113Z"
+    },
+    {
+      "test_id": 8220,
+      "category": "physics",
+      "question": "A particle of mass m moves in a one-dimensional potential V(x) = kx^4. What is the ground state energy in terms of ℏ, k, and m?",
+      "options": [
+        "A) (3/4)(ℏ²k/m)^(1/3)",
+        "B) (1/2)(ℏ²k/m)^(1/3)",
+        "C) (ℏ²k/m)^(1/3)",
+        "D) 2(ℏ²k/m)^(1/3)",
+        "E) (3/2)(ℏ²k/m)^(1/3)"
+      ],
+      "expected_answer": "A",
+      "error": "Unexpected end of JSON input",
+      "timestamp": "2025-07-31T13:46:38.040Z"
+    },
+    {
+      "test_id": 3531,
+      "category": "chemistry",
+      "question": "The cyclobutadiene molecule is cyclic and contains 4 carbon atoms, each of which is sp² hybridized. The molecule is planar and has 4 π electrons. Cyclobutadiene is",
+      "options": [
+        "A) aromatic",
+        "B) antiaromatic",
+        "C) nonaromatic",
+        "D) a stable molecule",
+        "E) a resonance hybrid"
+      ],
+      "expected_answer": "B",
+      "model_response": "\nI'll analyze this question as a computational chemist with expertise in molecular orbital theory and aromaticity.\n\n**Dr. Elena Rodriguez, Computational Chemist**\n\nTo determine the correct classification of cyclobutadiene, I need to evaluate it against the criteria for aromaticity, antiaromaticity, and nonaromaticity.\n\n### Criteria Analysis:\n\n1. **Cyclic and Planar**: The question confirms cyclobutadiene is cyclic and planar.\n\n2. **Fully Conjugated**: With all four carbon atoms being sp² hybridized, each has a p orbital available for π-electron conjugation.\n\n3. **Hückel's Rule**: For aromaticity, a molecule must have 4n + 2 π electrons (where n is an integer: 0, 1, 2, 3, ...). Cyclobutadiene has 4 π electrons.\n   - Testing Hückel's rule: 4 ≠ 4n + 2 for any integer n\n   - 4 does follow the 4n pattern (when n=1), which is characteristic of antiaromatic compounds.\n\n### Molecular Orbital Considerations:\n\nThe molecular orbital diagram for cyclobutadiene shows:\n- Two electrons in the lowest bonding orbital\n- One electron in each of two degenerate non-bonding orbitals (this is the key point)\n- This open-shell configuration with unpaired electrons makes cyclobutadiene highly unstable\n\n### Evaluating the Options:\n\nA) **Aromatic**: No, because it fails Hückel's rule (4n + 2 requirement)\n\nB) **Antiaromatic**: Yes, because it is cyclic, planar, fully conjugated, and has 4n π electrons (where n=1)\n\nC) **Nonaromatic**: No, because it meets all the structural criteria for antiaromaticity\n\nD) **A stable molecule**: No, antiaromatic compounds like cyclobutadiene are highly unstable and reactive, often distorting from planarity or dimerizing to avoid the unstable electronic configuration\n\nE) **A resonance hybrid**: No, while it can be represented with different resonance structures, this isn't its defining characteristic. The key issue is its antiaromatic nature.\n\n### Final Answer:\n\n**B) antiaromatic**\n\nCyclobutadiene is classified as antiaromatic because it meets all the structural criteria (cyclic, planar, fully conjugated) but has 4 π electrons, which follows the 4n pattern rather than the 4n+2 pattern required for aromaticity. This electronic configuration results in a highly unstable molecule with unpaired electrons in its molecular orbitals.",
+      "response_length": 2269,
+      "response_time_ms": 19303,
+      "timestamp": "2025-07-31T13:47:02.353Z"
+    },
+    {
+      "test_id": 3531,
+      "category": "chemistry",
+      "question": "The cyclobutadiene molecule is cyclic and contains 4 carbon atoms, each of which is sp² hybridized. The molecule is planar and has 4 π electrons. Cyclobutadiene is",
+      "options": [
+        "A) aromatic",
+        "B) antiaromatic",
+        "C) nonaromatic",
+        "D) a stable molecule",
+        "E) a resonance hybrid"
+      ],
+      "expected_answer": "B",
+      "model_response": "\nAs a computational chemist specializing in organic chemistry, I'll analyze cyclobutadiene's properties to determine its classification.\n\n**Dr. Elena Rodriguez, Computational Chemist**\n\nTo properly classify cyclobutadiene, I need to evaluate it against the criteria for aromaticity, antiaromaticity, and nonaromaticity:\n\n**Aromaticity Criteria:**\n1. Cyclic structure ✓\n2. Planar geometry ✓\n3. Fully conjugated π system ✓ (all carbons are sp² hybridized)\n4. Follows Hückel's rule (4n+2 π electrons)\n\n**Antiaromaticity Criteria:**\n1. Cyclic structure ✓\n2. Planar geometry ✓\n3. Fully conjugated π system ✓\n4. Violates Hückel's rule (has 4n π electrons)\n\n**Nonaromaticity Criteria:**\n- Fails to meet all the requirements for aromaticity or antiaromaticity\n\nNow, let's analyze cyclobutadiene:\n- It has 4 π electrons\n- For Hückel's rule: 4n+2 = 4 would give n = 0.5 (not an integer)\n- This violates the aromaticity rule\n- For antiaromaticity: 4n = 4 gives n = 1 (an integer)\n- This satisfies the antiaromaticity rule\n\nExperimental evidence shows cyclobutadiene is highly unstable and reactive, exhibiting bond length alternation rather than equal bond lengths as would be expected in a truly aromatic system. This behavior is characteristic of antiaromatic compounds, which destabilize due to π electron delocalization.\n\nEvaluating the options:\nA) aromatic - Incorrect, as it doesn't follow Hückel's rule (4n+2)\nB) antiaromatic - Correct, as it follows 4n rule and meets all other criteria\nC) nonaromatic - Incorrect, as it is cyclic, planar, and has a fully conjugated π system\nD) a stable molecule - Incorrect, antiaromatic compounds are particularly unstable\nE) a resonance hybrid - Incorrect, while it has resonance forms, it doesn't exhibit the stability of a resonance hybrid like benzene\n\n**Final Answer: B) antiaromatic**",
+      "response_length": 1823,
+      "response_time_ms": 18214,
+      "timestamp": "2025-07-31T13:47:40.403Z"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "successful": 4,
+    "errors": 2
+  }
+}

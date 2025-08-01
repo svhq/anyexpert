@@ -1,0 +1,55 @@
+{
+  "model": "o4-mini-high",
+  "timestamp": "2025-07-31T04:00:23.128Z",
+  "questions_tested": 5,
+  "correct_answers": 3,
+  "accuracy_percentage": "60.0",
+  "average_response_time_ms": "13177",
+  "detailed_results": [
+    {
+      "question_number": 1,
+      "category": "chemistry",
+      "correct_answer": "B",
+      "selected_answer": "NOT_FOUND",
+      "is_correct": false,
+      "response_time_ms": 17554,
+      "response_preview": "I am Dr. Elena Martinez, an expert in Organic Chemistry specializing in physical properties of organic compounds.\n\nAmong the given compounds, **1-prop..."
+    },
+    {
+      "question_number": 2,
+      "category": "law",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "response_time_ms": 19820,
+      "response_preview": "I am Professor Daniel Reed, Evidence Law Scholar.\n\nThe correct answer is **B) A statement by a party-opponent is not hearsay**.\n\nHere is the reasoning..."
+    },
+    {
+      "question_number": 3,
+      "category": "health",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "response_time_ms": 6588,
+      "response_preview": "The correct answer is **B) The number of new cases over a specified period**.\n\n**Explanation:**  \nIn epidemiology, the **incidence rate** measures how..."
+    },
+    {
+      "question_number": 4,
+      "category": "other",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "response_time_ms": 12097,
+      "response_preview": "The correct answer is **B) The earnings process is complete and collection is reasonably assured**.\n\nUnder the accrual basis of accounting, revenue is..."
+    },
+    {
+      "question_number": 5,
+      "category": "physics",
+      "correct_answer": "B",
+      "selected_answer": "NOT_FOUND",
+      "is_correct": false,
+      "response_time_ms": 9827,
+      "response_preview": "I am Dr. Elena Vasquez, Quantum Physicist.\n\nThe correct energy levels for a quantum harmonic oscillator with potential \\( V(x) = \\frac{1}{2} k x^2 \\) ..."
+    }
+  ]
+}

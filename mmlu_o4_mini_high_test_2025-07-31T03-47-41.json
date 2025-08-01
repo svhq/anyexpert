@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-07-31T03:47:41.251Z",
+  "model": "o4-mini-high",
+  "questions_tested": 4,
+  "results": [
+    {
+      "question_number": 1,
+      "category": "math",
+      "correct_answer": "D",
+      "selected_answer": "D",
+      "is_correct": true,
+      "response_time_ms": 15670,
+      "response_preview": "Dr. Sarah Lawson, Certified Financial Analyst\n\nI’ll treat this as a straightforward two‐step percentage increase problem.\n\n1. Starting salary: \\$20 000  \n2. After 1st year: increase by 10% →  \n   • 10..."
+    },
+    {
+      "question_number": 2,
+      "category": "physics",
+      "correct_answer": "A",
+      "selected_answer": "A",
+      "is_correct": true,
+      "response_time_ms": 29076,
+      "response_preview": "Dr. Elena Ortiz, Optical Physicist\n\nTo find the time-averaged magnitude of the Poynting vector ⟨S⟩ for a plane wave in a nondispersive, non-magnetic dielectric (μ=μ₀, n=1.5), we proceed from first pri..."
+    },
+    {
+      "question_number": 3,
+      "category": "business",
+      "correct_answer": "I",
+      "selected_answer": null,
+      "is_correct": false,
+      "response_time_ms": 26893,
+      "response_preview": "Dr. Emma Harper, Advertising Standards Consultant:\n\nTypical advertising codes (e.g. ASA in the UK, ARPP in France, ASAI in Ireland) are built around three “no-go” areas:\n\n1. You must not encourage uns..."
+    },
+    {
+      "question_number": 5,
+      "category": "psychology",
+      "correct_answer": "C",
+      "selected_answer": "C",
+      "is_correct": true,
+      "response_time_ms": 14526,
+      "response_preview": "I’m Dr. Emily Harper, Developmental Psychologist.\n\nAnswer: C) Concrete operational stage.\n\nReasoning (Piaget’s four “classic” stages):  \n1. Sensorimotor (0–2 yrs): Intelligence tied to sensory input a..."
+    }
+  ],
+  "summary": {
+    "correct_answers": 3,
+    "total_questions": 4,
+    "accuracy_percentage": 75,
+    "average_response_time_ms": 21541
+  }
+}

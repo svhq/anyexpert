@@ -1,0 +1,163 @@
+{
+  "model": "z-ai/glm-4.5-air:free",
+  "test_type": "complete_mmlu_testing",
+  "completed_timestamp": "2025-07-31T12:58:32.467Z",
+  "summary": {
+    "total_questions_tested": 13,
+    "successful_responses": 13,
+    "correct_answers": 3,
+    "retests_correct": 1,
+    "new_tests_correct": 2,
+    "overall_accuracy": 23,
+    "total_mmlu_score": {
+      "correct": 8,
+      "total": 30,
+      "percentage": 27
+    }
+  },
+  "results": [
+    {
+      "id": "bio-q7",
+      "test_type": "retest",
+      "category": "biology",
+      "correct_answer": "B",
+      "extracted_answer": null,
+      "is_correct": false,
+      "response_length": 1972,
+      "duration_ms": 25995,
+      "timestamp": "2025-07-31T12:49:19.289Z"
+    },
+    {
+      "id": "chem-q10",
+      "test_type": "retest",
+      "category": "chemistry",
+      "correct_answer": "D",
+      "extracted_answer": "D",
+      "is_correct": true,
+      "response_length": 1277,
+      "duration_ms": 13849,
+      "timestamp": "2025-07-31T12:49:38.147Z"
+    },
+    {
+      "id": "orig-1",
+      "test_type": "new",
+      "category": "math",
+      "correct_answer": "D",
+      "extracted_answer": "D",
+      "is_correct": true,
+      "response_length": 977,
+      "duration_ms": 10702,
+      "timestamp": "2025-07-31T12:49:53.867Z"
+    },
+    {
+      "id": "orig-2",
+      "test_type": "new",
+      "category": "physics",
+      "correct_answer": "A",
+      "extracted_answer": "A",
+      "is_correct": true,
+      "response_length": 1047,
+      "duration_ms": 28171,
+      "timestamp": "2025-07-31T12:50:27.055Z"
+    },
+    {
+      "id": "orig-3",
+      "test_type": "new",
+      "category": "business",
+      "correct_answer": "I",
+      "extracted_answer": null,
+      "is_correct": false,
+      "response_length": 2027,
+      "duration_ms": 30550,
+      "timestamp": "2025-07-31T12:51:02.613Z"
+    },
+    {
+      "id": "orig-4",
+      "test_type": "new",
+      "category": "history",
+      "correct_answer": "J",
+      "extracted_answer": "E",
+      "is_correct": false,
+      "response_length": 1593,
+      "duration_ms": 17289,
+      "timestamp": "2025-07-31T12:51:24.921Z"
+    },
+    {
+      "id": "orig-5",
+      "test_type": "new",
+      "category": "psychology",
+      "correct_answer": "D",
+      "extracted_answer": null,
+      "is_correct": false,
+      "response_length": 2733,
+      "duration_ms": 8963,
+      "timestamp": "2025-07-31T12:51:38.889Z"
+    },
+    {
+      "id": "orig-6",
+      "test_type": "new",
+      "category": "biology",
+      "correct_answer": "B",
+      "extracted_answer": null,
+      "is_correct": false,
+      "response_length": 1856,
+      "duration_ms": 287197,
+      "timestamp": "2025-07-31T12:56:31.105Z"
+    },
+    {
+      "id": "orig-7",
+      "test_type": "new",
+      "category": "economics",
+      "correct_answer": "C",
+      "extracted_answer": null,
+      "is_correct": false,
+      "response_length": 2468,
+      "duration_ms": 19977,
+      "timestamp": "2025-07-31T12:56:56.094Z"
+    },
+    {
+      "id": "orig-8",
+      "test_type": "new",
+      "category": "computer science",
+      "correct_answer": "B",
+      "extracted_answer": null,
+      "is_correct": false,
+      "response_length": 2248,
+      "duration_ms": 17115,
+      "timestamp": "2025-07-31T12:57:18.222Z"
+    },
+    {
+      "id": "orig-9",
+      "test_type": "new",
+      "category": "philosophy",
+      "correct_answer": "B",
+      "extracted_answer": null,
+      "is_correct": false,
+      "response_length": 1752,
+      "duration_ms": 12653,
+      "timestamp": "2025-07-31T12:57:35.885Z"
+    },
+    {
+      "id": "orig-10",
+      "test_type": "new",
+      "category": "engineering",
+      "correct_answer": "C",
+      "extracted_answer": null,
+      "is_correct": false,
+      "response_length": 1578,
+      "duration_ms": 13487,
+      "timestamp": "2025-07-31T12:57:54.377Z"
+    },
+    {
+      "id": "history-1",
+      "test_type": "new",
+      "category": "history",
+      "correct_answer": "J",
+      "extracted_answer": null,
+      "is_correct": false,
+      "response_length": 1906,
+      "duration_ms": 33075,
+      "timestamp": "2025-07-31T12:58:32.463Z"
+    }
+  ]
+}

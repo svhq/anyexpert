@@ -1,0 +1,17 @@
+{
+  "model": "z-ai/glm-4.5",
+  "verification_date": "2025-07-31T07:24:07.351Z",
+  "original_score": "19/30 (63%)",
+  "corrected_score": "19/30 (63%)",
+  "corrections_found": 3,
+  "extraction_errors_identified": [
+    "batch1-2: Model answered J correctly, extraction failed",
+    "batch1-5: Model answered E correctly, extracted A",
+    "batch2-3: Model answered D correctly, extracted A"
+  ],
+  "final_comparison": {
+    "o4-mini-high": "29/30 (96.7%)",
+    "GLM-4.5-air": "24/30 (80.0%)",
+    "z-ai/glm-4.5-corrected": "19/30 (63%)"
+  }
+}

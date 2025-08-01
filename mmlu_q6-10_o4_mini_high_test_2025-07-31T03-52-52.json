@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-07-31T03:52:52.211Z",
+  "model": "o4-mini-high",
+  "questions_tested": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "results": [
+    {
+      "question_number": 6,
+      "category": "Biology",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "response_time_ms": 17780,
+      "response_preview": "Dr. Emily Carter, Ph.D. – Molecular Biologist\n\nThe “central dogma” step of going from DNA → RNA (transcription) is carried out by RNA polymerase. Here’s why the other choices don’t fit:\n\n• DNA polymer...",
+      "full_response": "Dr. Emily Carter, Ph.D. – Molecular Biologist\n\nThe “central dogma” step of going from DNA → RNA (transcription) is carried out by RNA polymerase. Here’s why the other choices don’t fit:\n\n• DNA polymerase (A) – synthesizes DNA from a DNA template (replication), not RNA.  \n• DNA ligase (C) – joins Okazaki fragments during DNA replication.  \n• Reverse transcriptase (D) – makes DNA from an RNA template (e.g. in retroviruses), the opposite of transcription.  \n• Ribozyme (E) – an RNA molecule with catalytic activity (e.g. RNase P), not the general transcription enzyme.  \n• Helicase (F) – unwinds DNA duplex ahead of the replication fork, but doesn’t polymerize RNA.  \n• Primase (G) – makes short RNA primers for DNA polymerase to extend, not the main mRNA transcript.  \n• Topoisomerase (H) – relieves supercoiling in DNA, not responsible for RNA synthesis.  \n• Exonuclease (I) / Endonuclease (J) – cleave nucleic acids, rather than polymerize RNA.\n\nTherefore, the correct answer is B) RNA polymerase. It binds promoter regions on the DNA template and synthesizes a complementary RNA strand, carrying the genetic message forward toward protein synthesis."
+    },
+    {
+      "question_number": 7,
+      "category": "Economics",
+      "correct_answer": "C",
+      "selected_answer": "C",
+      "is_correct": true,
+      "response_time_ms": 17292,
+      "response_preview": "Dr. Elena Martínez, Professor of Economics\n\nAnswer: C) Maximum profit or minimum loss\n\nReasoning:\n\n1. Definition of profit  \n   – Profit (π) = Total Revenue (TR) – Total Cost (TC)\n\n2. First‐order cond...",
+      "full_response": "Dr. Elena Martínez, Professor of Economics\n\nAnswer: C) Maximum profit or minimum loss\n\nReasoning:\n\n1. Definition of profit  \n   – Profit (π) = Total Revenue (TR) – Total Cost (TC)\n\n2. First‐order condition for an extremum  \n   – dπ/dQ = d(TR)/dQ – d(TC)/dQ = MR – MC  \n   – Setting the derivative to zero gives MR = MC\n\n3. Economic interpretation  \n   – When MR > MC, producing one more unit adds more to revenue than to cost ⇒ profit rises  \n   – When MR < MC, producing one more unit adds more to cost than to revenue ⇒ profit falls  \n   – Therefore MR = MC is the output where profit is at its maximum (or loss is at its minimum, if the firm is in a loss‐making position)\n\n4. Why the other options are incorrect  \n   A) Maximum total revenue requires MR = 0, not MR = MC.  \n   B) Minimum average cost requires MC = AC.  \n   D) Break‐even means TR = TC (zero profit), not MR = MC.  \n   E) Marginal utility applies to consumers, not firms’ production.  \n   F) Minimum marginal cost occurs where MC is at its lowest point (dMC/dQ = 0).  \n   G) “Economic equilibrium” usually refers to market‐clearing price and quantity, not a firm’s internal decision rule.  \n   H) A price ceiling is a government‐imposed legal maximum price.  \n   I) Consumer surplus maximization is a welfare concept on the demand side.  \n   J) Market failure denotes a suboptimal market outcome, not a firm’s profit‐maximizing rule.\n\nConclusion: A firm sets output where MR = MC in order to maximize its profit (or minimize its loss)."
+    },
+    {
+      "question_number": 8,
+      "category": "Computer Science",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "response_time_ms": 9011,
+      "response_preview": "I’m Dr. Priya Desai, Professor of Computer Science specializing in algorithmic complexity.\n\nMerge sort is a classic divide-and-conquer algorithm. In the worst case it always:\n\n1. Divides an n-element ...",
+      "full_response": "I’m Dr. Priya Desai, Professor of Computer Science specializing in algorithmic complexity.\n\nMerge sort is a classic divide-and-conquer algorithm. In the worst case it always:\n\n1. Divides an n-element array into two halves of size n/2.  \n2. Recursively sorts each half (costs 2·T(n/2)).  \n3. Merges the two sorted halves in linear time, Θ(n).\n\nPutting this into a recurrence:\n\n T(n) = 2·T(n/2) + Θ(n)\n\nBy the Master Theorem:\n\n- a = 2, b = 2 ⇒ n^(log_b a) = n^(log_2 2) = n¹  \n- f(n) = Θ(n)\n\nSince f(n) = Θ(n^(log_b a)·log^0 n), we’re in Case 2 of the Master Theorem, giving:\n\n T(n) = Θ(n · log n)\n\nHence, in the worst case (and indeed on average) merge sort runs in O(n log n) time.\n\nAnswer: B) O(n log n)"
+    },
+    {
+      "question_number": 9,
+      "category": "Philosophy",
+      "correct_answer": "B",
+      "selected_answer": "B",
+      "is_correct": true,
+      "response_time_ms": 13255,
+      "response_preview": "Dr. Amanda Reynolds, Professor of Philosophy (Specialist in Kantian Ethics)\n\nThe correct answer is  \nB) Act only according to maxims that you could will to become universal laws.\n\nExplanation:\n\n1. Kan...",
+      "full_response": "Dr. Amanda Reynolds, Professor of Philosophy (Specialist in Kantian Ethics)\n\nThe correct answer is  \nB) Act only according to maxims that you could will to become universal laws.\n\nExplanation:\n\n1. Kant’s Categorical Imperative has several formulations; the “principle of universalizability” is most directly expressed in its first formulation, often called the “Formula of Universal Law.”  \n2. It instructs us to test every proposed maxim (subjective principle of action) by asking: “Could I rationally will that everyone act on this same maxim in all similar circumstances, without contradiction?”  \n3. If universal adoption of the maxim leads to a logical or practical contradiction (e.g. if everyone told lies whenever convenient, the very concept of truth‐telling would collapse), then the maxim fails the test and cannot be willed as a universal law.  \n4. Only those maxims that survive this test—i.e. that can coherently be willed as universal laws—are morally permissible under the Categorical Imperative.  \n\nWhy the other options are incorrect:  \n• A (greatest happiness) → Utilitarian principle, not Kantian.  \n• C (natural inclinations) → Heteronomous, based on desires rather than pure practical reason.  \n• D (consequences) → Consequentialism, whereas Kant’s ethics is deontological (duty‐based).  \n• E (social norms), F (divine command), G (personal virtue), H (self‐interest), I (cultural relativism), J (emotional intuition) all ground morality outside the pure rational will, and thus conflict with Kant’s insistence on autonomy and universality of moral law.\n\nBy focusing on whether the maxim can be consistently willed as a universal law, option B captures the essence of Kant’s universalizability principle."
+    },
+    {
+      "question_number": 10,
+      "category": "Engineering",
+      "correct_answer": "C",
+      "selected_answer": "C",
+      "is_correct": true,
+      "response_time_ms": 10478,
+      "response_preview": "I’m Dr. Jane Smith, Professor of Structural Engineering.\n\nAnswer: C) Stiffness or resistance to elastic deformation.\n\nReasoning:\n1. Young’s modulus (E) is defined as the ratio of tensile stress (σ) to...",
+      "full_response": "I’m Dr. Jane Smith, Professor of Structural Engineering.\n\nAnswer: C) Stiffness or resistance to elastic deformation.\n\nReasoning:\n1. Young’s modulus (E) is defined as the ratio of tensile stress (σ) to tensile strain (ε) in the linear-elastic portion of a material’s stress–strain curve:  \n   E = σ / ε  \n2. It quantifies how much stress is required to produce a given elastic (reversible) deformation. A higher E means the material deforms less under the same load—that is, it’s “stiffer.”\n3. The other options refer to entirely different material properties:\n   • A) Thermal conductivity  \n   • B) Plastic (permanent) deformation resistance—more related to yield strength or work-hardening  \n   • D) Tensile strength (ultimate stress)  \n   • E) Density  \n   • F) Coefficient of thermal expansion  \n   • G) Electrical conductivity  \n   • H) Corrosion resistance  \n   • I) Mohs hardness  \n   • J) Magnetic permeability  \n\nThus, Young’s modulus measures exactly the stiffness or resistance to elastic deformation."
+    }
+  ],
+  "summary": {
+    "correct_answers": 5,
+    "total_questions": 5,
+    "accuracy_percentage": 100,
+    "average_response_time_ms": 13563
+  }
+}

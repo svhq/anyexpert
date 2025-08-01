@@ -1,0 +1,17 @@
+# This is a config for E2B sandbox template.
+# You can use template ID (h95mt565c6jjcykbceo5) or template name (askanyexpert-advanced) to create a sandbox:
+
+# Python SDK
+# from e2b import Sandbox, AsyncSandbox
+# sandbox = Sandbox("askanyexpert-advanced") # Sync sandbox
+# sandbox = await AsyncSandbox.create("askanyexpert-advanced") # Async sandbox
+
+# JS SDK
+# import { Sandbox } from 'e2b'
+# const sandbox = await Sandbox.create('askanyexpert-advanced')
+
+team_id = "12c04104-e2c1-42a2-92a0-7625ffcba73a"
+start_cmd = "e2b.Dockerfile"
+dockerfile = "e2b.Dockerfile"
+template_name = "askanyexpert-advanced"
+template_id = "h95mt565c6jjcykbceo5"

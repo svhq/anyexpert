@@ -13,12 +13,65 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json({ limit: '1mb' }));
 
+// Global sandbox instance
+let sandbox = null;
+let sandboxReady = false;
+
+// Initialize sandbox on startup
+async function initializeSandbox() {
+  try {
+    console.log('Initializing persistent E2B sandbox...');
+    
+    const sandboxOptions = { 
+      apiKey: process.env.E2B_API_KEY,
+      onStdout: (output) => console.log('Sandbox output:', output),
+      onStderr: (error) => console.error('Sandbox error:', error)
+    };
+    
+    if (process.env.E2B_TEMPLATE_ID) {
+      sandboxOptions.template = process.env.E2B_TEMPLATE_ID;
+    }
+    
+    sandbox = await Sandbox.create(sandboxOptions);
+    console.log('Sandbox created, installing libraries...');
+    
+    // Run the bootstrap command to install Python libraries only
+    const bootstrapCmd = `python -m pip install -q --upgrade pip && pip install -q numpy pandas sympy requests beautifulsoup4 lxml matplotlib seaborn networkx scikit-learn pillow scipy statsmodels plotly mpmath`;
+    
+    console.log('Running bootstrap command...');
+    const bootstrapResult = await sandbox.commands.run(bootstrapCmd);
+    console.log('Bootstrap complete:', bootstrapResult.exitCode === 0 ? 'Success' : 'Failed');
+    
+    if (bootstrapResult.exitCode !== 0) {
+      console.error('Bootstrap stderr:', bootstrapResult.stderr);
+    }
+    
+    // Test that libraries are installed
+    const testResult = await sandbox.commands.run('python3 -c "import numpy, pandas, sympy; print(\\"Libraries ready\\")"');
+    if (testResult.exitCode === 0) {
+      console.log('✅ Libraries verified:', testResult.stdout);
+      sandboxReady = true;
+    } else {
+      console.error('❌ Library test failed:', testResult.stderr);
+    }
+    
+  } catch (error) {
+    console.error('Failed to initialize sandbox:', error);
+    sandbox = null;
+    sandboxReady = false;
+  }
+}
+
+// Initialize sandbox on startup
+initializeSandbox();
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ 
-    status: 'healthy', 
+    status: sandboxReady ? 'healthy' : 'initializing', 
     timestamp: new Date().toISOString(),
-    e2bKey: process.env.E2B_API_KEY ? 'configured' : 'missing'
+    e2bKey: process.env.E2B_API_KEY ? 'configured' : 'missing',
+    sandboxReady
   });
 });
 
@@ -33,24 +86,20 @@ app.post('/run_code', async (req, res) => {
     });
   }
   
-  let sandbox;
+  // Check if sandbox is ready
+  if (!sandbox || !sandboxReady) {
+    return res.json({
+      stdout: '',
+      stderr: 'Sandbox not ready. Please try again in a few seconds.',
+      exitCode: 1
+    });
+  }
   
   try {
-    console.log(`Creating E2B sandbox for ${language}...`);
-    
-    // Create sandbox with API key and custom template (if available)
-    const sandboxOptions = { apiKey: process.env.E2B_API_KEY };
-    if (process.env.E2B_TEMPLATE_ID) {
-      sandboxOptions.template = process.env.E2B_TEMPLATE_ID;
-    }
-    sandbox = await Sandbox.create(sandboxOptions);
-    
-    console.log('Sandbox created, executing code...');
-    
-    let result;
-    
     console.log(`Running ${language} code (${source.length} chars)`);
     console.log('Code preview:', source.substring(0, 100));
+    
+    let result;
     
     if (language === 'python') {
       console.log('Executing Python code...');
@@ -98,17 +147,20 @@ app.post('/run_code', async (req, res) => {
       stderr: error.message || 'Execution failed',
       exitCode: 1
     });
-    
-  } finally {
-    // Always clean up the sandbox
+  }
+});
+
+// Restart sandbox endpoint
+app.post('/restart_sandbox', async (req, res) => {
+  try {
     if (sandbox && sandbox.kill) {
-      try {
-        await sandbox.kill();
-        console.log('Sandbox killed');
-      } catch (killError) {
-        console.error('Error killing sandbox:', killError);
-      }
+      await sandbox.kill();
     }
+    sandboxReady = false;
+    await initializeSandbox();
+    res.json({ status: 'restarted', sandboxReady });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 });
 
@@ -123,10 +175,24 @@ app.use((error, req, res, next) => {
   });
 });
 
+// Graceful shutdown
+process.on('SIGINT', async () => {
+  console.log('\nShutting down gracefully...');
+  if (sandbox && sandbox.kill) {
+    try {
+      await sandbox.kill();
+      console.log('Sandbox killed');
+    } catch (error) {
+      console.error('Error killing sandbox:', error);
+    }
+  }
+  process.exit(0);
+});
+
 // Start server
 app.listen(PORT, () => {
-  console.log(`E2B Code execution service (working) running on port ${PORT}`);
-  console.log(`Health check: http://localhost:3001/health`);
+  console.log(`E2B Code execution service (persistent) running on port ${PORT}`);
+  console.log(`Health check: http://localhost:${PORT}/health`);
   console.log(`E2B API Key: ${process.env.E2B_API_KEY ? 'Configured ✓' : 'Missing ✗'}`);
 });
 

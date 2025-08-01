@@ -1,0 +1,37 @@
+{
+  "sessionId": "gpqa-session-2025-08-01T08-56-54-379Z",
+  "timestamp": "2025-08-01T08:56:54.379Z",
+  "questions": [
+    {
+      "questionId": "gpqa-1",
+      "questionNumber": 1,
+      "category": "Molecular Biology",
+      "expectedAnswer": "D",
+      "query": "A large gene has dozens of exons, of which the central ones code for folded triple helical repeats that connect the cytoskeleton with sarcolemma and extracellular space. Each exon usually codes for one folded triple alpha helix. The most common mutations of the gene are central exon deletions that create out-of-frame peptides and progressive degenerative organ waste. A solution is to deliver a Morpholino that recognizes the 5' end of the out-of-frame exon in pre-mRNA. The molecule prevents binding of the spliceosome and creates exon skipping and in-frame joining. Several missing exons are well tolerated by an organism. Which structure below is not involved in the proposed therapy?\n\n(A) antisense\n(B) polyA tail\n(C) lariat\n(D) R-loops",
+      "response": {
+        "content": "As Dr. Evelyn Reed, a molecular geneticist specializing in gene therapy, I can analyze this question by breaking down the proposed therapeutic mechanism and identifying which of the listed structures plays no role in it.\n\nThe core of the proposed therapy involves a Morpholino oligonucleotide. Let's consider the function of each option in the context of gene expression and splicing:\n\n*   **Morpholino Oligonucleotides:** These are synthetic molecules that bind to specific sequences of RNA. They are designed to be complementary to their target RNA sequence, meaning they follow the base-pairing rules (A with T, and G with C, although in RNA it's A with U). This complementary binding is the hallmark of **antisense** technology, where a molecule binds to a target RNA strand to modulate its function. The Morpholino in the therapy is described as recognizing the 5' end of an out-of-frame exon in pre-mRNA. This binding is intended to block spliceosome binding and promote exon skipping, thereby correcting the reading frame. Therefore, the Morpholino itself is an **antisense** molecule.\n\n*   **Poly(A) tail:** The poly(A) tail is a sequence of adenine nucleotides added to the 3' end of messenger RNA (mRNA) during a process called polyadenylation. It plays a crucial role in mRNA stability, nuclear export, and translation initiation. The proposed therapy targets the splicing of pre-mRNA by preventing spliceosome binding to a specific exon via a Morpholino. While the poly(A) tail is a component of mature mRNA, the *delivery* or *function* of the Morpholino molecule, or the *mechanism* of exon skipping, does not directly involve or depend on the poly(A) tail. The therapy is focused on the splicing machinery and the pre-mRNA sequence at the exon-intron boundaries, not the 3' end processing.\n\n*   **Lariat:** During the splicing process, introns are removed from pre-mRNA. A key step in intron removal involves the formation of a **lariat** structure. A 2'-5' phosphodiester bond is formed between the 5' splice site and an adenine nucleotide within the intron, creating a loop. This lariat structure is then excised from the pre-mRNA. The proposed therapy *prevents* the normal binding of the spliceosome, which is the complex machinery responsible for lariat formation and intron removal. Therefore, the lariat is intimately involved in the natural splicing process that the therapy aims to *modify*. While the therapy prevents the *formation* of a lariat for the targeted exon, the concept of the lariat is central to understanding the splicing event being manipulated.\n\n*   **R-loops:** R-loops are three-stranded nucleic acid structures where a DNA:RNA hybrid is formed, with the displaced single-stranded DNA loop extending from the helix. R-loops can form co-transcriptionally and can be associated with gene regulation, genome stability, and also with certain genetic disorders. While not as directly involved in the *core mechanism* of splicing as the lariat, R-loops can form in regions of active transcription and can influence gene expression, including splicing. However, the description of the therapy focuses on blocking spliceosome binding to pre-mRNA. The formation of R-loops is not explicitly mentioned as a target or a necessary component of this specific Morpholino-based exon-skipping strategy. The primary interaction is between the Morpholino and the pre-mRNA.\n\n**Conclusion:**\n\nThe Morpholino acts as an antisense molecule to block splicing. The lariat is a product of the normal splicing process that the therapy aims to alter. The poly(A) tail is a feature of mature mRNA that is not directly involved in the mechanism of exon skipping or spliceosome binding at the exon-intron junction targeted by the Morpholino. R-loops, while related to nucleic acid structures and gene expression, are not central to the described mechanism of this specific therapy.\n\nTherefore, the structure **not involved** in the proposed therapy's direct mechanism is the poly(A) tail.\n\nThe final answer is **(B) polyA tail**.",
+        "executionResults": null,
+        "mathExecuted": false,
+        "metadata": {
+          "requestId": "req-1754038614380-u46p4sdei",
+          "searchPerformed": false,
+          "model": "google/gemini-2.5-flash-lite",
+          "tokensUsed": 2024
+        }
+      },
+      "timing": {
+        "responseTime": 6392,
+        "timestamp": "2025-08-01T08:57:00.772Z"
+      },
+      "manualReview": {
+        "extractedAnswer": null,
+        "isCorrect": null,
+        "confidence": null,
+        "reasoning": null,
+        "reviewedBy": null,
+        "reviewTimestamp": null
+      }
+    }
+  ],
+  "summary": {}
+}

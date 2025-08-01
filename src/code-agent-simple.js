@@ -69,7 +69,18 @@ class SimpleCodeAgent {
     const messages = [
       {
         role: 'system',
-        content: `${SYSTEM_PROMPT}\n\nWhen asked about code output, write the code that would produce the answer.`
+        content: `${SYSTEM_PROMPT}
+
+When asked about code output, write the code that would produce the answer.
+
+Available Python libraries in the execution environment:
+- Core: numpy, pandas, sympy (arrays, dataframes, symbolic math)
+- Scientific: scipy, scikit-learn, statsmodels (scientific computing, ML, statistics)
+- Web: requests, beautifulsoup4, lxml (HTTP requests, web scraping)
+- Visualization: matplotlib, seaborn, plotly (plotting and charts)
+- Other: networkx (graphs), pillow (images), mpmath (arbitrary precision)
+
+You can use any of these libraries without installation.`
       }
     ];
 

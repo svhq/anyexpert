@@ -1,0 +1,58 @@
+{
+  "timestamp": "2025-07-31T05:22:07.128Z",
+  "total_wrong_answers": 6,
+  "extraction_errors": 2,
+  "truly_wrong": 4,
+  "details": [
+    {
+      "model": "o4-mini-high",
+      "question_num": 6,
+      "correct_answer": "I",
+      "original_extraction": "H",
+      "new_extraction": null,
+      "actually_correct": false,
+      "response_length": 4391
+    },
+    {
+      "model": "GLM-4.5-air",
+      "question_num": 3,
+      "correct_answer": "D",
+      "original_extraction": "A",
+      "new_extraction": "D",
+      "actually_correct": true,
+      "response_length": 2481
+    },
+    {
+      "model": "GLM-4.5-air",
+      "question_num": 4,
+      "correct_answer": "B",
+      "original_extraction": "H",
+      "new_extraction": "E",
+      "actually_correct": false,
+      "response_length": 2276
+    },
+    {
+      "model": "GLM-4.5-air",
+      "question_num": 6,
+      "error": "Unexpected end of JSON input"
+    },
+    {
+      "model": "GLM-4.5-air",
+      "question_num": 7,
+      "correct_answer": "B",
+      "original_extraction": "H",
+      "new_extraction": null,
+      "actually_correct": false,
+      "response_length": 1757
+    },
+    {
+      "model": "GLM-4.5-air",
+      "question_num": 10,
+      "correct_answer": "D",
+      "original_extraction": "E",
+      "new_extraction": "D",
+      "actually_correct": true,
+      "response_length": 1679
+    }
+  ]
+}

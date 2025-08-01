@@ -1,0 +1,14 @@
+{
+  "test_date": "2025-08-01T04:12:33.433Z",
+  "model": "z-ai/glm-4.5-air:free",
+  "question_id": "gpqa-5",
+  "question_category": "Quantum Mechanics",
+  "question_domain": "Physics",
+  "prompt_sent": "Question: A spin-half particle is in a linear superposition 0.5|up⟩+√3/2|down⟩ of its spin-up and spin-down states. If |up⟩ and |down⟩ are the eigenstates of σ_z , then what is the expectation value up to one decimal place, of the operator 10σ_z+5σ_x ? Here, symbols have their usual meanings\n\nOptions:\n\nA) -0.7\nB) 1.65\nC) 0.85\nD) -1.4",
+  "model_response": "\nI'll solve this quantum mechanics problem step by step. As a quantum physicist, I need to find the expectation value of the operator 10σ_z + 5σ_x for the given spin-half particle state.\n\nFirst, let's establish our approach:\n- The state is |ψ⟩ = 0.5|up⟩ + √3/2|down⟩\n- |up⟩ and |down⟩ are eigenstates of σ_z with eigenvalues +1 and -1 respectively\n- The Pauli matrices have these properties: σ_x|up⟩ = |down⟩ and σ_x|down⟩ = |up⟩\n\nThe expectation value of an operator A in state |ψ⟩ is ⟨ψ|A|ψ⟩. For our operator:\n⟨ψ|(10σ_z + 5σ_x)|ψ⟩ = 10⟨ψ|σ_z|ψ⟩ + 5⟨ψ|σ_x|ψ⟩\n\nLet's calculate each term separately.\n\nFirst term: 10⟨ψ|σ_z|ψ⟩\n⟨ψ|σ_z|ψ⟩ = (0.5⟨up| + √3/2⟨down|)σ_z(0.5|up⟩ + √3/2|down⟩)\n= (0.5⟨up| + √3/2⟨down|)(0.5|up⟩ - √3/2|down⟩)  [because σ_z|up⟩ = |up⟩ and σ_z|down⟩ = -|down⟩]\n= 0.5²⟨up|up⟩ - 0.5(√3/2)⟨up|down⟩ + (√3/2)0.5⟨down|up⟩ - (√3/2)²⟨down|down⟩\n= 0.25(1) - (√3/4)(0) + (√3/4)(0) - (3/4)(1)\n= 0.25 - 0.75\n= -0.5\n\nTherefore, 10⟨ψ|σ_z|ψ⟩ = 10 × (-0.5) = -5\n\nSecond term: 5⟨ψ|σ_x|ψ⟩\n⟨ψ|σ_x|ψ⟩ = (0.5⟨up| + √3/2⟨down|)σ_x(0.5|up⟩ + √3/2|down⟩)\n= (0.5⟨up| + √3/2⟨down|)(0.5|down⟩ + √3/2|up⟩)  [because σ_x|up⟩ = |down⟩ and σ_x|down⟩ = |up⟩]\n= 0.5²⟨up|down⟩ + 0.5(√3/2)⟨up|up⟩ + (√3/2)0.5⟨down|down⟩ + (√3/2)²⟨down|up⟩\n= 0.25(0) + (√3/4)(1) + (√3/4)(1) + (3/4)(0)\n= 0 + √3/4 + √3/4 + 0\n= √3/2 ≈ 0.866\n\nTherefore, 5⟨ψ|σ_x|ψ⟩ = 5 × 0.866 ≈ 4.33\n\nNow, the expectation value is:\n10⟨ψ|σ_z|ψ⟩ + 5⟨ψ|σ_x|ψ⟩ = -5 + 4.33 ≈ -0.67\n\nRounding to one decimal place, we get -0.7.\n\nTherefore, the correct answer is A) -0.7.\n\nAs a final check, I verified that the given state is normalized (⟨ψ|ψ⟩ = 1), confirming our calculation is valid.",
+  "extracted_answer": "A",
+  "correct_answer": "A",
+  "is_correct": true,
+  "response_time_ms": 24889,
+  "search_used": false
+}

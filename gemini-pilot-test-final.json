@@ -1,0 +1,49 @@
+{
+  "model": "google/gemini-2.5-pro",
+  "test_type": "3_question_pilot",
+  "completed_timestamp": "2025-07-31T08:45:42.280Z",
+  "summary": {
+    "total_questions": 3,
+    "successful_responses": 1,
+    "correct_answers": 0,
+    "errors": 2,
+    "search_usage": 0,
+    "accuracy": 0
+  },
+  "results": [
+    {
+      "id": "business-1",
+      "error": "Cannot read properties of undefined (reading 'toUpperCase')",
+      "timestamp": "2025-07-31T08:44:23.576Z"
+    },
+    {
+      "id": "law-1",
+      "category": "law",
+      "question": "A federal grand jury was investigating a corporation whose tanker ship had spilled crude oil into environmentally sensitive waters. The grand jury issued a subpoena requiring the corporation to produce all emails and internal documents regarding the corporation's knowledge of the risks of an oil spill. The corporation has objected, citing its Fifth Amendment privilege against self-incrimination. Can the subpoena be enforced?",
+      "options": [
+        "A) Yes, because the Fifth Amendment privilege only applies to personal testimonies.",
+        "B) Yes, because a corporation has no Fifth Amendment privilege.",
+        "C) No, because the corporation was not granted use-and-derivative-use immunity.",
+        "D) No, because the corporation was not granted transactional immunity.",
+        "E) Yes, because the Fifth Amendment privilege does not apply to the compelled production of documents.",
+        "F) No, because the documents are protected under attorney-client privilege.",
+        "G) No, because a corporation has the same Fifth Amendment rights as an individual.",
+        "H) s Fourth Amendment rights.\"",
+        "I) "
+      ],
+      "correct_answer": "B",
+      "model_response": "Of course. As an expert in Constitutional Law and corporate criminal procedure, I can clarify this issue for you.\n\n***\n\n**Professor Julian Vance, Specialist in Constitutional Law & Corporate Criminal Liability**\n\nThe question you've posed lies at the intersection of corporate personhood and individual rights, a subject the Supreme Court has addressed for over a century. Let's break down the legal principles to arrive at the correct conclusion.\n\n### Legal Analysis\n\nThe core of this issue is whether a corporation, as a legal entity, can invoke the Fifth Amendment's privilege against self-incrimination. The Fifth Amendment states that \"No person... shall be compelled in any criminal case to be a witness against himself.\"\n\nThe dispositive legal principle here is the **collective entity doctrine**. The Supreme Court established in the landmark case **_Hale v. Henkel_, 201 U.S. 43 (1906)** that the Fifth Amendment privilege against self-incrimination is a purely personal one. It applies to natural individuals, not to artificial entities like corporations.\n\nThe Court's reasoning was twofold:\n1.  **Personal Nature of the Right:** The privilege was intended to protect an individual from the \"cruel trilemma\" of self-accusation, perjury, or contempt. This is a deeply personal protection related to human dignity and conscience, which a corporation does not possess.\n2.  **State's Regulatory Power:** A corporation is a \"creature of the State,\" brought into existence by a charter that grants it certain rights and privileges. The state retains a reserved right to investigate the corporation's activities to ensure it is abiding by the law. Allowing a corporation to invoke the Fifth Amendment would frustrate the state's ability to exercise this essential oversight.\n\nThis principle has been consistently upheld. In **_Braswell v. United States_, 487 U.S. 99 (1988)**, the Court affirmed that a custodian of corporate records cannot refuse to produce those records, even if the act of producing them would personally incriminate the custodian. The Court reasoned that the custodian acts in a representative capacity, not a personal one, and the production of documents is an act of the corporation, which has no Fifth Amendment privilege.\n\nApplying this long-standing precedent to the facts:\n*   The entity under investigation is a corporation.\n*   The grand jury has subpoenaed corporate documents.\n*   The corporation has asserted a Fifth Amendment privilege.\n\nBased on the collective entity doctrine established in _Hale v. Henkel_, this assertion must fail. The corporation simply does not possess the right it is trying to claim. Therefore, the subpoena is enforceable.\n\n### Evaluation of Options\n\n*   **A) Yes, because the Fifth Amendment privilege only applies to personal testimonies.** This is partially correct but imprecise. The privilege can also apply to the \"act of production\" of documents for an individual if that act is testimonial. The more fundamental reason here is the nature of the entity.\n*   **B) Yes, because a corporation has no Fifth Amendment privilege.** This is the most accurate and direct statement of the controlling law. It is the foundational reason the subpoena can be enforced.\n*   **C) & D) No, because the corporation was not granted immunity.** Immunity is a legal tool used to *compel* testimony from a witness who *has* a valid Fifth Amendment privilege. Since the corporation has no privilege to begin with, the concept of immunity is irrelevant.\n*   **E) Yes, because the Fifth Amendment privilege does not apply to the compelled production of documents.** This is an overstatement. For an individual or a sole proprietorship, the privilege *can* apply to the production of documents under the \"act of production\" doctrine. The key distinction here is that the subject is a corporation.\n*   **F) No, because the documents are protected under attorney-client privilege.** While some of the subpoenaed documents *might* be protected by this separate privilege, the question states the corporation objected on Fifth Amendment grounds. We must answer based on the legal issue presented.\n*   **G) No, because a corporation has the same Fifth Amendment rights as an individual.** This is legally incorrect.\n\n### Conclusion\n\nThe correct answer is **B**. The subpoena can be enforced because the Supreme Court has held for over a century that a corporation, as a collective entity, does not have a Fifth Amendment privilege against self-incrimination.\n\n---\n\n### Logical Representation (Not a Mathematical Calculation)\n\nWhile this is a question of legal precedent, not mathematics, we can represent the legal decision-making process using a logical flow in Python. This code illustrates the bright-line rule that the courts apply.\n\n```python\nimport pandas as pd\n\ndef analyze_subpoena_enforceability(entity_type, privilege_asserted):\n    \"\"\"\n    Analyzes whether a subpoena can be enforced based on the entity type\n    and the privilege asserted, according to U.S. law.\n\n    Args:\n        entity_type (str): The type of entity ('corporation', 'individual').\n        privilege_asserted (str): The constitutional privilege being claimed (e.g., '5th_amendment').\n\n    Returns:\n        tuple: A boolean indicating enforceability and a string with the legal reasoning.\n    \"\"\"\n    # The core legal rule for corporations and the 5th Amendment\n    if entity_type == 'corporation' and privilege_asserted == '5th_amendment':\n        enforceable = True\n        reasoning = (\"The collective entity doctrine, established in Hale v. Henkel (1906), \"\n                     \"states that a corporation has no Fifth Amendment privilege against \"\n                     \"self-incrimination. The privilege is purely personal.\")\n    \n    # A simplified rule for individuals for contrast\n    elif entity_type == 'individual' and privilege_asserted == '5th_amendment':\n        enforceable = False\n        reasoning = (\"An individual possesses a Fifth Amendment privilege. Enforceability would \"\n                     \"depend on factors like the 'act of production' doctrine or a grant of immunity.\")\n    \n    else:\n        enforceable = 'Depends on other factors'\n        reasoning = 'The analysis for this combination of entity and privilege is not covered by this simple model.'\n        \n    return enforceable, reasoning\n\n# Scenario from the problem\nentity = 'corporation'\nprivilege = '5th_amendment'\n\nis_enforceable, legal_reasoning = analyze_subpoena_enforceability(entity, privilege)\n\n# Display the result in a clear format\noutput_df = pd.DataFrame([\n    {\"Scenario\": \"Corporation asserts 5th Amendment against document subpoena\"},\n    {\"Can Subpoena Be Enforced?\": is_enforceable},\n    {\"Legal Rationale\": legal_reasoning}\n])\n\nprint(\"--- Legal Analysis ---\")\nprint(f\"Entity in Question: {entity.title()}\")\nprint(f\"Privilege Asserted: {privilege.replace('_', ' ').title()}\")\nprint(\"-\" * 22)\nprint(f\"Result: The subpoena can be enforced.\")\nprint(f\"Reasoning: {legal_reasoning}\")\n\n```\n\n### Interpretation of the Logical Output\n\nThe code formalizes the legal rule discussed. When the entity is a `corporation` and the privilege is the `5th_amendment`, the function correctly returns `True` for enforceability. The reasoning provided mirrors the legal analysis: the collective entity doctrine denies corporations this personal right, making the corporation's objection invalid and the subpoena enforceable.",
+      "extracted_answer": "**B) YES, BECAUSE A CORPORATION HAS NO FIFTH AMENDMENT PRIVILEGE.**",
+      "extraction_method": "BOLD_FORMAT",
+      "is_correct": false,
+      "response_length": 7428,
+      "duration_ms": 39809,
+      "timestamp": "2025-07-31T08:45:08.396Z"
+    },
+    {
+      "id": "chemistry-1",
+      "error": "Cannot read properties of undefined (reading 'toUpperCase')",
+      "timestamp": "2025-07-31T08:45:42.272Z"
+    }
+  ]
+}

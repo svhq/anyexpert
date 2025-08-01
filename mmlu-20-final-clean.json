@@ -1,0 +1,297 @@
+{
+  "timestamp": "2025-07-31T13:35:00.000Z",
+  "total_questions": 20,
+  "domain_distribution": {
+    "math": 2,
+    "physics": 2,
+    "chemistry": 2,
+    "biology": 2,
+    "computer_science": 2,
+    "psychology": 2,
+    "economics": 2,
+    "history": 2,
+    "philosophy": 2,
+    "law": 2
+  },
+  "questions": [
+    {
+      "question_id": 7695,
+      "category": "math",
+      "question": "Statement 1 | The external direct product of cyclic groups is cyclic. Statement 2 | The external direct product of D_3 and D_4 is isomorphic to D_12.",
+      "options": [
+        "A) True, True",
+        "B) False, False",
+        "C) True, False",
+        "D) False, True"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 7701,
+      "category": "math",
+      "question": "A company with offices in five different countries is interested in estimating the proportion of its employees in favor of banning smoking on the office premises. It is known that the views of people from different countries on issues like smoking tend to vary due to the influence of different local social structures. Which of the following is an appropriate sampling technique to use in this situation, and why?",
+      "options": [
+        "A) Convenience sample, because it's the easiest method to execute",
+        "B) Cluster sample, because it's cheaper and easier to conduct than a stratified sample",
+        "C) Stratified sample, because it ensures representation from each country",
+        "D) Simple random sample, because it is unbiased",
+        "E) Systematic sample, because it ensures even distribution"
+      ],
+      "correct_answer": "C",
+      "answer_index": 2
+    },
+    {
+      "question_id": 8215,
+      "category": "physics",
+      "question": "For a quantum harmonic oscillator in its ground state, what are the expectation values of position and momentum [<x>, <p>]?",
+      "options": [
+        "A) [0, 0]",
+        "B) [1, 0]",
+        "C) [0, 1]",
+        "D) [1, 1]",
+        "E) [0.5, 0.5]"
+      ],
+      "correct_answer": "A",
+      "answer_index": 0
+    },
+    {
+      "question_id": 8220,
+      "category": "physics",
+      "question": "A particle of mass m moves in a one-dimensional potential V(x) = kx^4. What is the ground state energy in terms of ℏ, k, and m?",
+      "options": [
+        "A) (3/4)(ℏ²k/m)^(1/3)",
+        "B) (1/2)(ℏ²k/m)^(1/3)",
+        "C) (ℏ²k/m)^(1/3)",
+        "D) 2(ℏ²k/m)^(1/3)",
+        "E) (3/2)(ℏ²k/m)^(1/3)"
+      ],
+      "correct_answer": "A",
+      "answer_index": 0
+    },
+    {
+      "question_id": 3531,
+      "category": "chemistry",
+      "question": "The cyclobutadiene molecule is cyclic and contains 4 carbon atoms, each of which is sp² hybridized. The molecule is planar and has 4 π electrons. Cyclobutadiene is",
+      "options": [
+        "A) aromatic",
+        "B) antiaromatic",
+        "C) nonaromatic",
+        "D) a stable molecule",
+        "E) a resonance hybrid"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 3540,
+      "category": "chemistry",
+      "question": "Which of the following molecules has the highest dipole moment?",
+      "options": [
+        "A) CO2",
+        "B) NH3",
+        "C) BF3",
+        "D) CCl4",
+        "E) CH4"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 2811,
+      "category": "biology",
+      "question": "Which element is the primary component of organic molecules?",
+      "options": [
+        "A) Oxygen",
+        "B) Nitrogen",
+        "C) Carbon",
+        "D) Hydrogen",
+        "E) Phosphorus"
+      ],
+      "correct_answer": "C",
+      "answer_index": 2
+    },
+    {
+      "question_id": 2815,
+      "category": "biology",
+      "question": "The hydrolysis of ATP to ADP and inorganic phosphate is an example of which kind of reaction?",
+      "options": [
+        "A) Endergonic reaction",
+        "B) Exergonic reaction",
+        "C) Anabolic reaction",
+        "D) Redox reaction",
+        "E) Condensation reaction"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 2989,
+      "category": "computer_science",
+      "question": "Which of the following sorting algorithms has the best worst-case time complexity?",
+      "options": [
+        "A) Bubble sort",
+        "B) Quick sort",
+        "C) Merge sort",
+        "D) Insertion sort",
+        "E) Selection sort"
+      ],
+      "correct_answer": "C",
+      "answer_index": 2
+    },
+    {
+      "question_id": 2995,
+      "category": "computer_science",
+      "question": "In the context of databases, what does ACID stand for?",
+      "options": [
+        "A) Atomicity, Consistency, Isolation, Durability",
+        "B) Authentication, Consistency, Integrity, Durability",
+        "C) Atomicity, Concurrency, Isolation, Database",
+        "D) Authentication, Concurrency, Integrity, Database",
+        "E) Atomicity, Consistency, Integration, Durability"
+      ],
+      "correct_answer": "A",
+      "answer_index": 0
+    },
+    {
+      "question_id": 1995,
+      "category": "psychology",
+      "question": "According to Piaget, the preoperational stage is characterized by",
+      "options": [
+        "A) abstract logical thinking",
+        "B) egocentrism and symbolic thinking",
+        "C) object permanence",
+        "D) hypothetical-deductive reasoning",
+        "E) concrete operational thinking"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 2001,
+      "category": "psychology",
+      "question": "Which type of memory is responsible for storing general knowledge and facts?",
+      "options": [
+        "A) Episodic memory",
+        "B) Semantic memory",
+        "C) Procedural memory",
+        "D) Working memory",
+        "E) Sensory memory"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 6831,
+      "category": "economics",
+      "question": "Which of the following would most likely cause a rightward shift in the aggregate demand curve?",
+      "options": [
+        "A) An increase in interest rates",
+        "B) A decrease in government spending",
+        "C) An increase in consumer confidence",
+        "D) An increase in the value of the domestic currency",
+        "E) A decrease in the money supply"
+      ],
+      "correct_answer": "C",
+      "answer_index": 2
+    },
+    {
+      "question_id": 6840,
+      "category": "economics",
+      "question": "The natural rate of unemployment includes which of the following?",
+      "options": [
+        "A) Cyclical unemployment only",
+        "B) Frictional and structural unemployment",
+        "C) Seasonal unemployment only",
+        "D) All types of unemployment",
+        "E) No unemployment"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 4675,
+      "category": "history",
+      "question": "Which anatomical feature is most important for determining bipedalism in fossil hominins?",
+      "options": [
+        "A) The size of the brain",
+        "B) The position of the foramen magnum",
+        "C) The presence of a chin",
+        "D) The size of the canine teeth",
+        "E) The length of the arms"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 4681,
+      "category": "history",
+      "question": "The Columbian Exchange refers to the",
+      "options": [
+        "A) trade of gold and silver between Europe and the Americas",
+        "B) exchange of plants, animals, and diseases between the Old and New Worlds",
+        "C) establishment of trade routes between Europe and Asia",
+        "D) exchange of cultural practices between Native Americans",
+        "E) transfer of political systems from Europe to the Americas"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 4350,
+      "category": "philosophy",
+      "question": "According to John Rawls, the principles of justice are chosen behind a",
+      "options": [
+        "A) veil of ignorance",
+        "B) social contract",
+        "C) categorical imperative",
+        "D) state of nature",
+        "E) utilitarian calculus"
+      ],
+      "correct_answer": "A",
+      "answer_index": 0
+    },
+    {
+      "question_id": 4355,
+      "category": "philosophy",
+      "question": "Which philosopher is most associated with the concept of 'bad faith'?",
+      "options": [
+        "A) Immanuel Kant",
+        "B) Jean-Paul Sartre",
+        "C) John Stuart Mill",
+        "D) David Hume",
+        "E) Friedrich Nietzsche"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 875,
+      "category": "law",
+      "question": "The 'fruit of the poisonous tree' doctrine refers to",
+      "options": [
+        "A) evidence obtained from an unreliable witness",
+        "B) evidence derived from illegally obtained evidence",
+        "C) hearsay evidence",
+        "D) circumstantial evidence",
+        "E) expert testimony that has been discredited"
+      ],
+      "correct_answer": "B",
+      "answer_index": 1
+    },
+    {
+      "question_id": 881,
+      "category": "law",
+      "question": "Which of the following is required for a valid contract?",
+      "options": [
+        "A) Written documentation",
+        "B) Notarization",
+        "C) Consideration",
+        "D) Witness signatures",
+        "E) Government approval"
+      ],
+      "correct_answer": "C",
+      "answer_index": 2
+    }
+  ]
+}
