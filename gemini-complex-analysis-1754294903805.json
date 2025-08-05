@@ -1,0 +1,182 @@
+{
+  "testDate": "2025-08-04T08:08:23.805Z",
+  "model": "google/gemini-2.5-flash-lite",
+  "summary": {
+    "successRate": "5/5",
+    "totalErrors": 0,
+    "totalE2BFallbacks": 0,
+    "totalRateLimits": 0,
+    "totalParallelAttempts": 2
+  },
+  "results": [
+    {
+      "queryId": 1,
+      "queryName": "Home Loan Analysis",
+      "query": "I want to buy a house for $650,000 with a 20% down payment. What will my monthly mortgage payment be at 7.2% interest for 30 years, and how much will I pay in total interest over the life of the loan?",
+      "expectedTools": [
+        "code"
+      ],
+      "startTime": "2025-08-04T08:06:04.176Z",
+      "sandboxesBefore": 11,
+      "success": true,
+      "duration": 20242,
+      "durationSeconds": "20.24",
+      "toolsUsed": [
+        "code",
+        "code",
+        "synthesize"
+      ],
+      "totalSteps": 3,
+      "sandboxesAfter": 13,
+      "parallelAttempts": [],
+      "errorCount": 0,
+      "warningCount": 0,
+      "e2bFallbacks": 0,
+      "e2bRateLimits": 0,
+      "e2bSuccesses": 0,
+      "responsePreview": "Greetings! I'm **Eleanor Vance**, a seasoned Financial Advisor specializing in real estate investment and mortgage planning. I can certainly help you ...",
+      "endTime": "2025-08-04T08:06:24.359Z"
+    },
+    {
+      "queryId": 2,
+      "queryName": "Stock Research",
+      "query": "What is Tesla's current stock price and how has it performed over the past 6 months? Also calculate what a $10,000 investment made 6 months ago would be worth today.",
+      "expectedTools": [
+        "search",
+        "code"
+      ],
+      "startTime": "2025-08-04T08:06:27.622Z",
+      "sandboxesBefore": 13,
+      "success": true,
+      "duration": 27626,
+      "durationSeconds": "27.63",
+      "toolsUsed": [
+        "parallel",
+        "parallel",
+        "code",
+        "synthesize"
+      ],
+      "totalSteps": 4,
+      "sandboxesAfter": 16,
+      "parallelAttempts": [
+        {
+          "stepNum": 1,
+          "suggested": [
+            "search",
+            "code"
+          ],
+          "actualType": "parallel"
+        },
+        {
+          "stepNum": 2,
+          "suggested": [
+            "search",
+            "code"
+          ],
+          "actualType": "parallel"
+        }
+      ],
+      "errorCount": 0,
+      "warningCount": 0,
+      "e2bFallbacks": 0,
+      "e2bRateLimits": 0,
+      "e2bSuccesses": 0,
+      "responsePreview": "As **Dr. Evelyn Reed, Senior Financial Analyst**, I can certainly help you with that. To provide a comprehensive answer regarding Tesla's (TSLA) stock...",
+      "endTime": "2025-08-04T08:06:55.525Z"
+    },
+    {
+      "queryId": 3,
+      "queryName": "Diet Planning",
+      "query": "I'm a 35-year-old male, 180 lbs, moderately active. Calculate my daily calorie needs and create a macro breakdown (protein, carbs, fats) for muscle building.",
+      "expectedTools": [
+        "code"
+      ],
+      "startTime": "2025-08-04T08:06:58.720Z",
+      "sandboxesBefore": 16,
+      "success": true,
+      "duration": 33093,
+      "durationSeconds": "33.09",
+      "toolsUsed": [
+        "code",
+        "code",
+        "code",
+        "code",
+        "synthesize"
+      ],
+      "totalSteps": 5,
+      "sandboxesAfter": 17,
+      "parallelAttempts": [],
+      "errorCount": 0,
+      "warningCount": 0,
+      "e2bFallbacks": 0,
+      "e2bRateLimits": 0,
+      "e2bSuccesses": 0,
+      "responsePreview": "Hello! I'm Dr. Anya Sharma, a registered dietitian and sports nutritionist. I can certainly help you calculate your daily calorie needs and provide a ...",
+      "endTime": "2025-08-04T08:07:31.938Z"
+    },
+    {
+      "queryId": 4,
+      "queryName": "Travel Budget",
+      "query": "I'm planning a 2-week trip to Japan for 2 people. Research current flight prices from NYC to Tokyo and estimate total costs including accommodation, food, and activities.",
+      "expectedTools": [
+        "search",
+        "code"
+      ],
+      "startTime": "2025-08-04T08:07:35.126Z",
+      "sandboxesBefore": 17,
+      "success": true,
+      "duration": 26667,
+      "durationSeconds": "26.67",
+      "toolsUsed": [
+        "search",
+        "search",
+        "search",
+        "search",
+        "synthesize"
+      ],
+      "totalSteps": 5,
+      "sandboxesAfter": 18,
+      "parallelAttempts": [],
+      "errorCount": 0,
+      "warningCount": 0,
+      "e2bFallbacks": 0,
+      "e2bRateLimits": 0,
+      "e2bSuccesses": 0,
+      "responsePreview": "Hello! I'm **Dr. Evelyn Reed, a seasoned travel economist and analyst**, here to help you plan your 2-week trip to Japan for two from New York. I've r...",
+      "endTime": "2025-08-04T08:08:01.919Z"
+    },
+    {
+      "queryId": 5,
+      "queryName": "Investment Comparison",
+      "query": "Compare the potential returns of investing $25,000 in S&P 500 vs Bitcoin vs real estate (REITs) over 10 years. Use current market data and historical averages.",
+      "expectedTools": [
+        "search",
+        "code"
+      ],
+      "startTime": "2025-08-04T08:08:05.227Z",
+      "sandboxesBefore": 19,
+      "success": true,
+      "duration": 18567,
+      "durationSeconds": "18.57",
+      "toolsUsed": [
+        "search",
+        "search",
+        "search",
+        "synthesize"
+      ],
+      "totalSteps": 4,
+      "sandboxesAfter": 18,
+      "parallelAttempts": [],
+      "errorCount": 0,
+      "warningCount": 0,
+      "e2bFallbacks": 0,
+      "e2bRateLimits": 0,
+      "e2bSuccesses": 0,
+      "responsePreview": "As Dr. Evelyn Reed, Senior Financial Analyst, I've analyzed the provided research to compare the potential returns of investing $25,000 in the S&P 500...",
+      "endTime": "2025-08-04T08:08:23.805Z"
+    }
+  ],
+  "e2bIssues": [],
+  "errorLog": [],
+  "detailedLogs": []
+}

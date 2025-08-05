@@ -1,0 +1,20 @@
+{
+  "id": "mmlu-41",
+  "category": "math",
+  "question": "Statement 1 | A ring homomorphism is one to one if and only if the kernel is {0}. Statement 2 | Q is an ideal in R.\n\nOptions:\n['True, False' 'Not Given, Not Given' 'False, False' 'Not Given, True'\r\n 'True, Not Given' 'Not Given, False' 'True, True' 'False, True'\r\n 'False, Not Given']",
+  "correct_answer": "H",
+  "questionText": "Statement 1 | A ring homomorphism is one to one if and only if the kernel is {0}. Statement 2 | Q is an ideal in R.",
+  "options": [
+    "True, False",
+    "Not Given, Not Given",
+    "False, False",
+    "Not Given, True",
+    "True, Not Given",
+    "Not Given, False",
+    "True, True",
+    "False, True",
+    "False, Not Given"
+  ],
+  "optionCount": 9,
+  "formattedQuestion": "Statement 1 | A ring homomorphism is one to one if and only if the kernel is {0}. Statement 2 | Q is an ideal in R.\n\nOptions:\n(A) True, False\n(B) Not Given, Not Given\n(C) False, False\n(D) Not Given, True\n(E) True, Not Given\n(F) Not Given, False\n(G) True, True\n(H) False, True\n(I) False, Not Given"
+}

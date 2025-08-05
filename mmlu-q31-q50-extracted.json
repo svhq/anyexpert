@@ -1,0 +1,127 @@
+{
+  "test_name": "MMLU Questions 31-50",
+  "created_date": "2025-08-03T07:00:21.580Z",
+  "total_questions": 20,
+  "questions": [
+    {
+      "id": "mmlu-31",
+      "category": "business",
+      "question": "Steven Moore purchased a new car for $3,462.20, including taxes and all other charges. He wishes to pay for it in 35 months. Find his monthly payments.\n\nOptions:\n['$100.20' '$102.55' '$110.35' '$95.46' '$98.92' '$96.06' '$107.49'\r\n '$105.23' '$89.78' '$93.20']",
+      "correct_answer": "E"
+    },
+    {
+      "id": "mmlu-32",
+      "category": "business",
+      "question": "A man sells novelty items for $1.25 each. His cost is $.75 apiece plus a fixed cost of $140,000. How many items must he sell to break even? What is his sales revenue at that point?\n\nOptions:\n['180,000 units and $225,000' '220,000 units and $275,000'\r\n '240,000 units and $300,000' '200,000 units and $250,000'\r\n '350,000 units and $437,500' '260,000 units and $325,000'\r\n '250,000 units and $312,500' '280,000 units and $350,000'\r\n '300,000 units and $375,000' '320,000 units and $400,000']",
+      "correct_answer": "H"
+    },
+    {
+      "id": "mmlu-33",
+      "category": "business",
+      "question": "Find the amount to be paid each month in order to pay off car described below in two years. Price of car: $5,779.00 Transportation charge: $73.00 Factory-installed equipment: Radio 95.50 Metallic paint 59.90 Racing stripes 39.50 Power steering 98.00 Wide radial tires 198.10 Air conditioning 429.00 Dealer-installed equipment: Mirror $8.50 Mats 10.75 Undercoat 35.00 Insurance : Collision ($100-deductible) $505.75 for two years Comprehensive 231.50 for two years Sales tax: 5% Cash deposit: $500.00 Cost of financing: 9(1/2)%per year for two Years Used car allowance: $370.00\n\nOptions:\n['$275.50' '$6826.25' '$8371.42' '$344.42' '$310.22' '$288.99' '$398.65'\r\n '$425.78' '$462.30' '$349']",
+      "correct_answer": "J"
+    },
+    {
+      "id": "mmlu-34",
+      "category": "business",
+      "question": "Find the break-even point for the cost of production C and the revenue R received for each of the following: (a) C = $10x + $600,R = $30x (b) C = $5x + $200,R = $8x (c) C = $0.2x + $50,R = $0.3x (d) C = $1800x + $3000,R = $2500x\n\nOptions:\n['32 units, 72 units, 480 units, 4(4/7) units'\r\n '40 units, 70 units, 600 units, 5 units'\r\n '45 units, 80 units, 650 units, 6 units'\r\n '50 units, 62(1/2) units, 700 units, 7(1/7) units'\r\n '55 units, 85 units, 750 units, 6(3/7) units'\r\n '35 units, 75 units, 550 units, 5(2/7) units'\r\n '20 units, 60 units, 400 units, 3 units'\r\n '28 units, 68 units, 525 units, 4 units'\r\n '30 units, 66(2/3) units, 500 units, 4(2/7) units'\r\n '25 units, 64 units, 450 units, 3(3/7) units']",
+      "correct_answer": "I"
+    },
+    {
+      "id": "mmlu-35",
+      "category": "business",
+      "question": "The tax rate in the town of Centerville is 11(1 / 2)%. If a tax of $1,794 was paid on a piece of property and the assessment rate in Centerville is 30%, what is the expected market value of the property?\n\nOptions:\n['$60,000' '$43,200' '$1,794' '$25,000' '$30,000' '$39,780' '$48,000'\r\n '$15,600' '$52,000' '$21,000']",
+      "correct_answer": "I"
+    },
+    {
+      "id": "mmlu-36",
+      "category": "business",
+      "question": "A man buys a house and lot for $35,000, paying $12,000 down and borrowing the balance on a 6% mortgage due in 10 years. He pays real-estate taxes of $240, a water tax of $30, and insurance premiums of $70 a year. Allowing 4% interest on his investment, and 2% depreciation on the house valued at $25,000, what is the cost per month of owning the home if repairs average $120 a year?\n\nOptions:\n['$210 per month' '$265 per month' '$275 per month' '$200 per month'\r\n '$250 per month' '$220 per month' '$255 per month' '$245 per month'\r\n '$235 per month' '$230 per month']",
+      "correct_answer": "I"
+    },
+    {
+      "id": "mmlu-37",
+      "category": "business",
+      "question": "The Five Star Hotel put down $3,000 worth of carpeting. The carpeting is made to last for five years. The hotel's accountant wishes to use the declining-balance method. What is the depreciation for the second year?\n\nOptions:\n['$900' '$1,440' '$1,000' '$300' '$960' '$600' '$1,200' '$720' '$1,800'\r\n '$480']",
+      "correct_answer": "H"
+    },
+    {
+      "id": "mmlu-38",
+      "category": "business",
+      "question": "Mr. Williams owns a piece of property assessed at $7,800 in a city which has a tax rate of $2.80 per $100. How much in property taxes does he pay?\n\nOptions:\n['$218.40' '$220.00' '$234.00' '$210.00' '$225.60' '$200.00' '$246.40'\r\n '$232.20' '$198.00' '$204.00']",
+      "correct_answer": "A"
+    },
+    {
+      "id": "mmlu-39",
+      "category": "business",
+      "question": "Joe Troy purchased a chain saw for $1,200 for his lumber mill. The saw will last 6 years and have no residual value. Mr. Troy wishes to use the straight-line method of depreciation. Find the depreciation and book value for the first two years.\n\nOptions:\n['$350 per year, $850 after first year, $500 after second year'\r\n '$100 per year, $1100 after first year, $1000 after second year'\r\n '$400 per year, $800 after first year, $400 after second year'\r\n '$250 per year, $950 after first year, $700 after second year'\r\n '$600 per year, $600 after first year, $0 after second year'\r\n '$500 per year, $700 after first year, $200 after second year'\r\n '$150 per year, $1050 after first year, $900 after second year'\r\n '$200 per year, $1000 after first year, $800 after second year'\r\n '$300 per year, $900 after first year, $600 after second year'\r\n '$450 per year, $750 after first year, $300 after second year']",
+      "correct_answer": "H"
+    },
+    {
+      "id": "mmlu-40",
+      "category": "business",
+      "question": "Mr. Castle will buy one of two 10-HP motors offered to him. Motor A sells for $169 and has a full-load efficiency of 85.2%. Motor B costs $149 and has a full-load efficiency of 82.1%. The annual inspection and maintenance fee on both motors is 14.5% of the price. If electric energy costs 2.35 cents per kilowatt hour (1 HP = 0.746kw.) find the number of hours per year at which the cost of both motors will be the same.\n\nOptions:\n['450 hours' '400 hours' '600 hours' '300 hours' '325 (1 / 3) hours'\r\n '275 (1 / 2) hours' '350 hours' '500 hours' '425 hours'\r\n '374 (2 / 3) hours']",
+      "correct_answer": "J"
+    },
+    {
+      "id": "mmlu-41",
+      "category": "business",
+      "question": "Determine the number of men needed to build a boat in 77 days if it takes 36 men 132 days to build one.\n\nOptions:\n['84 men' '36 men' '99 men' '132 men' '45 men' '70 men' '62 men' '50 men'\r\n '77 men' '120 men']",
+      "correct_answer": "G"
+    },
+    {
+      "id": "mmlu-42",
+      "category": "business",
+      "question": "Given the above statement, find what would happen to the free amount if the reserve for contingencies to were to increase by $10,000.Retained Earnings: Reserved for contingencies $25,000 Reserved for plant expansion $20,000 Total reserves $45,000 Free retained earnings $50,000 Total retained earnings $95,000\n\nOptions:\n['$40,000' '$35,000' '$70,000' '$45,000' '$50,000' '$55,000' '$20,000'\r\n '$30,000' '$60,000' '$65,000']",
+      "correct_answer": "A"
+    },
+    {
+      "id": "mmlu-43",
+      "category": "business",
+      "question": "How much will it cost to cover a floor 13'6\" × 18'8\" with asphalt tile if the price is 9 (3/4) \\textcent per 9\" tile?\n\nOptions:\n['$42.50' '$49.99' '$46.25' '$40.75' '$47.50' '$48.95' '$43.88' '$51.20'\r\n '$45.00' '$44.00']",
+      "correct_answer": "G"
+    },
+    {
+      "id": "mmlu-44",
+      "category": "business",
+      "question": "Dermanand Klein are the sole stockholders of the Leather Products Corporation. It is estimated that Leather Products will have a taxable income of $30,000 this year. The stock is evenly divided between Mr.Dermanand Mr. Klein, so that resulting dividends will also be equally shared. Both Mr. Dermanand Mr. Klein expect to receive from other sources a net taxable income of $12,000. All profit after taxes Leather Products makes this year will be paid out as dividends. Mr.Dermanwants to introduce a new product. Should this venture succeed, the annual income before taxes will increase by $10,000. What will be the increase in stockholders' income after taxes? Use the tables \"Federal Taxes Rates on 1949 Net Incomes of Corporations in the United States\", and \"Federal Tax Rates on 1949 Incomes of Individuals in the United States.\"\n\nOptions:\n['$1,129.88' '$850' '$1,050' '$2,250' '$2,400' '$1,500' '$2,000' '$900'\r\n '$3,000' '$1,200']",
+      "correct_answer": "A"
+    },
+    {
+      "id": "mmlu-45",
+      "category": "business",
+      "question": "Tom bought a new bicycle for $80. After 4 years of use, he sold it to a second-hand dealer for $15. What was the annual depreciation by the straight line method? What was the annual rate of depreciation?\n\nOptions:\n['$13 per year and 16.25%' '$16.25 per year and 20.3%'\r\n '$17 per year and 21.25%' '$19 per year and 23.75%'\r\n '$14.75 per year and 18.4%' '$15.25 per year and 19%'\r\n '$18 per year and 22.5%' '$16 per year and 20%'\r\n '$12.50 per year and 15.6%' '$20 per year and 25%']",
+      "correct_answer": "B"
+    },
+    {
+      "id": "mmlu-46",
+      "category": "business",
+      "question": "A manufacturer can produce a saw for $13 in direct costs and $10 in overhead or indirect costs. He needs to sell his saw for a minimum price. At what price must he sell his saw so that he will not incur a short term loss?\n\nOptions:\n['$35' '$25' '$28' '$30' '$18' '$23' '$10' '$15' '$20' '$13']",
+      "correct_answer": "J"
+    },
+    {
+      "id": "mmlu-47",
+      "category": "business",
+      "question": "Which of the following would yield the greatest net return to acorporation in the 50% tax bracket A) 5% certificate of deposit B) 5% government bond C) 5% corporate bond D) 5%treasurybond E) 4% municipal bond\n\nOptions:\n['4.5% treasury bond with lower liquidity'\r\n '3.5% municipal bond with additional state taxes' '5% government bond'\r\n '6% corporate bond with a high risk of default'\r\n '6% certificate of deposit with a 2% penalty for early withdrawal'\r\n '5% corporate bond' '5.5% government bond with additional state taxes'\r\n '5% certificate of deposit'\r\n '3% corporate bond with tax-deductible expenses' '4% municipal bond']",
+      "correct_answer": "J"
+    },
+    {
+      "id": "mmlu-48",
+      "category": "business",
+      "question": "The list price of a book is $4.95. It sells in a bookstore at a net price of $2.95. What is the amount of trade discount?\n\nOptions:\n['$3.95' '$4.00' '$2.95' '$2.50' '$0.95' '$1.00' '$1.50' '$1.95' '$2.00'\r\n '$3.00']",
+      "correct_answer": "I"
+    },
+    {
+      "id": "mmlu-49",
+      "category": "business",
+      "question": "A business started last year with an inventory of 90,000 items which cost $60,000 and had a selling price of $80,000, At the end of the year, the inventory consisted of 70,000 items which cost $90,000 and had a selling price of $120,000. Records indicate that, during the year, 360,000 items were sold which cost $300,000, with net sales of $380,000. What are thestockturnrates at cost, selling price, and number of units?\n\nOptions:\n['3.5, 4.0, 4.5' '3.5, 3.5, 5.0' '4.5, 4.2, 3.8' '5.0, 4.5, 3.5'\r\n '4.0, 4.0, 4.0' '4.2, 3.5, 3.8' '4.0, 3.8, 4.5' '3.8, 4.0, 3.5'\r\n '4.5, 3.8, 4.0' '3.0, 4.2, 4.2']",
+      "correct_answer": "G"
+    },
+    {
+      "id": "mmlu-50",
+      "category": "business",
+      "question": "Paul Murphy wants to have $10,000 in his account after 10 years. If interest is compounded annually at 4%, how much should Mr. Murphy invest now?\n\nOptions:\n['$7,000.00' '$8,000.00' '$6,500.00' '$6,000.00' '$7,500.00' '$6,756.00'\r\n '$6,300.00' '$7,800.00' '$7,250.00' '$6,900.00']",
+      "correct_answer": "F"
+    }
+  ]
+}

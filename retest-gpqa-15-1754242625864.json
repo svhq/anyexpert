@@ -1,0 +1,48 @@
+{
+  "question_id": "gpqa-15",
+  "category": "Astrophysics",
+  "source": "GPQA",
+  "test_date": "2025-08-03T17:37:05.864Z",
+  "model": "google/gemini-2.5-flash-lite",
+  "duration_ms": 148096,
+  "duration_seconds": "148.1",
+  "steps": [
+    {
+      "action": "reason",
+      "duration": 111643
+    },
+    {
+      "action": "code",
+      "duration": 119880
+    },
+    {
+      "action": "code",
+      "duration": 128111
+    },
+    {
+      "action": "code",
+      "duration": 134561
+    },
+    {
+      "action": "code",
+      "duration": 143446
+    }
+  ],
+  "tools_used": [
+    "reason",
+    "code",
+    "code",
+    "code",
+    "code"
+  ],
+  "tool_counts": {
+    "reason": 1,
+    "code": 4
+  },
+  "previous_answer": "C",
+  "correct_answer": "D",
+  "extracted_answer": "b",
+  "is_correct": false,
+  "improved_from_previous": false,
+  "full_response_length": 5276
+}

@@ -1,0 +1,105 @@
+{
+  "test": {
+    "domain": "Current Events/Technology",
+    "query": "What are the latest developments in AI regulation in the EU and US in 2025? How do they differ?",
+    "expectedBehavior": "Should search for recent news and regulations"
+  },
+  "response": {
+    "answer": "As **Dr. Anya Sharma, a Legal Analyst specializing in Technology and International Governance**, I can provide an overview of the latest developments in AI regulation in the EU and US for 2025 and their key differences, based on the provided search results.\n\nThe landscape of AI regulation in 2025 sees the European Union and the United States taking distinctly different approaches, though both are grappling with how to govern this rapidly evolving technology.\n\n**European Union (EU): The Risk-Based Approach**\n\nThe EU's regulatory framework is largely shaped by the **EU AI Act** [1, 9]. This legislation is characterized by a **significant risk-based approach** [1]. This means that AI systems are categorized based on their potential risk to fundamental rights, safety, and democratic values.\n\n*   **Tiered Risk Classification:** The EU AI Act introduces a system that demands stricter controls for high-risk AI applications [9]. Unacceptable risk AI systems are banned, while high-risk systems are subject to stringent requirements.\n*   **Focus on Comprehensive Regulation:** The EU's approach is described as more encompassing and comprehensive in its regulation of AI technology [1]. This includes considerations for privacy and demanding stricter controls for high-risk applications [9].\n*   **Balancing Innovation and Regulation:** There is an ongoing effort within the EU to implement the AI Act in a way that respects principles of better regulation, aiming to support innovation while ensuring oversight [7]. However, some analyses suggest a recent shift towards deregulation could risk eroding democratic oversight and the EU's norm-setting credibility [10].\n\n**United States (US): Existing Laws and Sector-Specific Guidance**\n\nIn contrast, the US approach in 2025 appears to be more fragmented and relies heavily on existing federal laws and guidelines, with a stated aim to introduce AI legislation and a federal regulatory authority [2].\n\n*   **Reliance on Existing Frameworks:** The US is largely leveraging its existing legal and regulatory structures to address AI [2]. This means that different sectors may have varying levels of AI-specific guidance.\n*   **Emerging Legislation and Authority:** While relying on existing frameworks, the US is also working towards introducing new AI legislation and establishing a dedicated federal regulatory authority [2].\n*   **Sector-Specific Rules:** The US regulatory guidance is often sector-specific, particularly evident in financial compliance [5]. This contrasts with the EU's more horizontal, risk-based approach.\n*   **Divergence in Governance:** The US and EU are diverging on AI governance strategies, leading to different legal implications and compliance challenges [4].\n\n**Key Differences Summarized:**\n\n| Feature             | European Union (EU)                                                                | United States (US)                                                                    |\n| :------------------ | :--------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------ |\n| **Core Approach**   | Comprehensive, risk-based tiered classification (AI Act) [1, 9]                  | Reliance on existing federal laws, sector-specific guidance, with emerging legislation [2] |\n| **Risk Management** | Explicitly categorizes AI by risk, imposing stricter controls on high-risk systems [1, 9] | Less explicit broad-based risk banding; regulation often tied to specific applications |\n| **Regulatory Body** | Existing structures and the AI Act itself, with ongoing debate on implementation [7, 10] | Aims to introduce new legislation and a federal regulatory authority [2]              |\n| **Scope**           | Broad, horizontal application across various AI systems [1]                        | More fragmented, with sector-specific rules and varying levels of oversight [5]       |\n| **Objective**       | To establish a clear, harmonized regulatory framework for AI [1, 7]                | To adapt existing regulatory frameworks and foster innovation while addressing risks [2] |\n\nWhile the US leads in AI model production [6], the EU is taking a more proactive and structured legislative approach to AI regulation with its AI Act. The US, on the other hand, is evolving its regulatory posture by building upon existing legal foundations and indicating a future move towards more specific AI legislation and oversight bodies [2, 4]. This divergence in strategy presents distinct compliance landscapes for businesses operating across these jurisdictions [4, 8].",
+    "sources": [
+      {
+        "number": 1,
+        "title": "Comparing the EU AI Act to Proposed AI-Related Legislation in the US",
+        "url": "https://businesslawreview.uchicago.edu/online-archive/comparing-eu-ai-act-proposed-ai-related-legislation-us",
+        "snippet": "Based on the developments thus far, the EU has a more significant risk-based approach to regulating AI technology, while the US is attempting to regulate the ..."
+      },
+      {
+        "number": 2,
+        "title": "AI Watch: Global regulatory tracker - United States | White & Case LLP",
+        "url": "https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-united-states",
+        "snippet": "The US relies on existing federal laws and guidelines to regulate AI but aims to introduce AI legislation and a federal regulation authority."
+      },
+      {
+        "number": 3,
+        "title": "Key insights into AI regulations in the EU and the US - Kennedys Law",
+        "url": "https://kennedyslaw.com/en/thought-leadership/article/2025/key-insights-into-ai-regulations-in-the-eu-and-the-us-navigating-the-evolving-landscape/",
+        "snippet": "This article explores key global AI regulations in the US and in the EU, identifying common priorities before offering a deep dive into the EU and US AI ..."
+      },
+      {
+        "number": 4,
+        "title": "Transatlantic AI Governance – Strategic Implications for U.S. — EU ...",
+        "url": "https://www.kslaw.com/news-and-insights/transatlantic-ai-governance-strategic-implications-for-us-eu-compliance",
+        "snippet": "Explore transatlantic AI regulation as the EU and U.S. diverge on governance. Learn key legal differences, rising tensions, and compliance ..."
+      },
+      {
+        "number": 5,
+        "title": "AI Regulations in Financial Compliance - Lucinity",
+        "url": "https://lucinity.com/blog/a-comparison-of-ai-regulations-by-region-the-eu-ai-act-vs-u-s-regulatory-guidance",
+        "snippet": "Explore the impact of AI regulations on financial compliance and how to ensure compliance with the EU AI Act and U.S. sector-specific rules."
+      },
+      {
+        "number": 6,
+        "title": "The 2025 AI Index Report | Stanford HAI",
+        "url": "https://hai.stanford.edu/ai-index/2025-ai-index-report",
+        "snippet": "In 2024, U.S.-based institutions produced 40 notable AI models, significantly outpacing China's 15 and Europe's three. While the U.S. maintains its lead in ..."
+      },
+      {
+        "number": 7,
+        "title": "Better Regulation and the EU's Artificial Intelligence Act",
+        "url": "https://www.intereconomics.eu/contents/year/2025/number/3/article/better-regulation-and-the-eu-s-artificial-intelligence-act.html",
+        "snippet": "The EU must implement the AI Act in a way that respects the principles of better regulation – and is therefore most consistent with supporting innovation and ..."
+      },
+      {
+        "number": 8,
+        "title": "The Updated State of AI Regulations for 2025 - Cimplifi",
+        "url": "https://www.cimplifi.com/resources/the-updated-state-of-ai-regulations-for-2025/",
+        "snippet": "Explore how 2025 global AI regulations—from the U.S. to China—are reshaping legal compliance, risk, and strategy for legal teams and their ..."
+      },
+      {
+        "number": 9,
+        "title": "AI and Privacy: Shifting from 2024 to 2025 - Cloud Security Alliance",
+        "url": "https://cloudsecurityalliance.org/blog/2025/04/22/ai-and-privacy-2024-to-2025-embracing-the-future-of-global-legal-developments",
+        "snippet": "The EU AI Act exemplifies this shift, introducing a tiered risk classification system that demands stricter controls for high-risk applications, ..."
+      },
+      {
+        "number": 10,
+        "title": "The EU's AI Power Play: Between Deregulation and Innovation",
+        "url": "https://carnegieendowment.org/research/2025/05/the-eus-ai-power-play-between-deregulation-and-innovation?lang=en",
+        "snippet": "The EU's recent deregulatory shift risks eroding democratic oversight and the union's norm-setting credibility."
+      }
+    ],
+    "searchPerformed": true,
+    "agent": "unknown",
+    "confidence": 1,
+    "metadata": {
+      "requestId": "req-1754065732415-qtg4ja6lm",
+      "userId": "anonymous",
+      "totalDuration": 9143,
+      "rounds": 1,
+      "finalConfidence": 1,
+      "serperCalls": 4,
+      "tokensUsed": 0,
+      "searchLogs": [
+        {
+          "round": 0,
+          "queries": [
+            "latest AI regulation developments EU US 2025 comparison",
+            "EU AI Act 2025 impact on US AI companies and US AI regulatory landscape updates",
+            "comparative analysis of AI governance frameworks EU and US 2025 projections",
+            "current trends in AI policy and legislation EU vs US 2024-2025"
+          ],
+          "resultCount": 40,
+          "topUrls": [
+            "https://businesslawreview.uchicago.edu/online-archive/comparing-eu-ai-act-proposed-ai-related-legislation-us",
+            "https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-united-states",
+            "https://kennedyslaw.com/en/thought-leadership/article/2025/key-insights-into-ai-regulations-in-the-eu-and-the-us-navigating-the-evolving-landscape/"
+          ],
+          "confidence": 1,
+          "duration": 5766
+        }
+      ]
+    }
+  },
+  "responseTime": 9187,
+  "timestamp": "2025-08-01T16:29:01.565Z"
+}

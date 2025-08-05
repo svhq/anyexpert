@@ -1,0 +1,38 @@
+{
+  "question_id": "gpqa-14",
+  "category": "Quantum Mechanics",
+  "source": "GPQA",
+  "test_date": "2025-08-03T17:34:27.757Z",
+  "model": "google/gemini-2.5-flash-lite",
+  "duration_ms": 12921,
+  "duration_seconds": "12.9",
+  "steps": [
+    {
+      "action": "search",
+      "duration": 3448
+    },
+    {
+      "action": "search",
+      "duration": 8377
+    },
+    {
+      "action": "synthesize",
+      "duration": 12921
+    }
+  ],
+  "tools_used": [
+    "search",
+    "search",
+    "synthesize"
+  ],
+  "tool_counts": {
+    "search": 2,
+    "synthesize": 1
+  },
+  "previous_answer": "B",
+  "correct_answer": "D",
+  "extracted_answer": "D",
+  "is_correct": true,
+  "improved_from_previous": true,
+  "full_response_length": 3325
+}

@@ -1,0 +1,21 @@
+{
+  "id": "mmlu-42",
+  "category": "math",
+  "question": "Statement 1 | R is a splitting field of some polynomial over Q. Statement 2 | There is a field with 60 elements.\n\nOptions:\n['Statement 1 is True, Statement 2 is Not Given'\r\n 'Statement 1 is Not Given, Statement 2 is False' 'True, False'\r\n 'Both Statements are True and False respectively' 'True, True'\r\n 'Statement 1 is Not Given, Statement 2 is True' 'False, True'\r\n 'False, False' 'Statement 1 is False, Statement 2 is Not Given'\r\n 'Both statements are Not Given']",
+  "correct_answer": "H",
+  "questionText": "Statement 1 | R is a splitting field of some polynomial over Q. Statement 2 | There is a field with 60 elements.",
+  "options": [
+    "Statement 1 is True, Statement 2 is Not Given",
+    "Statement 1 is Not Given, Statement 2 is False",
+    "True, False",
+    "Both Statements are True and False respectively",
+    "True, True",
+    "Statement 1 is Not Given, Statement 2 is True",
+    "False, True",
+    "False, False",
+    "Statement 1 is False, Statement 2 is Not Given",
+    "Both statements are Not Given"
+  ],
+  "optionCount": 10,
+  "formattedQuestion": "Statement 1 | R is a splitting field of some polynomial over Q. Statement 2 | There is a field with 60 elements.\n\nOptions:\n(A) Statement 1 is True, Statement 2 is Not Given\n(B) Statement 1 is Not Given, Statement 2 is False\n(C) True, False\n(D) Both Statements are True and False respectively\n(E) True, True\n(F) Statement 1 is Not Given, Statement 2 is True\n(G) False, True\n(H) False, False\n(I) Statement 1 is False, Statement 2 is Not Given\n(J) Both statements are Not Given"
+}

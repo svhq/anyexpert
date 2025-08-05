@@ -1,0 +1,105 @@
+{
+  "testDate": "2025-08-04T04:47:41.455Z",
+  "model": "openai/o4-mini-high",
+  "summary": {
+    "successRate": "5/5",
+    "totalJsonIssues": 0,
+    "totalWarnings": 0,
+    "totalErrors": 0
+  },
+  "results": [
+    {
+      "queryId": 1,
+      "query": "What are the latest breakthroughs in quantum computing error correction as of 2025?",
+      "type": "search-required",
+      "model": "openai/o4-mini-high",
+      "timestamp": "2025-08-04T04:33:12.408Z",
+      "success": true,
+      "duration": 72259,
+      "toolsUsed": [
+        "search",
+        "synthesize"
+      ],
+      "responseLength": 4280,
+      "jsonParsingIssues": [],
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "queryId": 2,
+      "query": "Calculate the compound interest on $10,000 at 7.5% annually for 15 years, then compare it to simple interest",
+      "type": "calculation",
+      "model": "openai/o4-mini-high",
+      "timestamp": "2025-08-04T04:34:29.682Z",
+      "success": true,
+      "duration": 450935,
+      "toolsUsed": [
+        "code",
+        "code",
+        "code",
+        "code",
+        "code",
+        "code"
+      ],
+      "responseLength": 2208,
+      "jsonParsingIssues": [],
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "queryId": 3,
+      "query": "Explain the biochemical mechanism of CRISPR-Cas9 gene editing and its latest therapeutic applications",
+      "type": "knowledge+search",
+      "model": "openai/o4-mini-high",
+      "timestamp": "2025-08-04T04:42:05.629Z",
+      "success": true,
+      "duration": 66254,
+      "toolsUsed": [
+        "search",
+        "synthesize"
+      ],
+      "responseLength": 6619,
+      "jsonParsingIssues": [],
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "queryId": 4,
+      "query": "What is the current market cap of the top 5 tech companies and how has it changed since yesterday?",
+      "type": "current-data",
+      "model": "openai/o4-mini-high",
+      "timestamp": "2025-08-04T04:43:16.885Z",
+      "success": true,
+      "duration": 237462,
+      "toolsUsed": [
+        "search",
+        "search",
+        "search",
+        "search",
+        "search",
+        "search"
+      ],
+      "responseLength": 1934,
+      "jsonParsingIssues": [],
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "queryId": 5,
+      "query": "Solve the differential equation dy/dx = 3x^2 + 2x - 5 with initial condition y(0) = 1",
+      "type": "mathematical",
+      "model": "openai/o4-mini-high",
+      "timestamp": "2025-08-04T04:47:19.353Z",
+      "success": true,
+      "duration": 22101,
+      "toolsUsed": [
+        "synthesize"
+      ],
+      "responseLength": 1340,
+      "jsonParsingIssues": [],
+      "warnings": [],
+      "errors": []
+    }
+  ],
+  "allLogs": []
+}

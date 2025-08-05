@@ -1,0 +1,108 @@
+{
+  "test_date": "2025-08-03T17:37:50.107Z",
+  "model": "google/gemini-2.5-flash-lite",
+  "planning_enabled": true,
+  "total_questions": 6,
+  "successfully_tested": 6,
+  "correct": 1,
+  "improved": 1,
+  "accuracy": "16.7%",
+  "improvement_rate": "16.7%",
+  "results": [
+    {
+      "id": "mmlu-4",
+      "category": "History",
+      "correct": false,
+      "improved": false,
+      "duration": 37299,
+      "toolsUsed": [
+        "search",
+        "search",
+        "search",
+        "search",
+        "search",
+        "search"
+      ],
+      "extractedAnswer": "b",
+      "previousAnswer": "E"
+    },
+    {
+      "id": "gpqa-11",
+      "category": "Molecular Biology",
+      "correct": false,
+      "improved": false,
+      "duration": 130259,
+      "toolsUsed": [
+        "reason",
+        "reason",
+        "synthesize"
+      ],
+      "extractedAnswer": "b",
+      "previousAnswer": "A"
+    },
+    {
+      "id": "gpqa-13",
+      "category": "Quantum Mechanics",
+      "correct": false,
+      "improved": false,
+      "duration": 291153,
+      "toolsUsed": [
+        "reason",
+        "search",
+        "reason",
+        "reason",
+        "reason",
+        "synthesize"
+      ],
+      "extractedAnswer": "b",
+      "previousAnswer": "Unable to extract"
+    },
+    {
+      "id": "gpqa-14",
+      "category": "Quantum Mechanics",
+      "correct": true,
+      "improved": true,
+      "duration": 12921,
+      "toolsUsed": [
+        "search",
+        "search",
+        "synthesize"
+      ],
+      "extractedAnswer": "D",
+      "previousAnswer": "B"
+    },
+    {
+      "id": "gpqa-15",
+      "category": "Astrophysics",
+      "correct": false,
+      "improved": false,
+      "duration": 148096,
+      "toolsUsed": [
+        "reason",
+        "code",
+        "code",
+        "code",
+        "code"
+      ],
+      "extractedAnswer": "b",
+      "previousAnswer": "C"
+    },
+    {
+      "id": "gpqa-16",
+      "category": "High-energy particle physics",
+      "correct": false,
+      "improved": false,
+      "duration": 34236,
+      "toolsUsed": [
+        "search",
+        "search",
+        "search",
+        "search",
+        "reason",
+        "reason"
+      ],
+      "extractedAnswer": "b",
+      "previousAnswer": "B"
+    }
+  ]
+}

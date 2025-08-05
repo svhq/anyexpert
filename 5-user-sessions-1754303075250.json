@@ -1,0 +1,282 @@
+{
+  "testDate": "2025-08-04T10:24:35.250Z",
+  "model": "google/gemini-2.5-flash-lite",
+  "duration": 399668,
+  "sessions": [
+    {
+      "userId": "Alice",
+      "profession": "Small Business Owner",
+      "duration": 73692,
+      "queries": [
+        {
+          "userId": "Alice",
+          "queryNum": 1,
+          "query": "I run a coffee shop with $15,000 monthly revenue and $11,000 expenses. Calculate my profit margin, break-even point if I raise prices by 10%, and search for current small business tax deductions I might be missing.",
+          "startTime": "2025-08-04T10:17:56.026Z",
+          "success": true,
+          "duration": 21256,
+          "toolsUsed": [
+            "code",
+            "synthesize"
+          ],
+          "tokensUsed": 7623,
+          "parallelExecution": false
+        },
+        {
+          "userId": "Alice",
+          "queryNum": 2,
+          "query": "My shop uses 50 pounds of coffee beans weekly at $12/pound. If I switch to a bulk supplier offering 20% discount on 200+ pound orders, calculate my annual savings and find the best coffee storage methods for bulk purchases.",
+          "startTime": "2025-08-04T10:18:19.291Z",
+          "success": true,
+          "duration": 49703,
+          "toolsUsed": [
+            "parallel",
+            "parallel",
+            "parallel",
+            "parallel",
+            "parallel",
+            "code"
+          ],
+          "tokensUsed": 17174,
+          "parallelExecution": true
+        }
+      ],
+      "e2bChange": {
+        "before": 0,
+        "after": 1,
+        "created": 1
+      },
+      "success": true,
+      "avgQueryTime": 35479.5
+    },
+    {
+      "userId": "Bob",
+      "profession": "Software Developer",
+      "duration": 98948,
+      "queries": [
+        {
+          "userId": "Bob",
+          "queryNum": 1,
+          "query": "Write a Python function to analyze the time complexity of sorting algorithms (bubble, merge, quick sort), benchmark them with arrays of 1000, 5000, and 10000 elements, and search for the latest performance optimizations in Python 3.12.",
+          "startTime": "2025-08-04T10:19:14.830Z",
+          "success": true,
+          "duration": 75472,
+          "toolsUsed": [
+            "code",
+            "code",
+            "code",
+            "code",
+            "code",
+            "code"
+          ],
+          "tokensUsed": 26809,
+          "parallelExecution": false
+        },
+        {
+          "userId": "Bob",
+          "queryNum": 2,
+          "query": "I have a web app with 1000 daily users, each making 50 API calls. If my server handles 100 requests/second, calculate if I need scaling. Also find current best practices for API rate limiting in 2025.",
+          "startTime": "2025-08-04T10:20:32.309Z",
+          "success": true,
+          "duration": 20641,
+          "toolsUsed": [
+            "code",
+            "code",
+            "synthesize"
+          ],
+          "tokensUsed": 9238,
+          "parallelExecution": false
+        }
+      ],
+      "e2bChange": {
+        "before": 1,
+        "after": 1,
+        "created": 0
+      },
+      "success": true,
+      "avgQueryTime": 48056.5
+    },
+    {
+      "userId": "Carol",
+      "profession": "Data Scientist",
+      "duration": 67571,
+      "queries": [
+        {
+          "userId": "Carol",
+          "queryNum": 1,
+          "query": "Generate a synthetic dataset of 1000 customer records with age (normal dist, mean=35, std=12), income (lognormal), and purchase history. Calculate correlation matrix and search for latest customer segmentation techniques using AI.",
+          "startTime": "2025-08-04T10:20:58.708Z",
+          "success": true,
+          "duration": 20787,
+          "toolsUsed": [
+            "code",
+            "synthesize"
+          ],
+          "tokensUsed": 7781,
+          "parallelExecution": false
+        },
+        {
+          "userId": "Carol",
+          "queryNum": 2,
+          "query": "I have a model with 92% accuracy, 88% precision, and 85% recall. Calculate the F1 score, create a confusion matrix visualization, and find recent research on handling imbalanced datasets in production.",
+          "startTime": "2025-08-04T10:21:21.500Z",
+          "success": true,
+          "duration": 43625,
+          "toolsUsed": [
+            "code",
+            "code",
+            "code",
+            "search",
+            "synthesize"
+          ],
+          "tokensUsed": 18543,
+          "parallelExecution": false
+        }
+      ],
+      "e2bChange": {
+        "before": 1,
+        "after": 1,
+        "created": 0
+      },
+      "success": true,
+      "avgQueryTime": 32206
+    },
+    {
+      "userId": "David",
+      "profession": "Real Estate Investor",
+      "duration": 90787,
+      "queries": [
+        {
+          "userId": "David",
+          "queryNum": 1,
+          "query": "Property costs $450,000, rental income $3,500/month, expenses $1,200/month. Calculate ROI, cap rate, and cash-on-cash return with 25% down at 7.5% interest. Search for current real estate market trends in major US cities.",
+          "startTime": "2025-08-04T10:22:11.268Z",
+          "success": true,
+          "duration": 48298,
+          "toolsUsed": [
+            "code",
+            "code",
+            "parallel",
+            "parallel",
+            "synthesize"
+          ],
+          "tokensUsed": 16852,
+          "parallelExecution": true
+        },
+        {
+          "userId": "David",
+          "queryNum": 2,
+          "query": "I have $200,000 to invest. Compare returns between: 1) One $200k rental property, 2) Two $100k properties, 3) REITs. Include tax implications and find current REIT performance data for 2025.",
+          "startTime": "2025-08-04T10:23:01.576Z",
+          "success": true,
+          "duration": 39789,
+          "toolsUsed": [
+            "parallel",
+            "search",
+            "reason",
+            "synthesize"
+          ],
+          "tokensUsed": 22854,
+          "parallelExecution": true
+        }
+      ],
+      "e2bChange": {
+        "before": 1,
+        "after": 4,
+        "created": 3
+      },
+      "success": true,
+      "avgQueryTime": 44043.5
+    },
+    {
+      "userId": "Eve",
+      "profession": "Fitness Trainer",
+      "duration": 48209,
+      "queries": [
+        {
+          "userId": "Eve",
+          "queryNum": 1,
+          "query": "Client weighs 180 lbs, wants to lose 20 lbs in 3 months. Calculate required daily calorie deficit, protein needs at 1g/lb during cut, and search for latest research on sustainable weight loss strategies.",
+          "startTime": "2025-08-04T10:23:47.116Z",
+          "success": true,
+          "duration": 21684,
+          "toolsUsed": [
+            "code",
+            "code",
+            "synthesize"
+          ],
+          "tokensUsed": 8097,
+          "parallelExecution": false
+        },
+        {
+          "userId": "Eve",
+          "queryNum": 2,
+          "query": "Design a HIIT workout: 30 seconds work, 15 seconds rest, 8 exercises, 3 rounds. Calculate total time, estimated calorie burn for 150 lb person, and find current research on HIIT vs steady-state cardio effectiveness.",
+          "startTime": "2025-08-04T10:24:10.803Z",
+          "success": true,
+          "duration": 23729,
+          "toolsUsed": [
+            "code",
+            "code",
+            "code",
+            "synthesize"
+          ],
+          "tokensUsed": 12109,
+          "parallelExecution": false
+        }
+      ],
+      "e2bChange": {
+        "before": 4,
+        "after": 5,
+        "created": 1
+      },
+      "success": true,
+      "avgQueryTime": 22706.5
+    }
+  ],
+  "metrics": {
+    "totalQueries": 10,
+    "successfulQueries": 10,
+    "failedQueries": 0,
+    "avgResponseTime": 36498.4,
+    "slowQueries": [
+      {
+        "userId": "Bob",
+        "queryNum": 1,
+        "duration": 75472,
+        "query": "Write a Python function to analyze the time comple..."
+      }
+    ],
+    "errors": {
+      "json": 0,
+      "timeout": 0,
+      "e2b": 0,
+      "other": 0
+    }
+  },
+  "errorLog": [],
+  "e2bAnalysis": {
+    "initial": {
+      "total": 0,
+      "warmPool": 0,
+      "metrics": {
+        "totalExecutions": 0,
+        "failures": 0,
+        "retries": 0,
+        "avgExecutionTime": 0,
+        "warmSandboxCount": 0
+      }
+    },
+    "final": {
+      "total": 5,
+      "warmPool": 1,
+      "metrics": {
+        "totalExecutions": 23,
+        "failures": 0,
+        "retries": 0,
+        "avgExecutionTime": 1061.5652173913043,
+        "warmSandboxCount": 1
+      }
+    }
+  }
+}

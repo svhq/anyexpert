@@ -1,0 +1,26 @@
+Professor Marcus Lee, Professor of Pure Mathematics:
+
+Step-by-step solution:
+
+1.  Definitions  
+    • f(u,v) = u² + v²  
+    • g(u,v) = u² − v²  
+
+2.  We wish to compute  
+    f ( g(x,y), g(f(x,y)) ).
+
+3.  First evaluate g(f(x,y)). Since g takes two arguments, we feed both slots the single value f(x,y):  
+    g(f(x,y), f(x,y))  
+    = [f(x,y)]² − [f(x,y)]²  
+    = 0.
+
+4.  Substitute back into f:  
+    f(g(x,y), g(f(x,y)))  
+    = f(g(x,y), 0)  
+    = [g(x,y)]² + 0²  
+    = (x² − y²)²  
+    = x⁴ − 2 x² y² + y⁴.
+
+5.  Comparing with the provided options, this matches option H.
+
+Final Answer: H) x⁴ − 2x²y² + y⁴

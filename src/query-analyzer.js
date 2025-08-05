@@ -1,5 +1,6 @@
 const config = require('../config');
 const logger = require('./utils/logger');
+const FlexibleJSONParser = require('./utils/json-parser');
 
 /**
  * Query Analyzer - Determines if web search is needed for a query
@@ -240,18 +241,21 @@ class QueryAnalyzer {
       const data = await response.json();
       const content = data.choices[0].message.content;
       
-      try {
-        const analysis = JSON.parse(content);
+      // Use flexible parser
+      const parseResult = FlexibleJSONParser.parse(content);
+      
+      if (parseResult.success && parseResult.data) {
+        const analysis = parseResult.data;
         const result = {
           needsSearch: analysis.needsSearch === 'Y',
           rationale: analysis.rationale || 'No rationale provided'
         };
         logger.logSearchDecision('query-analyzer', userQuery, result.needsSearch, result.rationale, 'json');
         return result;
-      } catch (parseError) {
-        logger.logJsonParsingFailure('query-analyzer', 'query-analyzer', content, parseError);
-        // Fallback: try to extract from text if JSON parsing fails
-        console.warn('Failed to parse JSON response, using enhanced fallback logic');
+      } else {
+        logger.logJsonParsingFailure('query-analyzer', 'query-analyzer', content, parseResult.error);
+        // Fallback is working as designed - no need for warning in production
+        logger.debug('Using heuristic fallback for search decision');
         
         // Try to extract JSON from within the response
         const jsonMatch = content.match(/\{[^{}]*"needsSearch"[^{}]*\}/i);

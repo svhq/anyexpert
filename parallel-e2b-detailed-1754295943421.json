@@ -1,0 +1,70 @@
+{
+  "testDate": "2025-08-04T08:25:43.420Z",
+  "model": "google/gemini-2.5-flash-lite",
+  "results": [
+    {
+      "queryId": 1,
+      "queryName": "Parallel Test",
+      "startTime": "2025-08-04T08:24:37.105Z",
+      "success": true,
+      "duration": 21018,
+      "durationSeconds": "21.02",
+      "toolsUsed": [
+        "search",
+        "code"
+      ],
+      "parallelDetected": false,
+      "parallelSteps": [],
+      "e2bExecutions": 0,
+      "sandboxReuses": 0,
+      "responsePreview": "As Dr. Evelyn Reed, Senior Financial Analyst, I've analyzed the provided research and data to determine Tesla's current stock price and calculate the ...",
+      "endTime": "2025-08-04T08:24:58.283Z"
+    },
+    {
+      "queryId": 2,
+      "queryName": "Complex Calculation",
+      "startTime": "2025-08-04T08:25:01.480Z",
+      "success": true,
+      "duration": 23012,
+      "durationSeconds": "23.01",
+      "toolsUsed": [
+        "code",
+        "code",
+        "search",
+        "synthesize"
+      ],
+      "parallelDetected": false,
+      "parallelSteps": [],
+      "e2bExecutions": 0,
+      "sandboxReuses": 0,
+      "responsePreview": "Hello! I'm Dr. Evelyn Reed, a financial analyst specializing in real estate and mortgage markets. I can certainly help you break down these figures.\n\n...",
+      "endTime": "2025-08-04T08:25:24.593Z"
+    },
+    {
+      "queryId": 3,
+      "queryName": "Multi-Step Analysis",
+      "startTime": "2025-08-04T08:25:27.787Z",
+      "success": true,
+      "duration": 15187,
+      "durationSeconds": "15.19",
+      "toolsUsed": [
+        "code",
+        "search",
+        "synthesize"
+      ],
+      "parallelDetected": false,
+      "parallelSteps": [],
+      "e2bExecutions": 0,
+      "sandboxReuses": 0,
+      "responsePreview": "As **Dr. Eleanor Vance, Financial Analyst**, I can certainly break down these calculations for you and provide a comparison.\n\nFirst, let's calculate t...",
+      "endTime": "2025-08-04T08:25:43.114Z"
+    }
+  ],
+  "e2bEvents": [],
+  "summary": {
+    "parallelExecutions": 0,
+    "totalE2BExecutions": 0,
+    "finalSandboxCount": 7,
+    "sandboxReuses": 4
+  }
+}

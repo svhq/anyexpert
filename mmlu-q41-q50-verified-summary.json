@@ -1,0 +1,102 @@
+[
+  {
+    "question_id": "mmlu-41",
+    "category": "math",
+    "correct_answer": "H",
+    "extracted_answer": "A",
+    "response_time": "18.8",
+    "e2b_executions": 0,
+    "filename": "mmlu-41-verified-response-1754205871799.txt",
+    "match": false
+  },
+  {
+    "question_id": "mmlu-42",
+    "category": "math",
+    "correct_answer": "H",
+    "extracted_answer": "H",
+    "response_time": "11.1",
+    "e2b_executions": 0,
+    "filename": "mmlu-42-verified-response-1754205882943.txt",
+    "match": true
+  },
+  {
+    "question_id": "mmlu-43",
+    "category": "biology",
+    "correct_answer": "B",
+    "extracted_answer": "B",
+    "response_time": "13.2",
+    "e2b_executions": 0,
+    "filename": "mmlu-43-verified-response-1754205896171.txt",
+    "match": true
+  },
+  {
+    "question_id": "mmlu-44",
+    "category": "biology",
+    "correct_answer": "D",
+    "extracted_answer": "D",
+    "response_time": "13.1",
+    "e2b_executions": 0,
+    "filename": "mmlu-44-verified-response-1754205909286.txt",
+    "match": true
+  },
+  {
+    "question_id": "mmlu-45",
+    "category": "psychology",
+    "correct_answer": "E",
+    "extracted_answer": "E",
+    "response_time": "15.7",
+    "e2b_executions": 0,
+    "filename": "mmlu-45-verified-response-1754205924952.txt",
+    "match": true
+  },
+  {
+    "question_id": "mmlu-46",
+    "category": "psychology",
+    "correct_answer": "I",
+    "extracted_answer": "I",
+    "response_time": "17.2",
+    "e2b_executions": 0,
+    "filename": "mmlu-46-verified-response-1754205942145.txt",
+    "match": true
+  },
+  {
+    "question_id": "mmlu-47",
+    "category": "computer science",
+    "correct_answer": "B",
+    "extracted_answer": null,
+    "response_time": "14.2",
+    "e2b_executions": 0,
+    "filename": "mmlu-47-verified-response-1754205956330.txt",
+    "match": false
+  },
+  {
+    "question_id": "mmlu-48",
+    "category": "computer science",
+    "correct_answer": "A",
+    "extracted_answer": "A",
+    "response_time": "14.9",
+    "e2b_executions": 1,
+    "filename": "mmlu-48-verified-response-1754205971236.txt",
+    "match": true
+  },
+  {
+    "question_id": "mmlu-49",
+    "category": "economics",
+    "correct_answer": "G",
+    "extracted_answer": "G",
+    "response_time": "9.5",
+    "e2b_executions": 0,
+    "filename": "mmlu-49-verified-response-1754205980733.txt",
+    "match": true
+  },
+  {
+    "question_id": "mmlu-50",
+    "category": "economics",
+    "correct_answer": "A",
+    "extracted_answer": "A",
+    "response_time": "11.8",
+    "e2b_executions": 0,
+    "filename": "mmlu-50-verified-response-1754205992571.txt",
+    "match": true
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "id": "mmlu-48",
+  "category": "computer science",
+  "question": "In the program below, y is a positive integer (e.g. l, 2, 3, ...).\r\n result ← 0\r\n REPEAT 3 TIMES {\r\n REPEAT y TIMES {\r\n result ← result + 1\r\n }\r\n }\n\nOptions:\n['3y' '3/y' 'y+2' '3^y' '2y' 'y+3' 'y^2' 'y-3' 'y^3' '9y']",
+  "correct_answer": "A",
+  "questionText": "In the program below, y is a positive integer (e.g. l, 2, 3, ...).\r\n result ← 0\r\n REPEAT 3 TIMES {\r\n REPEAT y TIMES {\r\n result ← result + 1\r\n }\r\n }",
+  "options": [
+    "3y",
+    "3/y",
+    "y+2",
+    "3^y",
+    "2y",
+    "y+3",
+    "y^2",
+    "y-3",
+    "y^3",
+    "9y"
+  ],
+  "optionCount": 10,
+  "formattedQuestion": "In the program below, y is a positive integer (e.g. l, 2, 3, ...).\r\n result ← 0\r\n REPEAT 3 TIMES {\r\n REPEAT y TIMES {\r\n result ← result + 1\r\n }\r\n }\n\nOptions:\n(A) 3y\n(B) 3/y\n(C) y+2\n(D) 3^y\n(E) 2y\n(F) y+3\n(G) y^2\n(H) y-3\n(I) y^3\n(J) 9y"
+}

@@ -1,5 +1,6 @@
 const config = require('../config');
 const logger = require('./utils/logger');
+const FlexibleJSONParser = require('./utils/json-parser');
 
 /**
  * Search Planner - Generates optimized search queries for each round
@@ -50,13 +51,17 @@ class SearchPlanner {
       const data = await response.json();
       const content = data.choices[0].message.content;
       
-      try {
-        const result = JSON.parse(content);
+      // Use flexible parser
+      const parseResult = FlexibleJSONParser.parse(content);
+      
+      if (parseResult.success && parseResult.data) {
+        const result = parseResult.data;
         // Ensure we return an array of queries
         return Array.isArray(result.queries) ? result.queries : [userQuery];
-      } catch (parseError) {
-        logger.logJsonParsingFailure('search-planner', 'search-planner', content, parseError);
-        console.warn('Failed to parse JSON response, using enhanced fallback logic');
+      } else {
+        logger.logJsonParsingFailure('search-planner', 'search-planner', content, parseResult.error);
+        // Don't log warning in production - fallback is working as designed
+        logger.debug('Using fallback query extraction');
         
         // Try to extract queries from response text
         const queries = this.extractQueriesFromText(content, userQuery, round);

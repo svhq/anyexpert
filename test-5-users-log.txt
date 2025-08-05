@@ -1,0 +1,2185 @@
+=== TESTING 5 MORE REAL-WORLD USERS ===
+
+Starting comprehensive test of 5 users with 2 queries each...
+
+
+👤 User 1/5: Rachel_MarketingDirector (Marketing Director)
+
+📝 Processing Rachel_MarketingDirector-Q1:
+   Query: "Our e-commerce site has 50k monthly visitors, 2% conversion ..."
+[2025-08-04 14:32:33] [32mINFO[39m:
+    requestId: "req-1754317953753-z72y4sb0u"
+    step: "unified-agent"
+    query: "Our e-commerce site has 50k monthly visitors, 2% conversion rate, $85 AOV. We spend $20k/month on Google Ads with $25 CPA, $15k on Facebook with $30 CPA. If we shift $5k from Facebook to Google, expecting CPA to rise to $27 on Google due to diminishing returns, what's the net impact on revenue and ROI?"
+[2025-08-04 14:32:33] [32mINFO[39m:
+    requestId: "req-1754317953753-z72y4sb0u"
+    step: "unified-agent-start"
+    query: "Our e-commerce site has 50k monthly visitors, 2% conversion rate, $85 AOV. We spend $20k/month on Google Ads with $25 CPA, $15k on Facebook with $30 CPA. If we shift $5k from Facebook to Google, expecting CPA to rise to $27 on Google due to diminishing returns, what's the net impact on revenue and ROI?"
+[2025-08-04 14:32:33] [32mINFO[39m:
+    requestId: "req-1754317953753-z72y4sb0u"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:32:41] [32mINFO[39m:
+    message: "Initializing E2B Orchestrator"
+[2025-08-04 14:32:41] [32mINFO[39m:
+    message: "Initializing dynamic pool"
+    targetSize: 3
+[2025-08-04 14:32:42] [32mINFO[39m:
+    message: "Found existing sandboxes"
+    count: 0
+[2025-08-04 14:32:44] [32mINFO[39m:
+    message: "Created sandbox"
+    poolSize: 1
+[2025-08-04 14:32:46] [32mINFO[39m:
+    message: "Created sandbox"
+    poolSize: 1
+[2025-08-04 14:32:46] [32mINFO[39m:
+    message: "E2B Orchestrator initialized successfully"
+[2025-08-04 14:32:46] [32mINFO[39m:
+    requestId: "req-1754317953753-z72y4sb0u"
+    type: "code_execution"
+    language: "python"
+    codeLength: 2490
+    success: true
+[2025-08-04 14:32:46] [32mINFO[39m:
+    requestId: "req-1754317953753-z72y4sb0u"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.95
+    status: "step-complete"
+   ✅ Completed in 18.6s
+   Steps: 1, Confidence: 0.95
+   Used E2B: Yes
+   Key figures: 2%, $85, 2%, $20,000, $25...
+[2025-08-04 14:32:52] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754317953753-z72y4sb0u"
+    totalDuration: 18620
+    totalSteps: 1
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code"
+    ]
+    tokensUsed: 3620
+[2025-08-04 14:32:52] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754317953753-z72y4sb0u"
+    userId: "anonymous"
+    totalDuration: 18620
+    totalSteps: 1
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code"
+    ]
+    tokensUsed: 3620
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The query requires calculations to determine the net impact on revenue and ROI based on the provided e-commerce metrics and a proposed budget shift. This involves arithmetic operations and formula application.",
+          "parallelActions": null
+        },
+        "duration": 12985
+      }
+    ]
+
+📝 Processing Rachel_MarketingDirector-Q2:
+   Query: "We're launching a loyalty program. Option A: Points system (..."
+[2025-08-04 14:32:54] [32mINFO[39m:
+    requestId: "req-1754317974382-km0o2dyd0"
+    step: "unified-agent"
+    query: "We're launching a loyalty program. Option A: Points system (1 point per $1, redeem 100 points for $5 off) expecting 30% adoption and 15% increase in purchase frequency. Option B: Tiered benefits ($500/year = Gold with 10% off) expecting 10% adoption but 40% higher AOV. Which drives more incremental revenue over 12 months?"
+[2025-08-04 14:32:54] [32mINFO[39m:
+    requestId: "req-1754317974382-km0o2dyd0"
+    step: "unified-agent-start"
+    query: "We're launching a loyalty program. Option A: Points system (1 point per $1, redeem 100 points for $5 off) expecting 30% adoption and 15% increase in purchase frequency. Option B: Tiered benefits ($500/year = Gold with 10% off) expecting 10% adoption but 40% higher AOV. Which drives more incremental revenue over 12 months?"
+[2025-08-04 14:32:54] [32mINFO[39m:
+    requestId: "req-1754317974382-km0o2dyd0"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:33:02] [32mINFO[39m:
+    requestId: "req-1754317974382-km0o2dyd0"
+    type: "code_execution"
+    language: "python"
+    codeLength: 1375
+    success: true
+[2025-08-04 14:33:02] [32mINFO[39m:
+    requestId: "req-1754317974382-km0o2dyd0"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.95
+    status: "step-complete"
+[2025-08-04 14:33:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 2,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 2,
+      "errors": 0
+    }
+   ✅ Completed in 18.5s
+   Steps: 1, Confidence: 0.95
+   Used E2B: Yes
+   Key figures: $1, $5, 5%, $5, $100...
+[2025-08-04 14:33:12] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754317974382-km0o2dyd0"
+    totalDuration: 18531
+    totalSteps: 1
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code"
+    ]
+    tokensUsed: 3673
+[2025-08-04 14:33:12] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754317974382-km0o2dyd0"
+    userId: "anonymous"
+    totalDuration: 18531
+    totalSteps: 1
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code"
+    ]
+    tokensUsed: 3673
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The user is asking to compare two loyalty program options based on provided metrics and calculate which drives more incremental revenue. This requires calculations and comparisons, making 'code' the appropriate next action.",
+          "parallelActions": null
+        },
+        "duration": 8129
+      }
+    ]
+
+👤 User 2/5: David_RealEstateInvestor (Real Estate Investor)
+
+📝 Processing David_RealEstateInvestor-Q1:
+   Query: "Analyzing a rental property: Purchase price $450k, 20% down,..."
+[2025-08-04 14:33:15] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    step: "unified-agent"
+    query: "Analyzing a rental property: Purchase price $450k, 20% down, 6.5% interest rate, $2,800/month rent, $400 HOA, $500 insurance, $300 maintenance reserve, 1.2% property tax. With 5% annual appreciation and 3% rent increases, what's my cash-on-cash return and when do I hit 25% equity for refinancing?"
+[2025-08-04 14:33:15] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    step: "unified-agent-start"
+    query: "Analyzing a rental property: Purchase price $450k, 20% down, 6.5% interest rate, $2,800/month rent, $400 HOA, $500 insurance, $300 maintenance reserve, 1.2% property tax. With 5% annual appreciation and 3% rent increases, what's my cash-on-cash return and when do I hit 25% equity for refinancing?"
+[2025-08-04 14:33:15] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:33:25] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    type: "code_execution"
+    language: "python"
+    codeLength: 350
+    success: false
+[2025-08-04 14:33:25] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:33:25] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 1
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:33:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 3,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 3,
+      "errors": 0
+    }
+[2025-08-04 14:33:35] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    type: "code_execution"
+    language: "python"
+    codeLength: 358
+    success: false
+[2025-08-04 14:33:35] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 1
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:33:35] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 2
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:33:45] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    type: "code_execution"
+    language: "python"
+    codeLength: 389
+    success: false
+[2025-08-04 14:33:45] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 2
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:33:45] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 3
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:33:53] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    type: "code_execution"
+    language: "python"
+    codeLength: 2436
+    success: false
+[2025-08-04 14:33:53] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 3
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:33:53] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 4
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:34:02] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    type: "code_execution"
+    language: "python"
+    codeLength: 348
+    success: false
+[2025-08-04 14:34:02] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 4
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:34:02] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 5
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:34:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 7,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 7,
+      "errors": 0
+    }
+[2025-08-04 14:34:14] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    type: "code_execution"
+    language: "python"
+    codeLength: 350
+    success: false
+[2025-08-04 14:34:14] [32mINFO[39m:
+    requestId: "req-1754317995924-4zsxtfj95"
+    stepNum: 5
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+   ✅ Completed in 68.9s
+   Steps: 6, Confidence: 0.5
+   Used E2B: Yes
+   Key figures: 25%, $450,000, 20%, $450,000, $90,000...
+[2025-08-04 14:34:24] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754317995924-4zsxtfj95"
+    totalDuration: 68917
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 27026
+[2025-08-04 14:34:24] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754317995924-4zsxtfj95"
+    userId: "anonymous"
+    totalDuration: 68917
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 27026
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The query requires complex calculations for cash-on-cash return and equity buildup, which can be performed using code.",
+          "parallelActions": null
+        },
+        "duration": 9832
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous step correctly identified that the query requires complex calculations. The next logical step is to proceed with executing the code to perform these calculations.",
+          "parallelActions": null
+        },
+        "duration": 19157
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps correctly identified the need for code execution to perform the financial calculations. The next logical step is to proceed with writing and executing the code.",
+          "parallelActions": null
+        },
+        "duration": 29287
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have established the need for code execution to perform the financial calculations. The next logical step is to proceed with writing and executing the code to determine the cash-on-cash return and the time to reach 25% equity.",
+          "parallelActions": null
+        },
+        "duration": 38027
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have consistently identified the need for code execution to perform the financial calculations. The next logical step is to proceed with writing and executing the code to answer the user's query.",
+          "parallelActions": null
+        },
+        "duration": 47004
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have consistently identified the need for code execution to perform the financial calculations. The next logical step is to proceed with writing and executing the code to answer the user's query.",
+          "parallelActions": null
+        },
+        "duration": 58377
+      }
+    ]
+
+📝 Processing David_RealEstateInvestor-Q2:
+   Query: "Comparing two investment strategies with $200k capital: A) B..."
+[2025-08-04 14:34:26] [32mINFO[39m:
+    requestId: "req-1754318066852-526km6mek"
+    step: "unified-agent"
+    query: "Comparing two investment strategies with $200k capital: A) Buy one $600k property (33% down) in appreciating area with $3,500 rent, expecting 7% appreciation. B) Buy two $300k properties (33% down each) with $2,000 rent each but only 4% appreciation. Factor in management costs of 8%. Which has better 5-year returns?"
+[2025-08-04 14:34:26] [32mINFO[39m:
+    requestId: "req-1754318066852-526km6mek"
+    step: "unified-agent-start"
+    query: "Comparing two investment strategies with $200k capital: A) Buy one $600k property (33% down) in appreciating area with $3,500 rent, expecting 7% appreciation. B) Buy two $300k properties (33% down each) with $2,000 rent each but only 4% appreciation. Factor in management costs of 8%. Which has better 5-year returns?"
+[2025-08-04 14:34:26] [32mINFO[39m:
+    requestId: "req-1754318066852-526km6mek"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:34:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 8,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 8,
+      "errors": 0
+    }
+[2025-08-04 14:34:36] [32mINFO[39m:
+    requestId: "req-1754318066852-526km6mek"
+    type: "code_execution"
+    language: "python"
+    codeLength: 196
+    success: true
+[2025-08-04 14:34:36] [32mINFO[39m:
+    requestId: "req-1754318066852-526km6mek"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.95
+    status: "step-complete"
+   ✅ Completed in 15.8s
+   Steps: 1, Confidence: 0.95
+   Used E2B: Yes
+   Key figures: $200,000, 33%, 67%, $600k, $600,000...
+[2025-08-04 14:34:42] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754318066852-526km6mek"
+    totalDuration: 15759
+    totalSteps: 1
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code"
+    ]
+    tokensUsed: 4162
+[2025-08-04 14:34:42] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754318066852-526km6mek"
+    userId: "anonymous"
+    totalDuration: 15759
+    totalSteps: 1
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code"
+    ]
+    tokensUsed: 4162
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The query requires calculations to compare the returns of two investment strategies over 5 years, including appreciation, rent, and management costs. This is a task for the code interpreter.",
+          "parallelActions": null
+        },
+        "duration": 9355
+      }
+    ]
+
+👤 User 3/5: Nina_HRDirector (HR Director)
+
+📝 Processing Nina_HRDirector-Q1:
+   Query: "We have 200 employees with 18% annual turnover. Average repl..."
+[2025-08-04 14:34:45] [32mINFO[39m:
+    requestId: "req-1754318085624-a1iywqzgl"
+    step: "unified-agent"
+    query: "We have 200 employees with 18% annual turnover. Average replacement cost is $15k per employee. If we invest $200k in retention programs (better benefits, training, culture initiatives) and reduce turnover to 12%, what's the ROI? Also factor that lower turnover improves productivity by 5%."
+[2025-08-04 14:34:45] [32mINFO[39m:
+    requestId: "req-1754318085624-a1iywqzgl"
+    step: "unified-agent-start"
+    query: "We have 200 employees with 18% annual turnover. Average replacement cost is $15k per employee. If we invest $200k in retention programs (better benefits, training, culture initiatives) and reduce turnover to 12%, what's the ROI? Also factor that lower turnover improves productivity by 5%."
+[2025-08-04 14:34:45] [32mINFO[39m:
+    requestId: "req-1754318085624-a1iywqzgl"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:34:54] [32mINFO[39m:
+    requestId: "req-1754318085624-a1iywqzgl"
+    type: "code_execution"
+    language: "python"
+    codeLength: 1553
+    success: true
+[2025-08-04 14:34:54] [32mINFO[39m:
+    requestId: "req-1754318085624-a1iywqzgl"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.95
+    status: "step-complete"
+   ✅ Completed in 11.6s
+   Steps: 1, Confidence: 0.95
+   Used E2B: Yes
+   Key figures: 18%, $15,000, 18%, $15,000, $540,000...
+[2025-08-04 14:34:57] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754318085624-a1iywqzgl"
+    totalDuration: 11577
+    totalSteps: 1
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code"
+    ]
+    tokensUsed: 4202
+[2025-08-04 14:34:57] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754318085624-a1iywqzgl"
+    userId: "anonymous"
+    totalDuration: 11577
+    totalSteps: 1
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code"
+    ]
+    tokensUsed: 4202
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The query requires calculations to determine the ROI, including turnover cost savings and productivity improvements. This can be done using the provided data.",
+          "parallelActions": null
+        },
+        "duration": 8549
+      }
+    ]
+
+📝 Processing Nina_HRDirector-Q2:
+   Query: "Comparing compensation strategies: Current average salary is..."
+[2025-08-04 14:34:59] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    step: "unified-agent"
+    query: "Comparing compensation strategies: Current average salary is $75k. Option A: 5% across-board raise costing $750k. Option B: Performance-based raises averaging 4% but top 20% get 10%, costing $700k total. Historical data shows 10% raises reduce turnover by 40% for high performers. Which option provides better value?"
+[2025-08-04 14:34:59] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    step: "unified-agent-start"
+    query: "Comparing compensation strategies: Current average salary is $75k. Option A: 5% across-board raise costing $750k. Option B: Performance-based raises averaging 4% but top 20% get 10%, costing $700k total. Historical data shows 10% raises reduce turnover by 40% for high performers. Which option provides better value?"
+[2025-08-04 14:34:59] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:35:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 10,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 10,
+      "errors": 0
+    }
+[2025-08-04 14:35:19] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:35:19] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 1
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:35:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 10,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 10,
+      "errors": 0
+    }
+[2025-08-04 14:35:39] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 1
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:35:39] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 2
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:35:58] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 2
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:35:58] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 3
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:36:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 10,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 10,
+      "errors": 0
+    }
+[2025-08-04 14:36:18] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    type: "code_execution"
+    language: "python"
+    codeLength: 448
+    success: false
+[2025-08-04 14:36:18] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 3
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:36:18] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 4
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:36:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 11,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 11,
+      "errors": 0
+    }
+[2025-08-04 14:36:41] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    type: "code_execution"
+    language: "python"
+    codeLength: 2737
+    success: true
+[2025-08-04 14:36:41] [32mINFO[39m:
+    requestId: "req-1754318099212-76qshcu9u"
+    stepNum: 4
+    action: "code"
+    newConfidence: 0.95
+    status: "step-complete"
+   ✅ Completed in 106.3s
+   Steps: 5, Confidence: 0.95
+   Used E2B: Yes
+   Key figures: $75,000, 20%, $75,000, 10%, 10%...
+[2025-08-04 14:36:45] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754318099212-76qshcu9u"
+    totalDuration: 106293
+    totalSteps: 5
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 15031
+[2025-08-04 14:36:45] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754318099212-76qshcu9u"
+    userId: "anonymous"
+    totalDuration: 106293
+    totalSteps: 5
+    finalConfidence: 0.95
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 15031
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The query requires calculations to compare the cost-effectiveness of two compensation strategies, including analyzing the impact of performance-based raises on turnover.",
+          "parallelActions": null
+        },
+        "duration": 19880
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous step correctly identified the need for calculations to compare the two compensation strategies. The next logical step is to perform these calculations to determine the cost-effectiveness and potential value of each option.",
+          "parallelActions": null
+        },
+        "duration": 40114
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps correctly identified the need for calculations. The next logical step is to perform these calculations to compare the cost-effectiveness and value of each compensation option.",
+          "parallelActions": null
+        },
+        "duration": 59499
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have correctly identified the need for calculations to compare the two compensation strategies. The next logical step is to perform these calculations to determine the cost-effectiveness and potential value of each option.",
+          "parallelActions": null
+        },
+        "duration": 79177
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have consistently identified the need for calculations to compare the two compensation strategies. The next logical step is to execute these calculations to determine the cost-effectiveness and value of each option.",
+          "parallelActions": null
+        },
+        "duration": 102638
+      }
+    ]
+
+👤 User 4/5: Alex_StartupCTO (Startup CTO)
+
+📝 Processing Alex_StartupCTO-Q1:
+   Query: "Our API handles 10M requests/day on 20 servers ($2k/month ea..."
+[2025-08-04 14:36:48] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    step: "unified-agent"
+    query: "Our API handles 10M requests/day on 20 servers ($2k/month each). Load testing shows we can optimize to handle 750k requests/server/day. If traffic grows 20% monthly and new servers take 2 weeks to provision, when should we start scaling? What's the cost difference between proactive vs reactive scaling over 6 months?"
+[2025-08-04 14:36:48] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    step: "unified-agent-start"
+    query: "Our API handles 10M requests/day on 20 servers ($2k/month each). Load testing shows we can optimize to handle 750k requests/server/day. If traffic grows 20% monthly and new servers take 2 weeks to provision, when should we start scaling? What's the cost difference between proactive vs reactive scaling over 6 months?"
+[2025-08-04 14:36:48] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:36:56] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:36:56] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 1
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:37:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 12,
+      "errors": 0
+    }
+[2025-08-04 14:37:09] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:37:09] [31mERROR[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:37:09] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    type: "code_execution"
+    language: "python"
+    codeLength: 960
+    success: false
+[2025-08-04 14:37:09] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 1
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:37:09] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 2
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:37:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 13,
+      "errors": 0
+    }
+[2025-08-04 14:38:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 13,
+      "errors": 0
+    }
+[2025-08-04 14:38:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 13,
+      "errors": 0
+    }
+[2025-08-04 14:38:50] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:38:50] [31mERROR[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:38:50] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    type: "code_execution"
+    language: "python"
+    codeLength: 492
+    success: false
+[2025-08-04 14:38:50] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 2
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:38:50] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 3
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:39:00] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 3
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:39:00] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 4
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:39:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 14,
+      "errors": 0
+    }
+[2025-08-04 14:39:11] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 4
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:39:11] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 5
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:39:28] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:39:28] [31mERROR[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:39:28] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    type: "code_execution"
+    language: "python"
+    codeLength: 227
+    success: false
+[2025-08-04 14:39:28] [32mINFO[39m:
+    requestId: "req-1754318208512-emedv9l5g"
+    stepNum: 5
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:39:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 15,
+      "errors": 0
+    }
+   ✅ Completed in 175.8s
+   Steps: 6, Confidence: 0.5
+   Used E2B: Yes
+   Key figures: 20%, 20%, 66.7%, $40,000, $40,000...
+[2025-08-04 14:39:44] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754318208512-emedv9l5g"
+    totalDuration: 175762
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 79557
+[2025-08-04 14:39:44] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754318208512-emedv9l5g"
+    userId: "anonymous"
+    totalDuration: 175762
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 79557
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The query requires calculations and projections based on provided data, making it suitable for a code-based approach.",
+          "parallelActions": null
+        },
+        "duration": 8294
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The user is asking for calculations and projections based on provided data, which requires a code-based approach to determine scaling timelines and cost differences.",
+          "parallelActions": null
+        },
+        "duration": 21224
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The user is asking for calculations and projections based on provided data, which requires a code-based approach to determine scaling timelines and cost differences.",
+          "parallelActions": null
+        },
+        "duration": 121600
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The user is asking for calculations and projections based on provided data, which requires a code-based approach to determine scaling timelines and cost differences.",
+          "parallelActions": null
+        },
+        "duration": 132405
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The user has provided all necessary information and is asking for calculations and projections. The previous steps correctly identified that a code-based approach is needed to perform these calculations.",
+          "parallelActions": null
+        },
+        "duration": 143473
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The user has provided all necessary information and is asking for calculations and projections. The previous steps correctly identified that a code-based approach is needed to perform these calculations.",
+          "parallelActions": null
+        },
+        "duration": 160244
+      }
+    ]
+
+📝 Processing Alex_StartupCTO-Q2:
+   Query: "Choosing between architectures: Monolith costs $50k to build..."
+[2025-08-04 14:39:46] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    step: "unified-agent"
+    query: "Choosing between architectures: Monolith costs $50k to build, $10k/month to maintain, handles 5M requests/day. Microservices costs $150k to build, $25k/month to maintain, but scales linearly and reduces deployment time by 70%. At what request volume does microservices become cost-effective? Consider developer productivity gains of 30%."
+[2025-08-04 14:39:46] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    step: "unified-agent-start"
+    query: "Choosing between architectures: Monolith costs $50k to build, $10k/month to maintain, handles 5M requests/day. Microservices costs $150k to build, $25k/month to maintain, but scales linearly and reduces deployment time by 70%. At what request volume does microservices become cost-effective? Consider developer productivity gains of 30%."
+[2025-08-04 14:39:46] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:40:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 15,
+      "errors": 0
+    }
+[2025-08-04 14:40:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 15,
+      "errors": 0
+    }
+[2025-08-04 14:41:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 15,
+      "errors": 0
+    }
+[2025-08-04 14:41:05] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:41:05] [31mERROR[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:41:05] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    type: "code_execution"
+    language: "python"
+    codeLength: 1039
+    success: false
+[2025-08-04 14:41:05] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:41:05] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 1
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:41:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 16,
+      "errors": 0
+    }
+[2025-08-04 14:42:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 16,
+      "errors": 0
+    }
+[2025-08-04 14:42:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 16,
+      "errors": 0
+    }
+[2025-08-04 14:43:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 16,
+      "errors": 0
+    }
+[2025-08-04 14:43:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 16,
+      "errors": 0
+    }
+[2025-08-04 14:43:58] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 1
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:43:58] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 2
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:44:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 16,
+      "errors": 0
+    }
+[2025-08-04 14:44:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 16,
+      "errors": 0
+    }
+[2025-08-04 14:45:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 16,
+      "errors": 0
+    }
+[2025-08-04 14:45:16] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:45:16] [31mERROR[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:45:16] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    type: "code_execution"
+    language: "python"
+    codeLength: 39008
+    success: false
+[2025-08-04 14:45:16] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 2
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:45:16] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 3
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:45:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 17,
+      "errors": 0
+    }
+[2025-08-04 14:45:42] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:45:42] [31mERROR[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:45:42] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    type: "code_execution"
+    language: "python"
+    codeLength: 4734
+    success: false
+[2025-08-04 14:45:42] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 3
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:45:42] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 4
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:46:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 18,
+      "errors": 0
+    }
+[2025-08-04 14:46:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 18,
+      "errors": 0
+    }
+[2025-08-04 14:46:47] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:46:47] [31mERROR[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:46:47] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    type: "code_execution"
+    language: "python"
+    codeLength: 6403
+    success: false
+[2025-08-04 14:46:47] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 4
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:46:47] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 5
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:47:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 19,
+      "errors": 0
+    }
+[2025-08-04 14:47:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 19,
+      "errors": 0
+    }
+[2025-08-04 14:48:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 19,
+      "errors": 0
+    }
+[2025-08-04 14:48:21] [32mINFO[39m:
+    requestId: "req-1754318386276-01pws2tfb"
+    stepNum: 5
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:48:33] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 19,
+      "errors": 0
+    }
+   ✅ Completed in 553.8s
+   Steps: 6, Confidence: 0.5
+   Used E2B: Yes
+   Key figures: $50,000, $10,000, $150,000, $25,000, 70%...
+[2025-08-04 14:49:00] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754318386276-01pws2tfb"
+    totalDuration: 553774
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 174325
+[2025-08-04 14:49:00] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754318386276-01pws2tfb"
+    userId: "anonymous"
+    totalDuration: 553774
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 174325
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The query requires a cost-benefit analysis involving calculations to determine the break-even point between two architectures, considering build costs, maintenance costs, and potential productivity gains.",
+          "parallelActions": null
+        },
+        "duration": 78956
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous step correctly identified the need for a cost-benefit analysis and calculations. The next logical step is to perform these calculations to determine the cost-effectiveness of microservices at different request volumes, incorporating the provided data.",
+          "parallelActions": null
+        },
+        "duration": 252238
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps correctly identified the need for calculations. The next logical step is to perform these calculations to determine the break-even point.",
+          "parallelActions": null
+        },
+        "duration": 330250
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have correctly identified the need for calculations. The next logical step is to perform these calculations to determine the break-even point, incorporating all provided cost and productivity data.",
+          "parallelActions": null
+        },
+        "duration": 356103
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have consistently identified the need for calculations to determine the cost-effectiveness. The next logical step is to perform these calculations using the provided data.",
+          "parallelActions": null
+        },
+        "duration": 421252
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have consistently identified the need for calculations. The next logical step is to perform these calculations to determine the break-even point, incorporating all provided cost and productivity data.",
+          "parallelActions": null
+        },
+        "duration": 515235
+      }
+    ]
+
+👤 User 5/5: Maria_RetailChainCFO (Retail Chain CFO)
+
+📝 Processing Maria_RetailChainCFO-Q1:
+   Query: "We have 50 stores averaging $2M annual revenue each. Impleme..."
+[2025-08-04 14:49:03] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    step: "unified-agent"
+    query: "We have 50 stores averaging $2M annual revenue each. Implementing new inventory system for $3M reduces stock-outs by 5% (currently losing 8% of sales to stock-outs) and reduces inventory holding costs by 15% (currently $200k per store). What's the payback period and 3-year NPV at 10% discount rate?"
+[2025-08-04 14:49:03] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    step: "unified-agent-start"
+    query: "We have 50 stores averaging $2M annual revenue each. Implementing new inventory system for $3M reduces stock-outs by 5% (currently losing 8% of sales to stock-outs) and reduces inventory holding costs by 15% (currently $200k per store). What's the payback period and 3-year NPV at 10% discount rate?"
+[2025-08-04 14:49:03] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:49:03] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 19,
+      "errors": 0
+    }
+[2025-08-04 14:49:09] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:09] [31mERROR[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:09] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    type: "code_execution"
+    language: "python"
+    codeLength: 143
+    success: false
+[2025-08-04 14:49:09] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:49:09] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 1
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:49:16] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:16] [31mERROR[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:16] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    type: "code_execution"
+    language: "python"
+    codeLength: 134
+    success: false
+[2025-08-04 14:49:16] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 1
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:49:16] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 2
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:49:23] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:23] [31mERROR[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:23] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    type: "code_execution"
+    language: "python"
+    codeLength: 134
+    success: false
+[2025-08-04 14:49:23] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 2
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:49:23] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 3
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:49:28] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:28] [31mERROR[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:28] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    type: "code_execution"
+    language: "python"
+    codeLength: 134
+    success: false
+[2025-08-04 14:49:28] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 3
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:49:28] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 4
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:49:34] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 23,
+      "errors": 0
+    }
+[2025-08-04 14:49:34] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:34] [31mERROR[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:34] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    type: "code_execution"
+    language: "python"
+    codeLength: 160
+    success: false
+[2025-08-04 14:49:34] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 4
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:49:34] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 5
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:49:41] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:41] [31mERROR[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:41] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    type: "code_execution"
+    language: "python"
+    codeLength: 134
+    success: false
+[2025-08-04 14:49:41] [32mINFO[39m:
+    requestId: "req-1754318943057-korcmlenw"
+    stepNum: 5
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+   ✅ Completed in 43.0s
+   Steps: 6, Confidence: 0.5
+   Used E2B: Yes
+   Key figures: $3, $2M, $100M, 8%, $100M...
+[2025-08-04 14:49:46] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754318943057-korcmlenw"
+    totalDuration: 42989
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 17128
+[2025-08-04 14:49:46] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754318943057-korcmlenw"
+    userId: "anonymous"
+    totalDuration: 42989
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 17128
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The query requires calculations for payback period and NPV, which can be performed using the provided financial data.",
+          "parallelActions": null
+        },
+        "duration": 6023
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous step correctly identified that the query requires calculations. The next logical step is to perform these calculations using the provided data.",
+          "parallelActions": null
+        },
+        "duration": 13294
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps correctly identified the need for calculations. The next logical step is to perform these calculations using the provided financial data to determine the payback period and NPV.",
+          "parallelActions": null
+        },
+        "duration": 20222
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps correctly identified the need for calculations. The next logical step is to perform these calculations using the provided financial data to determine the payback period and NPV.",
+          "parallelActions": null
+        },
+        "duration": 25885
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have correctly identified that the query requires calculations. The next logical step is to perform these calculations using the provided financial data to determine the payback period and NPV.",
+          "parallelActions": null
+        },
+        "duration": 31932
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have correctly identified that the query requires calculations. The next logical step is to perform these calculations using the provided financial data to determine the payback period and NPV.",
+          "parallelActions": null
+        },
+        "duration": 37964
+      }
+    ]
+
+📝 Processing Maria_RetailChainCFO-Q2:
+   Query: "Analyzing expansion: Opening new store costs $1.5M, projecte..."
+[2025-08-04 14:49:48] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    step: "unified-agent"
+    query: "Analyzing expansion: Opening new store costs $1.5M, projected $2.5M annual revenue, 20% EBITDA margin. But it might cannibalize 15% of sales from two nearby stores ($3M revenue each). Should we expand? Also consider that market presence increases brand value, potentially boosting all stores by 2%."
+[2025-08-04 14:49:48] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    step: "unified-agent-start"
+    query: "Analyzing expansion: Opening new store costs $1.5M, projected $2.5M annual revenue, 20% EBITDA margin. But it might cannibalize 15% of sales from two nearby stores ($3M revenue each). Should we expand? Also consider that market presence increases brand value, potentially boosting all stores by 2%."
+[2025-08-04 14:49:48] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 0
+    previousConfidence: 0
+    status: "step-start"
+[2025-08-04 14:49:55] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:55] [31mERROR[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:49:55] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    type: "code_execution"
+    language: "python"
+    codeLength: 1691
+    success: false
+[2025-08-04 14:49:55] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 0
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:49:55] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 1
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:49:59] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 1
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:49:59] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 2
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:50:04] [32mINFO[39m:
+    message: "Pool maintenance complete"
+    poolSize: 1
+    avgLoad: 0
+    metrics: {
+      "poolSize": 1,
+      "avgLoad": 0,
+      "healthyCount": 1,
+      "busyCount": 0,
+      "totalExecutions": 12,
+      "avgQueueDepth": 0,
+      "created": 2,
+      "destroyed": 0,
+      "reused": 26,
+      "errors": 0
+    }
+[2025-08-04 14:50:08] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:50:08] [31mERROR[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:50:08] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    type: "code_execution"
+    language: "python"
+    codeLength: 2317
+    success: false
+[2025-08-04 14:50:08] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 2
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:50:08] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 3
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:50:15] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 3
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:50:15] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 4
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:50:23] [31mERROR[39m:
+    message: "Orchestrator execution failed"
+    userId: "default"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:50:23] [31mERROR[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    message: "E2B execution failed"
+    error: "{\"sandboxId\":\"irpd5skuwymx26ydioaul\",\"message\":\"The sandbox was not found\",\"code\":502}: This error is likely due to sandbox timeout. You can modify the sandbox timeout by passing 'timeoutMs' when starting the sandbox or calling '.setTimeout' on the sandbox with the desired timeout."
+[2025-08-04 14:50:23] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    type: "code_execution"
+    language: "python"
+    codeLength: 1524
+    success: false
+[2025-08-04 14:50:23] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 4
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+[2025-08-04 14:50:23] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 5
+    previousConfidence: 0.5
+    status: "step-start"
+[2025-08-04 14:50:28] [32mINFO[39m:
+    requestId: "req-1754318988049-awjsrx0p8"
+    stepNum: 5
+    action: "code"
+    newConfidence: 0.5
+    status: "step-complete"
+   ✅ Completed in 44.9s
+   Steps: 6, Confidence: 0.5
+   Used E2B: Yes
+   Key figures: $1,500,000, $2,500,000, 20%, $2,500,000, $500,000...
+
+======================================================================
+TEST SUMMARY
+======================================================================
+
+📊 Overall Results:
+   Total queries: 10
+   Successful: 10 (100.0%)
+   Failed: 0
+   E2B usage: 10 queries (100.0%)
+
+⚡ Performance:
+   Average duration: 105.7s
+   Average steps: 3.9
+   Average confidence: 0.72
+   Total test time: 1079.2s
+
+🔍 Issues Detected:
+   JSON parsing errors: 0
+   Timeouts: 0
+   Other errors: 0
+
+✅ Test complete! Detailed results saved to test-5-users-results.json
+[2025-08-04 14:50:32] [32mINFO[39m:
+    type: "unified-agent-complete"
+    requestId: "req-1754318988049-awjsrx0p8"
+    totalDuration: 44859
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 17705
+[2025-08-04 14:50:32] [32mINFO[39m:
+    type: "request-complete"
+    requestId: "req-1754318988049-awjsrx0p8"
+    userId: "anonymous"
+    totalDuration: 44859
+    totalSteps: 6
+    finalConfidence: 0.5
+    toolsUsed: [
+      "code",
+      "code",
+      "code",
+      "code",
+      "code",
+      "code"
+    ]
+    tokensUsed: 17705
+    steps: [
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The query requires financial calculations to determine the profitability of opening a new store, considering revenue, costs, cannibalization, and brand value increase. This necessitates a code-based approach.",
+          "parallelActions": null
+        },
+        "duration": 7206
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous step correctly identified the need for financial calculations. The next logical step is to perform these calculations to analyze the expansion's profitability.",
+          "parallelActions": null
+        },
+        "duration": 11374
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps correctly identified the need for financial calculations. The next logical step is to perform these calculations to analyze the expansion's profitability, considering all the provided financial data.",
+          "parallelActions": null
+        },
+        "duration": 20629
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have correctly identified the need for financial calculations. The next logical step is to perform these calculations to analyze the expansion's profitability, considering all the provided financial data.",
+          "parallelActions": null
+        },
+        "duration": 26986
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have correctly identified the need for financial calculations. The next logical step is to perform these calculations to analyze the expansion's profitability, considering all the provided financial data.",
+          "parallelActions": null
+        },
+        "duration": 35298
+      },
+      {
+        "action": {
+          "type": "code",
+          "rationale": "The previous steps have consistently identified the need for financial calculations. The next logical step is to execute these calculations to analyze the expansion's profitability, incorporating all provided financial data.",
+          "parallelActions": null
+        },
+        "duration": 40557
+      }
+    ]
+[2025-08-04 14:50:32] [32mINFO[39m:
+    message: "Shutting down E2B Orchestrator"
+[2025-08-04 14:50:33] [32mINFO[39m:
+    message: "Pool manager shutdown complete"
+    metrics: {
+      "created": 2,
+      "destroyed": 1,
+      "reused": 28,
+      "errors": 0
+    }
+[2025-08-04 14:50:33] [32mINFO[39m:
+    message: "E2B Orchestrator shutdown complete"
+    metrics: {
+      "orchestrator": {
+        "totalRequests": 28,
+        "cachedRequests": 0,
+        "localRequests": 0,
+        "e2bRequests": 28,
+        "errors": 16,
+        "cacheHitRate": "0.0%",
+        "localOffloadRate": "0.0%",
+        "e2bRate": "100.0%"
+      },
+      "router": {
+        "total": 0,
+        "routing": {
+          "local-math": 0,
+          "local-safe": 0,
+          "e2b": 0
+        },
+        "e2bOffloadRate": "0%"
+      },
+      "rateLimiter": {
+        "healthScore": 1,
+        "failureRate": 0,
+        "availableTokens": {
+          "creation": 1,
+          "operations": 40000,
+          "lifecycle": 20000
+        },
+        "busySandboxes": []
+      },
+      "pool": {
+        "poolSize": 0,
+        "avgLoad": 0,
+        "healthyCount": 0,
+        "busyCount": 0,
+        "totalExecutions": 0,
+        "avgQueueDepth": 0,
+        "created": 2,
+        "destroyed": 1,
+        "reused": 28,
+        "errors": 0
+      },
+      "queue": {
+        "enqueued": 28,
+        "completed": 12,
+        "failed": 16,
+        "timedOut": 0,
+        "rejected": 0,
+        "globalQueueSize": 0,
+        "globalQueuePending": 0,
+        "activeUsers": 1,
+        "successRate": "42.9%",
+        "timeoutRate": "0.0%",
+        "rejectionRate": "0.0%",
+        "userLoads": [
+          {
+            "userId": "default",
+            "load": 5
+          }
+        ]
+      },
+      "circuitBreaker": {
+        "state": "CLOSED",
+        "requests": 28,
+        "successful": 12,
+        "failed": 16,
+        "rejected": 0,
+        "stateChanges": [],
+        "failureRate": "100.0%",
+        "successRate": "0.0%",
+        "recentRequests": 5,
+        "nextAttempt": null,
+        "timeUntilNextAttempt": null
+      },
+      "cache": {
+        "hits": 0,
+        "misses": 28,
+        "evictions": 0,
+        "stores": 5,
+        "hitRate": "0.0%",
+        "size": 5,
+        "maxSize": 1000,
+        "avgDeterminismScore": "1.000"
+      }
+    }

@@ -1,0 +1,21 @@
+{
+  "id": "mmlu-44",
+  "category": "biology",
+  "question": "The light reactions of photosynthesis supply the Calvin cycle with which of the following?\n\nOptions:\n['CO2 released by the light-dependent reactions provides the raw material for the Calvin cycle.'\r\n 'The light reactions provide oxygen for the light-independent reactions.'\r\n 'Water entering the plant through the roots provides hydrogen directly to the Calvin cycle.'\r\n 'ATP and NADPH provide the power and raw materials for the Calvin cycle.'\r\n 'The light reactions provide nitrogen to the Calvin cycle for protein synthesis.'\r\n 'Glucose and fructose are supplied to the Calvin cycle by the light reactions.'\r\n 'The light reactions supply the Calvin cycle with sunlight directly.'\r\n 'ATP and NADPH are broken down in the light reactions to supply the Calvin cycle with energy.'\r\n 'The light reactions provide carbon dioxide for the light-independent reactions.'\r\n 'The light reactions supply the Calvin cycle with water and oxygen.']",
+  "correct_answer": "D",
+  "questionText": "The light reactions of photosynthesis supply the Calvin cycle with which of the following?",
+  "options": [
+    "CO2 released by the light-dependent reactions provides the raw material for the Calvin cycle.",
+    "The light reactions provide oxygen for the light-independent reactions.",
+    "Water entering the plant through the roots provides hydrogen directly to the Calvin cycle.",
+    "ATP and NADPH provide the power and raw materials for the Calvin cycle.",
+    "The light reactions provide nitrogen to the Calvin cycle for protein synthesis.",
+    "Glucose and fructose are supplied to the Calvin cycle by the light reactions.",
+    "The light reactions supply the Calvin cycle with sunlight directly.",
+    "ATP and NADPH are broken down in the light reactions to supply the Calvin cycle with energy.",
+    "The light reactions provide carbon dioxide for the light-independent reactions.",
+    "The light reactions supply the Calvin cycle with water and oxygen."
+  ],
+  "optionCount": 10,
+  "formattedQuestion": "The light reactions of photosynthesis supply the Calvin cycle with which of the following?\n\nOptions:\n(A) CO2 released by the light-dependent reactions provides the raw material for the Calvin cycle.\n(B) The light reactions provide oxygen for the light-independent reactions.\n(C) Water entering the plant through the roots provides hydrogen directly to the Calvin cycle.\n(D) ATP and NADPH provide the power and raw materials for the Calvin cycle.\n(E) The light reactions provide nitrogen to the Calvin cycle for protein synthesis.\n(F) Glucose and fructose are supplied to the Calvin cycle by the light reactions.\n(G) The light reactions supply the Calvin cycle with sunlight directly.\n(H) ATP and NADPH are broken down in the light reactions to supply the Calvin cycle with energy.\n(I) The light reactions provide carbon dioxide for the light-independent reactions.\n(J) The light reactions supply the Calvin cycle with water and oxygen."
+}

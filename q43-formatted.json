@@ -1,0 +1,19 @@
+{
+  "id": "mmlu-43",
+  "category": "biology",
+  "question": "Which of the following would most likely provide examples of mitotic cell divisions?\n\nOptions:\n['cross section of muscle tissue' 'longitudinal section of a shoot tip'\r\n 'longitudinal section of a leaf vein' 'cross section of a fruit'\r\n 'cross section of a leaf' 'longitudinal section of a petal'\r\n 'longitudinal section of a seed'\r\n 'cross section of an anther (site of pollen production in a flower)']",
+  "correct_answer": "B",
+  "questionText": "Which of the following would most likely provide examples of mitotic cell divisions?",
+  "options": [
+    "cross section of muscle tissue",
+    "longitudinal section of a shoot tip",
+    "longitudinal section of a leaf vein",
+    "cross section of a fruit",
+    "cross section of a leaf",
+    "longitudinal section of a petal",
+    "longitudinal section of a seed",
+    "cross section of an anther (site of pollen production in a flower)"
+  ],
+  "optionCount": 8,
+  "formattedQuestion": "Which of the following would most likely provide examples of mitotic cell divisions?\n\nOptions:\n(A) cross section of muscle tissue\n(B) longitudinal section of a shoot tip\n(C) longitudinal section of a leaf vein\n(D) cross section of a fruit\n(E) cross section of a leaf\n(F) longitudinal section of a petal\n(G) longitudinal section of a seed\n(H) cross section of an anther (site of pollen production in a flower)"
+}

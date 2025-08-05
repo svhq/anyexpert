@@ -1,0 +1,11 @@
+Dr. Evelyn Reed, Sociologist specializing in classical social theory:
+
+Based on the comprehensive research and analysis of Émile Durkheim's theories on social solidarity, organic solidarity is defined as **social cohesion based on interdependence due to specialization**.
+
+Durkheim differentiated between two primary forms of social solidarity: mechanical and organic. Mechanical solidarity is characteristic of simpler, more homogenous societies where cohesion arises from shared beliefs, values, and a strong collective consciousness, often referred to as solidarity based on likeness [10]. In contrast, organic solidarity is found in modern, complex, and industrialized societies [11, 26].
+
+The core of organic solidarity, as highlighted in the provided search results, stems from the increasing **division of labor** and the resulting **specialization of work** [1, 11, 13, 31]. In such societies, individuals perform distinct, specialized roles and become interdependent, relying on one another to fulfill their needs and maintain the functioning of society [3, 17, 21, 28]. This mutual dependence, where each individual's specialized function complements others', creates a strong bond that holds society together [12, 14, 28, 38]. As one source puts it, "organic solidarity is a social cohesion based upon the interdependence that arises between people from the specialization of work and complementarianism" [14]. Furthermore, Durkheim argued that this form of solidarity is also associated with a greater emphasis on individuality and the dignity of the individual [5, 16, 20, 22].
+
+Therefore, among the given options, (C) social cohesion based on interdependence due to specialization most accurately reflects Durkheim's concept of organic solidarity.
+
+The final answer is $\boxed{C}$.

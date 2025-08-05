@@ -1,0 +1,146 @@
+{
+  "x-ai/grok-3-mini": [
+    {
+      "query_id": 1,
+      "category": "Health/Medical",
+      "model": "x-ai/grok-3-mini",
+      "response_time": "63.6",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 7621,
+      "filename": "real-world-q1-x-ai-grok-3-mini-1754214765499.txt"
+    },
+    {
+      "query_id": 2,
+      "category": "Technology/Programming",
+      "model": "x-ai/grok-3-mini",
+      "response_time": "70.5",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 8480,
+      "filename": "real-world-q2-x-ai-grok-3-mini-1754214837998.txt"
+    },
+    {
+      "query_id": 3,
+      "category": "Finance/Investment",
+      "model": "x-ai/grok-3-mini",
+      "response_time": "70.2",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 9647,
+      "filename": "real-world-q3-x-ai-grok-3-mini-1754214910193.txt"
+    },
+    {
+      "query_id": 4,
+      "category": "Science/Environment",
+      "model": "x-ai/grok-3-mini",
+      "response_time": "53.6",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 7816,
+      "filename": "real-world-q4-x-ai-grok-3-mini-1754214965816.txt"
+    },
+    {
+      "query_id": 5,
+      "category": "Legal/Business",
+      "model": "x-ai/grok-3-mini",
+      "response_time": "59.5",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 8842,
+      "filename": "real-world-q5-x-ai-grok-3-mini-1754215027303.txt"
+    }
+  ],
+  "google/gemini-2.0-flash-lite": [
+    {
+      "query_id": 1,
+      "category": "Health/Medical",
+      "model": "google/gemini-2.0-flash-lite",
+      "response_time": "58.3",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 8357,
+      "filename": "real-world-q1-google-gemini-2.0-flash-lite-1754215087633.txt"
+    },
+    {
+      "query_id": 2,
+      "category": "Technology/Programming",
+      "model": "google/gemini-2.0-flash-lite",
+      "response_time": "63.2",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 10381,
+      "filename": "real-world-q2-google-gemini-2.0-flash-lite-1754215152853.txt"
+    },
+    {
+      "query_id": 3,
+      "category": "Finance/Investment",
+      "model": "google/gemini-2.0-flash-lite",
+      "response_time": "65.5",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 7557,
+      "filename": "real-world-q3-google-gemini-2.0-flash-lite-1754215220425.txt"
+    },
+    {
+      "query_id": 4,
+      "category": "Science/Environment",
+      "model": "google/gemini-2.0-flash-lite",
+      "response_time": "62.6",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 8427,
+      "filename": "real-world-q4-google-gemini-2.0-flash-lite-1754215285085.txt"
+    },
+    {
+      "query_id": 5,
+      "category": "Legal/Business",
+      "model": "google/gemini-2.0-flash-lite",
+      "response_time": "58.5",
+      "e2b_count": 0,
+      "tools_used": [
+        "search",
+        "reason",
+        "synthesize"
+      ],
+      "response_length": 8375,
+      "filename": "real-world-q5-google-gemini-2.0-flash-lite-1754215345607.txt"
+    }
+  ]
+}

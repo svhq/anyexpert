@@ -17,11 +17,7 @@ const config = {
     apiKey: process.env.SERPER_API_KEY,
     baseUrl: 'https://google.serper.dev'
   },
-  codeExecution: {
-    serviceUrl: process.env.CODE_EXECUTION_URL || 'http://localhost:3001',
-    timeout: parseInt(process.env.CODE_EXECUTION_TIMEOUT || '30000', 10),
-    maxIterations: parseInt(process.env.CODE_MAX_ITERATIONS || '2', 10)
-  },
+  // E2B configuration now handled directly by e2b-manager.js
   systemPrompt: SYSTEM_PROMPT,
   // E2B specific settings
   E2B_API_KEY: process.env.E2B_API_KEY,

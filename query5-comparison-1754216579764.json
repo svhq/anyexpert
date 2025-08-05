@@ -1,0 +1,30 @@
+[
+  {
+    "query_id": 5,
+    "category": "Legal/Business",
+    "model": "x-ai/grok-3-mini",
+    "response_time": "62.3",
+    "e2b_count": 0,
+    "tools_used": [
+      "search",
+      "reason",
+      "synthesize"
+    ],
+    "response_length": 8487,
+    "filename": "real-world-q5-x-ai-grok-3-mini-1754216517548.txt"
+  },
+  {
+    "query_id": 5,
+    "category": "Legal/Business",
+    "model": "google/gemini-2.5-flash-lite",
+    "response_time": "59.2",
+    "e2b_count": 0,
+    "tools_used": [
+      "search",
+      "reason",
+      "synthesize"
+    ],
+    "response_length": 8339,
+    "filename": "real-world-q5-google-gemini-2.5-flash-lite-1754216579751.txt"
+  }
+]
