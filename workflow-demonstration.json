@@ -1,0 +1,12 @@
+{
+  "query": "Calculate the compound annual growth rate (CAGR) if an investment grew from $10,000 to $25,000 over 7 years",
+  "duration": 30551,
+  "result": {
+    "steps": 1,
+    "tools": [
+      "code"
+    ],
+    "confidence": 0.95
+  },
+  "events": []
+}
