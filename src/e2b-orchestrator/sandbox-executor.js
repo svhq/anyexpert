@@ -1,5 +1,5 @@
 // sandbox-executor.js - Per-sandbox execution queue with fairness
-const PQueue = require('p-queue').default;
+const PQueue = require('p-queue').default || require('p-queue');
 
 class SandboxExecutor {
   constructor(sandbox, sandboxId) {
