@@ -385,8 +385,18 @@ Parallel execution:
   async executeCode(userQuery, steps, chatHistory, requestId) {
     // Support both code extraction and tool calling
     const useToolCalling = this.config.preferToolCalling ?? true;
+    const hasRunCode = this.hasToolAvailable('run_code');
     
-    if (useToolCalling && this.hasToolAvailable('run_code')) {
+    logger.info({
+      requestId,
+      message: 'Code execution path selection',
+      preferToolCalling: this.config.preferToolCalling,
+      useToolCalling,
+      hasRunCode,
+      path: useToolCalling && hasRunCode ? 'tool_calling' : 'code_extraction'
+    });
+    
+    if (useToolCalling && hasRunCode) {
       // Modern tool calling approach
       return await this.executeCodeViaTools(userQuery, steps, chatHistory, requestId);
     } else {
