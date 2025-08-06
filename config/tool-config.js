@@ -66,6 +66,28 @@ const TOOL_DEFINITIONS = {
         required: ['code']
       }
     }
+  },
+  
+  scrape_web: {
+    type: 'function',
+    function: {
+      name: 'scrape_web',
+      description: 'Extract full content from a specific URL when deeper information is needed.',
+      parameters: {
+        type: 'object',
+        properties: {
+          url: { 
+            type: 'string',
+            description: 'The URL to scrape'
+          },
+          reason: { 
+            type: 'string',
+            description: 'Why full content extraction is needed'
+          }
+        },
+        required: ['url', 'reason']
+      }
+    }
   }
 };
 
@@ -99,7 +121,7 @@ const API_MODE_CONFIGS = {
   [API_MODES.SEARCH]: {
     name: 'Search Only',
     description: 'Web search capability only',
-    tools: [TOOL_DEFINITIONS.search_web],
+    tools: [TOOL_DEFINITIONS.search_web, TOOL_DEFINITIONS.scrape_web],
     systemPromptAddition: '\n\n**Tools Available:** You have access to web search for current information and fact-checking. Use search strategically when you need current/external information that may not be in your training data.',
     capabilities: {
       webSearch: true,
@@ -111,7 +133,7 @@ const API_MODE_CONFIGS = {
   [API_MODES.FULL]: {
     name: 'Full Tools',
     description: 'All tools available (search + code execution)',
-    tools: [TOOL_DEFINITIONS.search_web, TOOL_DEFINITIONS.run_code],
+    tools: [TOOL_DEFINITIONS.search_web, TOOL_DEFINITIONS.run_code, TOOL_DEFINITIONS.scrape_web],
     systemPromptAddition: '\n\n**Tools Available:** You have access to: (1) Web search for current information and fact-checking, (2) Python code execution sandbox for calculations, analysis, and verification. When uncertainty exists or calculations are needed, use tools strategically: search for current/external info, code for calculations/verification. You may use multiple tools in parallel when beneficial.',
     capabilities: {
       webSearch: true,

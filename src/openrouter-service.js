@@ -27,7 +27,7 @@ class OpenRouterService {
     const requestBody = {
       model: this.model,
       messages: messages,
-      max_tokens: options.max_tokens || 8000,
+      max_tokens: options.max_tokens || 16000,
       temperature: options.temperature || 0.3,
       top_p: options.top_p || 0.9,
       frequency_penalty: options.frequency_penalty || 0,

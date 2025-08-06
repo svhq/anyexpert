@@ -76,13 +76,21 @@ class ModularUnifiedAgent {
         const action = await this.planNextAction(userQuery, steps, chatHistory);
         
         // Skip action if tool is not available in current mode
-        if (action.type !== 'reason' && !this.hasToolAvailable(action.type === 'search' ? 'search_web' : 'run_code')) {
-          logger.info({
-            requestId,
-            stepNum,
-            message: `Tool ${action.type} not available in API mode ${this.toolConfig.mode}, switching to reasoning`
-          });
-          action.type = 'reason';
+        const toolMapping = {
+          'search': 'search_web',
+          'code': 'run_code',
+          'scrape': 'scrape_web'
+        };
+        
+        if (action.type !== 'reason' && action.type !== 'synthesize' && toolMapping[action.type]) {
+          if (!this.hasToolAvailable(toolMapping[action.type])) {
+            logger.info({
+              requestId,
+              stepNum,
+              message: `Tool ${action.type} not available in API mode ${this.toolConfig.mode}, switching to reasoning`
+            });
+            action.type = 'reason';
+          }
         }
         
         // Execute the action(s)
@@ -221,23 +229,61 @@ class ModularUnifiedAgent {
    * Plan the next action based on current state and available tools
    */
   async planNextAction(userQuery, steps, chatHistory) {
+    // Build context from previous steps
+    const context = steps.length > 0 ? 
+      `\n\nPrevious steps:\n${steps.map(s => `- ${s.action.type}: ${s.result.content.substring(0, 200)}...`).join('\n')}` : '';
+    
+    // Dynamically determine available actions
+    const availableActions = ['reason', 'synthesize'];
+    if (this.hasToolAvailable('search_web')) availableActions.push('search');
+    if (this.hasToolAvailable('run_code')) availableActions.push('code');
+    
+    // Use structured JSON planning
     const messages = [
       {
         role: 'system',
-        content: this.generateSystemMessage()
+        content: this.buildPlanningSystemPrompt(availableActions)
       },
       {
         role: 'user',
-        content: this.buildPlanningPrompt(userQuery, steps, chatHistory)
+        content: `Query: "${userQuery}"${context}\n\nWhat should be the next action?`
       }
     ];
-
+    
     const response = await this.callModel(messages, {
-      max_tokens: 300,
+      max_tokens: 200,
       temperature: 0.3
     });
+    
+    return this.parseActionResponse(response.content);
+  }
 
-    return this.parseActionPlan(response.content);
+  /**
+   * Build planning system prompt with available actions
+   */
+  buildPlanningSystemPrompt(availableActions) {
+    return `You are a planning assistant. Analyze the query and determine the next action(s).
+
+Return ONLY valid JSON:
+{
+  "next_action": "${availableActions.join('|')}",
+  "parallel_actions": ["action1", "action2"] or null,
+  "rationale": "brief explanation"
+}
+
+Guidelines:
+- search: Current information, facts, recent events
+- code: Calculations, data analysis, algorithms
+- reason: Analysis using existing knowledge
+- synthesize: Final answer when sufficient information gathered
+- scrape: Extract full content from specific URLs when needed
+
+Parallel execution:
+- Use when multiple independent tasks needed
+- parallel_actions should include ALL actions to run in parallel
+- Example: "Calculate X and find Y" → parallel_actions: ["code", "search"]
+- If only one action needed → parallel_actions: null
+- next_action should be the first action from parallel_actions when using parallel execution`;
   }
 
   /**
@@ -276,6 +322,13 @@ class ModularUnifiedAgent {
       case 'synthesize':
         return this.synthesizeFinalAnswer(userQuery, steps, chatHistory, requestId);
         
+      case 'scrape':
+        if (!this.hasToolAvailable('scrape_web')) {
+          logger.warn({ requestId, message: 'Scrape requested but not available, falling back to reasoning' });
+          return this.executeReason(userQuery, steps, chatHistory);
+        }
+        return this.executeScrape(userQuery, steps, chatHistory, requestId);
+        
       default:
         logger.warn({ requestId, message: `Unknown action type: ${action.type}, falling back to reasoning` });
         return this.executeReason(userQuery, steps, chatHistory);
@@ -286,28 +339,41 @@ class ModularUnifiedAgent {
    * Execute web search action
    */
   async executeSearch(userQuery, steps, requestId) {
-    // Generate search query using search planner
-    const searchQueries = await searchPlanner.generate(
-      userQuery, 
-      'Searching for relevant information',
-      0,
-      []
+    // Get previous search results if any
+    const previousSearches = steps.filter(s => s.action?.type === 'search');
+    const allPreviousResults = previousSearches.flatMap(s => s.result?.sources || []);
+
+    // Generate search queries
+    const round = previousSearches.length;
+    const queries = await searchPlanner.generate(
+      userQuery,
+      'Need current information',
+      round,
+      allPreviousResults
     );
-    const searchQuery = Array.isArray(searchQueries) ? searchQueries[0] : searchQueries;
     
     logger.info({ 
       requestId, 
       type: 'web_search', 
-      query: searchQuery 
+      queries: queries 
     });
 
-    const searchResults = await webSearch.search(searchQuery);
+    // Execute searches using runBatch like original agent
+    const searchResults = await webSearch.runBatch(queries);
     
+    // Format results - matching original agent structure
+    const sources = searchResults.map((result, idx) => ({
+      number: idx + 1,
+      title: result.title,
+      url: result.url,
+      snippet: result.snippet
+    }));
+
     return {
-      content: this.formatSearchResults(searchResults),
-      sources: searchResults.results || [],
-      tokensUsed: 0,
-      confidence: 0.7
+      content: this.formatSearchResults(sources),
+      sources,
+      queries,
+      confidence: Math.min(sources.length / 10, 0.7)
     };
   }
 
@@ -315,6 +381,19 @@ class ModularUnifiedAgent {
    * Execute code execution action
    */
   async executeCode(userQuery, steps, chatHistory, requestId) {
+    // Support both code extraction and tool calling
+    const useToolCalling = this.config.preferToolCalling ?? true;
+    
+    if (useToolCalling && this.hasToolAvailable('run_code')) {
+      // Modern tool calling approach
+      return await this.executeCodeViaTools(userQuery, steps, chatHistory, requestId);
+    } else {
+      // Classic code extraction approach
+      return await this.executeCodeViaExtraction(userQuery, steps, chatHistory, requestId);
+    }
+  }
+
+  async executeCodeViaTools(userQuery, steps, chatHistory, requestId) {
     const messages = [
       {
         role: 'system',
@@ -325,13 +404,13 @@ class ModularUnifiedAgent {
         content: this.buildCodePrompt(userQuery, steps, chatHistory)
       }
     ];
-
+    
     const response = await this.callModel(messages, {
       tools: [this.toolDefinitions.find(t => t.function.name === 'run_code')],
       tool_choice: 'auto',
-      max_tokens: 1000
+      max_tokens: 50000
     });
-
+    
     if (response.tool_calls && response.tool_calls.length > 0) {
       const toolCall = response.tool_calls[0];
       const { code, timeout } = JSON.parse(toolCall.function.arguments);
@@ -339,11 +418,12 @@ class ModularUnifiedAgent {
       logger.info({ 
         requestId, 
         type: 'code_execution', 
+        method: 'tool_calling',
         language: 'python',
         codeLength: code.length,
         success: true
       });
-
+      
       const executionResult = await e2bManager.executeCode(code, { 
         timeout: timeout || 30000,
         userId: 'modular-agent'
@@ -357,11 +437,133 @@ class ModularUnifiedAgent {
         confidence: 0.9
       };
     }
-
+    
     return {
       content: response.content,
       tokensUsed: response.usage?.total_tokens || 0,
       confidence: 0.6
+    };
+  }
+
+  async executeCodeViaExtraction(userQuery, steps, chatHistory, requestId) {
+    const messages = [
+      {
+        role: 'system',
+        content: this.generateSystemMessage()
+      },
+      {
+        role: 'user',
+        content: this.buildCodePrompt(userQuery, steps, chatHistory)
+      }
+    ];
+    
+    const response = await this.callModel(messages, {
+      max_tokens: 50000,
+      temperature: 0.1
+    });
+    
+    // Extract Python code from response
+    const codeMatch = response.content.match(/```python\n([\s\S]*?)\n```/);
+    
+    if (codeMatch && codeMatch[1]) {
+      const code = codeMatch[1];
+      
+      logger.info({ 
+        requestId, 
+        type: 'code_execution', 
+        method: 'code_extraction',
+        language: 'python',
+        codeLength: code.length,
+        success: true
+      });
+      
+      const executionResult = await e2bManager.executeCode(code, { 
+        timeout: 30000,
+        userId: 'modular-agent'
+      });
+      
+      return {
+        content: response.content,
+        code: code,
+        executionResults: executionResult,
+        tokensUsed: response.usage?.total_tokens || 0,
+        confidence: 0.9
+      };
+    }
+    
+    // No code found
+    return {
+      content: response.content,
+      tokensUsed: response.usage?.total_tokens || 0,
+      confidence: 0.5
+    };
+  }
+
+  /**
+   * Execute web scraping action
+   */
+  async executeScrape(userQuery, steps, chatHistory, requestId) {
+    const messages = [
+      {
+        role: 'system',
+        content: this.generateSystemMessage()
+      },
+      {
+        role: 'user',
+        content: this.buildScrapePrompt(userQuery, steps, chatHistory)
+      }
+    ];
+    
+    const response = await this.callModel(messages, {
+      tools: [this.toolDefinitions.find(t => t.function.name === 'scrape_web')],
+      tool_choice: 'auto',
+      max_tokens: 8000
+    });
+    
+    if (response.tool_calls && response.tool_calls.length > 0) {
+      const toolCall = response.tool_calls[0];
+      const { url, reason } = JSON.parse(toolCall.function.arguments);
+      
+      logger.info({ 
+        requestId, 
+        type: 'web_scrape', 
+        url,
+        reason
+      });
+      
+      // Execute scraping
+      const scrapedContent = await webSearch.scrape(url);
+      
+      if (!scrapedContent) {
+        return {
+          content: `Unable to scrape content from ${url}. The page may be inaccessible or blocked.`,
+          confidence: 0.2
+        };
+      }
+      
+      // Truncate content if too long (to avoid context overflow)
+      const maxContentLength = 10000;
+      let content = scrapedContent.content;
+      if (content.length > maxContentLength) {
+        content = content.substring(0, maxContentLength) + '\n\n[Content truncated...]';
+      }
+      
+      return {
+        content: `${response.content}\n\nScraped content from ${url}:\n\nTitle: ${scrapedContent.title}\n\n${content}`,
+        source: {
+          url,
+          title: scrapedContent.title,
+          metadata: scrapedContent.metadata
+        },
+        confidence: 0.95
+      };
+    }
+    
+    // No tool call made
+    return {
+      content: response.content,
+      tokensUsed: response.usage?.total_tokens || 0,
+      confidence: 0.5
     };
   }
 
@@ -381,7 +583,7 @@ class ModularUnifiedAgent {
     ];
 
     const response = await this.callModel(messages, {
-      max_tokens: 1500,
+      max_tokens: 8000,
       temperature: 0.2
     });
 
@@ -413,7 +615,7 @@ class ModularUnifiedAgent {
     ];
 
     const response = await this.callModel(messages, {
-      max_tokens: 2000,
+      max_tokens: 8000,
       temperature: 0.1
     });
 
@@ -491,17 +693,110 @@ class ModularUnifiedAgent {
     return prompt;
   }
 
-  parseActionPlan(content) {
-    const lowerContent = content.toLowerCase();
+  buildScrapePrompt(userQuery, steps, chatHistory) {
+    let prompt = `As an expert, identify which URL needs to be scraped for: "${userQuery}"\n\n`;
     
-    if (lowerContent.includes('search') && this.hasToolAvailable('search_web')) {
-      return { type: 'search' };
-    } else if (lowerContent.includes('code') && this.hasToolAvailable('run_code')) {
-      return { type: 'code' };
-    } else if (lowerContent.includes('synthesize')) {
-      return { type: 'synthesize' };
-    } else {
-      return { type: 'reason' };
+    if (steps.length > 0) {
+      prompt += `Context from previous steps:\n`;
+      steps.forEach((step, i) => {
+        if (step.result.sources) {
+          prompt += `\nStep ${i + 1} found these sources:\n`;
+          step.result.sources.forEach(source => {
+            prompt += `- ${source.title} (${source.url})\n`;
+          });
+        }
+      });
+      prompt += `\n`;
+    }
+
+    prompt += `Use the scrape_web tool to extract full content from the most relevant URL. Choose wisely - scraping is more expensive than search.`;
+    return prompt;
+  }
+
+  parseActionResponse(content) {
+    try {
+      // Extract JSON from markdown code blocks if present
+      let jsonContent = content;
+      const jsonMatch = content.match(/```json\n([\s\S]*?)\n```/);
+      if (jsonMatch && jsonMatch[1]) {
+        jsonContent = jsonMatch[1];
+      }
+      
+      // Try JSON parsing
+      const parsed = JSON.parse(jsonContent);
+      
+      // Validate and clean the response
+      const action = {
+        type: parsed.next_action || 'reason',
+        parallelActions: Array.isArray(parsed.parallel_actions) ? parsed.parallel_actions : null,
+        rationale: parsed.rationale || ''
+      };
+      
+      // Ensure actions are available
+      if (action.parallelActions) {
+        action.parallelActions = action.parallelActions.filter(a => 
+          this.isActionAvailable(a)
+        );
+        if (action.parallelActions.length === 0) {
+          action.parallelActions = null;
+        }
+      }
+      
+      return action;
+    } catch (e) {
+      // Elegant fallback for non-JSON responses
+      return this.parseActionFallback(content);
+    }
+  }
+
+  parseActionFallback(content) {
+    const lower = content.toLowerCase();
+    
+    // Check for parallel execution hints
+    const hasMultipleTasks = 
+      (lower.includes('both') || lower.includes('and also') || lower.includes('as well as')) &&
+      (lower.includes('search') || lower.includes('find')) && 
+      (lower.includes('calculate') || lower.includes('code'));
+    
+    if (hasMultipleTasks) {
+      const actions = [];
+      if (lower.includes('search') && this.hasToolAvailable('search_web')) actions.push('search');
+      if (lower.includes('code') && this.hasToolAvailable('run_code')) actions.push('code');
+      
+      if (actions.length > 1) {
+        return {
+          type: actions[0],
+          parallelActions: actions,
+          rationale: 'Multiple independent tasks detected'
+        };
+      }
+    }
+    
+    // Single action detection
+    if (lower.includes('search') && this.hasToolAvailable('search_web')) {
+      return { type: 'search', parallelActions: null };
+    }
+    if (lower.includes('code') && this.hasToolAvailable('run_code')) {
+      return { type: 'code', parallelActions: null };
+    }
+    if (lower.includes('synthesize')) {
+      return { type: 'synthesize', parallelActions: null };
+    }
+    
+    return { type: 'reason', parallelActions: null };
+  }
+
+  isActionAvailable(actionType) {
+    switch(actionType) {
+      case 'search':
+        return this.hasToolAvailable('search_web');
+      case 'code':
+        return this.hasToolAvailable('run_code');
+      case 'reason':
+      case 'synthesize':
+        return true;
+      default:
+        return false;
     }
   }
 
@@ -530,7 +825,7 @@ class ModularUnifiedAgent {
       body: JSON.stringify({
         model: this.config.openrouter.model,
         messages,
-        max_tokens: options.max_tokens || 1000,
+        max_tokens: options.max_tokens || 16000,
         temperature: options.temperature || 0.7,
         tools: options.tools || undefined,
         tool_choice: options.tool_choice || undefined
@@ -545,16 +840,16 @@ class ModularUnifiedAgent {
     return data.choices[0].message;
   }
 
-  formatSearchResults(searchResults) {
-    if (!searchResults.results || searchResults.results.length === 0) {
+  formatSearchResults(sources) {
+    if (!sources || sources.length === 0) {
       return 'No search results found.';
     }
 
     let formatted = 'Search Results:\n\n';
-    searchResults.results.forEach((result, i) => {
-      formatted += `${i + 1}. **${result.title}**\n`;
-      formatted += `   ${result.snippet}\n`;
-      formatted += `   Source: ${result.url}\n\n`;
+    sources.forEach((source) => {
+      formatted += `${source.number}. **${source.title}**\n`;
+      formatted += `   ${source.snippet}\n`;
+      formatted += `   Source: ${source.url}\n\n`;
     });
 
     return formatted;

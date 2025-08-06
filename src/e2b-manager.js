@@ -13,7 +13,7 @@ class E2BManager {
     
     // Sandbox pool
     this.warmSandboxes = [];
-    this.maxWarmSandboxes = 10; // Keep up to 10 warm sandboxes for better burst handling
+    this.maxWarmSandboxes = 20; // Keep up to 20 warm sandboxes for better burst handling
     this.sandboxTimeout = 30 * 60 * 1000; // 30 minutes
     
     // Retry configuration

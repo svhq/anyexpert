@@ -162,6 +162,56 @@ class WebSearch {
       throw error;
     }
   }
+
+  /**
+   * Scrape full content from a URL using Serper's scrape endpoint
+   * @param {string} url - URL to scrape
+   * @param {Object} options - Additional options
+   * @returns {Promise<Object>} - Scraped content
+   */
+  async scrape(url, options = {}) {
+    try {
+      const response = await fetch(`${this.baseUrl}/scrape`, {
+        method: 'POST',
+        headers: {
+          'X-API-KEY': this.apiKey,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ url })
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Serper scrape error: ${response.status} - ${errorText}`);
+      }
+
+      const data = await response.json();
+      
+      // Log for debugging if needed
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Serper scrape response:', {
+          hasText: !!data.text,
+          hasMarkdown: !!data.markdown,
+          textLength: data.text?.length || 0
+        });
+      }
+      
+      return {
+        url,
+        title: data.title || 'No title',
+        content: data.markdown || data.text || '',
+        metadata: {
+          description: data.description,
+          language: data.language,
+          ...data.metadata
+        }
+      };
+    } catch (error) {
+      console.error('Scraping error for URL:', url, error);
+      // Return null to indicate failure, let agent handle gracefully
+      return null;
+    }
+  }
 }
 
 // Export singleton instance

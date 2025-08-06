@@ -1,32 +1,108 @@
 # Dependencies
 node_modules/
-package-lock.json
 
 # Environment files
 .env
+.env.local
+.env.production
+.env.*.local
 
 # Logs
-*.log
 logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+api-server.log
+e2b-server.log
 
-# Temporary files
-test-*.js
-temp/
-*.tmp
-
-# E2B template builds
+# E2B sandboxes and builds
+.e2b/
+e2b-temp/
 microservices/run-code/*.tar.gz
+
+# Test output
+test-results/
+coverage/
+test-*.js
+test-*.json
+*-response-*.txt
+*-response-*.json
+*-results-*.json
+*-test-*.json
+*-final-*.json
+*-summary-*.json
+*-analysis-*.json
+detailed-verification-*.json
+modular-*-test-*.json
+stress-test-*.json
+parallel-*-test-*.json
+
+# But keep these specific files
+!mmlu-*-questions.json
+!gpqa-*-questions.json
+!corrected-question-*.json
 
 # IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+
+# Build files
+dist/
+build/
+*.tsbuildinfo
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Output files
+output/
+results/
+*.txt
+!requirements.txt
+
+# Session data
+sessions/
+*.session
+realtime-ui/session-logs/
 
 # OS files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Build outputs
-build/
-dist/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Batch files (local dev scripts)
+*.bat
+*.ps1
+*.sh
+!build-template.sh
+
+# Keep important config and docs
+!package.json
+!package-lock.json
+!tsconfig.json
+!config/*.js
+!.gitignore
+!README.md
+!CLAUDE.md
+!*.md

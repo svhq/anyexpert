@@ -1,0 +1,171 @@
+{
+  "testType": "expert-stress-lite",
+  "timestamp": "2025-08-05T11:21:13.734Z",
+  "duration": 229363,
+  "sessions": [
+    {
+      "sessionId": "startup-001",
+      "persona": "AI Startup CEO - Alex Chen",
+      "queries": [
+        {
+          "query": "What are the latest transformer architecture improvements in 2025? Calculate the computational cost difference between GPT-4 and a 70B parameter model at 1M tokens/day.",
+          "complexity": "high",
+          "success": true,
+          "duration": 37462,
+          "steps": 3,
+          "toolsUsed": [
+            "parallel",
+            "parallel",
+            "parallel"
+          ],
+          "hadParallel": true,
+          "executionErrors": [],
+          "expert": "Unknown",
+          "confidence": 0.9
+        },
+        {
+          "query": "Find the current cloud GPU pricing for A100 vs H100 and calculate monthly costs for training a 7B parameter model.",
+          "complexity": "medium",
+          "success": true,
+          "duration": 37889,
+          "steps": 6,
+          "toolsUsed": [
+            "parallel",
+            "search",
+            "search",
+            "search",
+            "search",
+            "search"
+          ],
+          "hadParallel": true,
+          "executionErrors": [],
+          "expert": "Dr",
+          "confidence": 0.8
+        }
+      ],
+      "metrics": {
+        "totalDuration": 75351,
+        "toolsUsed": {
+          "parallel": 4,
+          "search": 5
+        },
+        "parallelExecutions": 4,
+        "errors": []
+      }
+    },
+    {
+      "sessionId": "doctor-002",
+      "persona": "Medical Researcher - Dr. Sarah Johnson",
+      "queries": [
+        {
+          "query": "What are the 2025 FDA guidelines for AI in diagnostic imaging? Write code to calculate diagnostic accuracy metrics (sensitivity, specificity, AUC).",
+          "complexity": "high",
+          "success": true,
+          "duration": 51133,
+          "steps": 6,
+          "toolsUsed": [
+            "parallel",
+            "search",
+            "search",
+            "search",
+            "search",
+            "code"
+          ],
+          "hadParallel": true,
+          "executionErrors": [],
+          "expert": "Dr",
+          "confidence": 0.9
+        },
+        {
+          "query": "Calculate the sample size needed for a clinical trial with 80% power, 0.05 significance, expecting 20% improvement in detection rate.",
+          "complexity": "medium",
+          "success": true,
+          "duration": 24207,
+          "steps": 2,
+          "toolsUsed": [
+            "code",
+            "code"
+          ],
+          "hadParallel": false,
+          "executionErrors": [],
+          "expert": "Unknown",
+          "confidence": 0.9
+        }
+      ],
+      "metrics": {
+        "totalDuration": 75340,
+        "toolsUsed": {
+          "parallel": 1,
+          "search": 4,
+          "code": 3
+        },
+        "parallelExecutions": 1,
+        "errors": []
+      }
+    },
+    {
+      "sessionId": "analyst-003",
+      "persona": "Financial Analyst - Michael Park",
+      "queries": [
+        {
+          "query": "What's the current market cap of top 5 quantum computing companies? Calculate their average P/E ratio and volatility.",
+          "complexity": "high",
+          "success": true,
+          "duration": 38849,
+          "steps": 6,
+          "toolsUsed": [
+            "parallel",
+            "search",
+            "search",
+            "search",
+            "search",
+            "search"
+          ],
+          "hadParallel": true,
+          "executionErrors": [],
+          "expert": "Unknown",
+          "confidence": 0.8
+        },
+        {
+          "query": "Build a Monte Carlo simulation for portfolio risk with 60% stocks, 30% bonds, 10% crypto over 5 years.",
+          "complexity": "high",
+          "success": true,
+          "duration": 26316,
+          "steps": 2,
+          "toolsUsed": [
+            "code",
+            "code"
+          ],
+          "hadParallel": false,
+          "executionErrors": [],
+          "expert": "Unknown",
+          "confidence": 0.9
+        }
+      ],
+      "metrics": {
+        "totalDuration": 65165,
+        "toolsUsed": {
+          "parallel": 1,
+          "search": 5,
+          "code": 2
+        },
+        "parallelExecutions": 1,
+        "errors": []
+      }
+    }
+  ],
+  "statistics": {
+    "totalQueries": 6,
+    "successfulQueries": 6,
+    "failedQueries": 0,
+    "successRate": 1,
+    "avgResponseTime": 35976,
+    "parallelExecutions": 4,
+    "toolUsage": {
+      "parallel": 6,
+      "search": 14,
+      "code": 5
+    },
+    "totalErrors": 0
+  }
+}
