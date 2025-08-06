@@ -1,13 +1,14 @@
-// e2b-manager-v3.js - E2B Manager using the new orchestrator
-const orchestrator = require('./e2b-orchestrator');
+// e2b-manager-v3.js - E2B Manager with fail-fast for missing API key
+const e2bManager = require('./e2b-manager');
 const logger = require('./utils/logger');
 
 class E2BManagerV3 {
   constructor() {
-    this.orchestrator = orchestrator;
+    this.e2bManager = e2bManager;
+    this.templateId = process.env.E2B_TEMPLATE_ID || 'prod-all';
     
     // For backward compatibility
-    this.maxRetries = 2;
+    this.maxRetries = process.env.NODE_ENV === 'production' ? 0 : 2;
     this.sandboxTimeout = 30 * 60 * 1000;
   }
   
@@ -18,13 +19,28 @@ class E2BManagerV3 {
       requestId = null
     } = options;
     
+    // Fail fast if E2B is not configured
+    if (!process.env.E2B_API_KEY) {
+      logger.warn({ requestId, message: 'E2B_API_KEY not configured, skipping code execution' });
+      return {
+        success: false,
+        stdout: '',
+        stderr: 'E2B not configured. Using reasoning instead.',
+        exitCode: 1,
+        executionTime: 0,
+        skipped: true
+      };
+    }
+    
     const userId = options.userId || 'default';
     
     try {
-      const result = await this.orchestrator.execute(userId, code, {
+      // Delegate to the actual e2b-manager
+      const result = await this.e2bManager.executeCode(code, {
         language,
         timeoutMs,
-        requestId
+        requestId,
+        userId
       });
       
       // Ensure backward compatibility with expected format
@@ -33,9 +49,8 @@ class E2BManagerV3 {
         stdout: result.stdout || '',
         stderr: result.stderr || '',
         exitCode: result.exitCode || 0,
-        executionTime: result.executionTime || result.totalTime || 0,
-        cached: result.cached || false,
-        executor: result.executor || 'unknown'
+        executionTime: result.executionTime || 0,
+        cached: result.cached || false
       };
       
     } catch (error) {
@@ -61,21 +76,11 @@ class E2BManagerV3 {
   }
   
   getMetrics() {
-    const metrics = this.orchestrator.getMetrics();
-    
-    // Flatten metrics for backward compatibility
-    return {
-      ...metrics.pool,
-      ...metrics.orchestrator,
-      rateLimiter: metrics.rateLimiter,
-      queue: metrics.queue,
-      circuitBreaker: metrics.circuitBreaker,
-      cache: metrics.cache
-    };
+    return this.e2bManager.getMetrics();
   }
   
   async shutdown() {
-    await this.orchestrator.shutdown();
+    await this.e2bManager.shutdown();
   }
 }
 

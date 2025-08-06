@@ -13,8 +13,8 @@ const e2bManager = require('./e2b-manager-v3');
 class ModularUnifiedAgent {
   constructor() {
     this.config = config;
-    this.maxSteps = 6;
-    this.confidenceThreshold = 0.9;
+    this.maxSteps = parseInt(process.env.MAX_PLANNING_STEPS) || 6;
+    this.confidenceThreshold = parseFloat(process.env.CONFIDENCE_THRESHOLD) || 0.85;
     
     // Get current tool configuration
     this.toolConfig = getCurrentConfig();
@@ -429,12 +429,15 @@ Parallel execution:
         userId: 'modular-agent'
       });
       
+      // If E2B was skipped, adjust confidence
+      const confidence = executionResult.skipped ? 0.6 : 0.9;
+      
       return {
         content: response.content,
         code: code,
         executionResults: executionResult,
         tokensUsed: response.usage?.total_tokens || 0,
-        confidence: 0.9
+        confidence: confidence
       };
     }
     
@@ -482,12 +485,15 @@ Parallel execution:
         userId: 'modular-agent'
       });
       
+      // If E2B was skipped, adjust confidence
+      const confidence = executionResult.skipped ? 0.6 : 0.9;
+      
       return {
         content: response.content,
         code: code,
         executionResults: executionResult,
         tokensUsed: response.usage?.total_tokens || 0,
-        confidence: 0.9
+        confidence: confidence
       };
     }
     
