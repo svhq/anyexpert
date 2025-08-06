@@ -181,6 +181,28 @@ app.post("/api/test-tools", async (req, res) => {
   }
 });
 
+// Simple test endpoint
+app.get("/api/test-simple", async (req, res) => {
+  const e2bManager = require("./src/e2b-manager-v3");
+  
+  try {
+    const code = "print(2+2)";
+    const result = await e2bManager.executeCode(code, {
+      timeout: 5000,
+      requestId: "test-simple"
+    });
+    
+    res.json({
+      code: code,
+      result: result,
+      confidence: result.success ? 0.9 : 0.6,
+      wouldLoop: result.success ? "No (0.9 > 0.8)" : "Yes (0.6 < 0.8)"
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Main ask endpoint
 app.post("/api/ask", async (req, res) => {
   const { question } = req.body;
