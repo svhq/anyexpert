@@ -424,15 +424,47 @@ Parallel execution:
     
     if (response.tool_calls && response.tool_calls.length > 0) {
       const toolCall = response.tool_calls[0];
-      const { code, timeout } = JSON.parse(toolCall.function.arguments);
+      let code, timeout;
+      
+      try {
+        const parsed = JSON.parse(toolCall.function.arguments);
+        code = parsed.code;
+        timeout = parsed.timeout;
+      } catch (e) {
+        logger.error({
+          requestId,
+          message: 'Failed to parse tool call arguments',
+          error: e.message,
+          arguments: toolCall.function.arguments
+        });
+        return {
+          content: 'Failed to parse code execution request',
+          tokensUsed: response.usage?.total_tokens || 0,
+          confidence: 0.3
+        };
+      }
+      
+      // Check if code is actually present
+      if (!code) {
+        logger.error({
+          requestId,
+          message: 'No code provided in tool call',
+          toolCallArgs: toolCall.function.arguments
+        });
+        return {
+          content: 'No code provided for execution',
+          tokensUsed: response.usage?.total_tokens || 0,
+          confidence: 0.3
+        };
+      }
       
       logger.info({ 
         requestId, 
         type: 'code_execution', 
         method: 'tool_calling',
         language: 'python',
-        codeLength: code.length,
-        success: true
+        code: code.substring(0, 100),
+        codeLength: code.length
       });
       
       const executionResult = await e2bManager.executeCode(code, { 
@@ -447,14 +479,15 @@ Parallel execution:
         success: executionResult.success,
         skipped: executionResult.skipped,
         stdout: executionResult.stdout?.substring(0, 100),
-        stderr: executionResult.stderr?.substring(0, 100)
+        stderr: executionResult.stderr?.substring(0, 100),
+        modelResponseContent: response.content?.substring(0, 200)
       });
       
-      // If E2B was skipped, adjust confidence
-      const confidence = executionResult.skipped ? 0.6 : 0.9;
+      // If E2B was skipped or failed, adjust confidence
+      const confidence = (executionResult.skipped || !executionResult.success) ? 0.6 : 0.9;
       
       return {
-        content: response.content,
+        content: response.content || `Code executed: ${code.substring(0, 50)}...`,
         code: code,
         executionResults: executionResult,
         tokensUsed: response.usage?.total_tokens || 0,
