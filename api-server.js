@@ -4,13 +4,18 @@ const workflowEngine = require("./src/workflow-engine");
 const logger = require("./src/utils/logger");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
 
 // Health check
 app.get("/health", (req, res) => {
+  res.json({ status: "healthy", service: "Ask Any Expert API" });
+});
+
+// API Health check (for frontend compatibility)
+app.get("/api/health", (req, res) => {
   res.json({ status: "healthy", service: "Ask Any Expert API" });
 });
 

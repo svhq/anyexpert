@@ -1,0 +1,181 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AskAnyExpert API",
+    "version": "1.0.0",
+    "description": "AI-powered expert system with web search, scraping, and code execution capabilities"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local development server"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health Check",
+        "description": "Check if the API server is running",
+        "responses": {
+          "200": {
+            "description": "Server is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "healthy"
+                    },
+                    "service": {
+                      "type": "string",
+                      "example": "Ask Any Expert API"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ask": {
+      "post": {
+        "summary": "Ask Question",
+        "description": "Submit a question to the AI expert system",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["question"],
+                "properties": {
+                  "question": {
+                    "type": "string",
+                    "description": "The question to ask the expert system",
+                    "example": "What are the latest developments in AI?"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Question processed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "answer": {
+                      "type": "string",
+                      "description": "The detailed answer to the question"
+                    },
+                    "sources": {
+                      "type": "array",
+                      "description": "List of sources used if web search was performed",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "snippet": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "searchPerformed": {
+                      "type": "boolean",
+                      "description": "Whether web search was used"
+                    },
+                    "agent": {
+                      "type": "string",
+                      "description": "Which expert agent was used"
+                    },
+                    "confidence": {
+                      "type": "number",
+                      "description": "Confidence score (0-1)",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "description": "Additional processing information",
+                      "properties": {
+                        "agent": {
+                          "type": "string"
+                        },
+                        "finalConfidence": {
+                          "type": "number"
+                        },
+                        "steps": {
+                          "type": "integer"
+                        },
+                        "searchQueries": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "toolsUsed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - question is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Question is required"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Failed to process question"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Specific error details"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
