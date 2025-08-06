@@ -498,6 +498,15 @@ Parallel execution:
       // If E2B was skipped or failed, adjust confidence
       const confidence = (executionResult.skipped || !executionResult.success) ? 0.6 : 0.9;
       
+      logger.info({
+        requestId,
+        message: 'Code execution final result',
+        executionSuccess: executionResult.success,
+        executionSkipped: executionResult.skipped,
+        assignedConfidence: confidence,
+        hadToolCall: true
+      });
+      
       return {
         content: response.content || `Code executed: ${code.substring(0, 50)}...`,
         code: code,
