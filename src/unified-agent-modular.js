@@ -411,6 +411,15 @@ Parallel execution:
       max_tokens: 50000
     });
     
+    // Log if model made a tool call or not
+    logger.info({
+      requestId,
+      message: 'Model response for code execution',
+      hasToolCalls: !!(response.tool_calls && response.tool_calls.length > 0),
+      toolCallsCount: response.tool_calls?.length || 0,
+      contentLength: response.content?.length || 0
+    });
+    
     if (response.tool_calls && response.tool_calls.length > 0) {
       const toolCall = response.tool_calls[0];
       const { code, timeout } = JSON.parse(toolCall.function.arguments);
@@ -427,6 +436,16 @@ Parallel execution:
       const executionResult = await e2bManager.executeCode(code, { 
         timeout: timeout || 30000,
         userId: 'modular-agent'
+      });
+      
+      // Log execution result for debugging
+      logger.info({
+        requestId,
+        message: 'E2B execution result',
+        success: executionResult.success,
+        skipped: executionResult.skipped,
+        stdout: executionResult.stdout?.substring(0, 100),
+        stderr: executionResult.stderr?.substring(0, 100)
       });
       
       // If E2B was skipped, adjust confidence
@@ -813,10 +832,30 @@ Parallel execution:
     const lastStep = steps[steps.length - 1];
     
     if (lastStep.action.type === 'synthesize') return 0.95;
-    if (lastStep.action.type === 'code' && lastStep.result.executionResults) return 0.9;
-    if (lastStep.action.type === 'search' && lastStep.result.sources) return 0.8;
     
-    return Math.min(0.7 + (steps.length * 0.1), 0.9);
+    // Check if code execution was actually successful
+    if (lastStep.action.type === 'code' && lastStep.result.executionResults) {
+      // If E2B was skipped or failed, lower confidence
+      if (lastStep.result.executionResults.skipped || !lastStep.result.executionResults.success) {
+        return 0.5;
+      }
+      // Successful code execution with output
+      if (lastStep.result.executionResults.stdout || lastStep.result.executionResults.stderr) {
+        return 0.9;
+      }
+      return 0.7;
+    }
+    
+    if (lastStep.action.type === 'search' && lastStep.result.sources && lastStep.result.sources.length > 0) {
+      return 0.8;
+    }
+    
+    // For reasoning steps, check if we have meaningful content
+    if (lastStep.action.type === 'reason' && lastStep.result.content && lastStep.result.content.length > 100) {
+      return 0.85;
+    }
+    
+    return Math.min(0.5 + (steps.length * 0.1), 0.85);
   }
 
   async callModel(messages, options = {}) {
