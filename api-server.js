@@ -67,6 +67,58 @@ app.get("/api/debug/e2b", async (req, res) => {
   res.json(diagnostics);
 });
 
+// Test endpoint with inline logging
+app.post("/api/test-debug", async (req, res) => {
+  const { question } = req.body;
+  const agent = require("./src/unified-agent-modular");
+  
+  // Capture logs
+  const logs = [];
+  const originalInfo = logger.info;
+  const originalWarn = logger.warn;
+  const originalError = logger.error;
+  
+  // Override logger temporarily
+  logger.info = (data) => {
+    logs.push({ level: 'info', ...data });
+    originalInfo.call(logger, data);
+  };
+  logger.warn = (data) => {
+    logs.push({ level: 'warn', ...data });
+    originalWarn.call(logger, data);
+  };
+  logger.error = (data) => {
+    logs.push({ level: 'error', ...data });
+    originalError.call(logger, data);
+  };
+  
+  try {
+    const result = await agent.process(question || "What is 2+2?");
+    
+    // Restore logger
+    logger.info = originalInfo;
+    logger.warn = originalWarn;
+    logger.error = originalError;
+    
+    // Filter relevant logs
+    const relevantLogs = logs.filter(log => 
+      log.message?.includes('Code execution') || 
+      log.message?.includes('Model response') ||
+      log.message?.includes('E2B execution') ||
+      log.message?.includes('confidence') ||
+      log.hasToolCalls !== undefined
+    );
+    
+    res.json({
+      answer: result.content,
+      metadata: result.metadata,
+      logs: relevantLogs
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Test endpoint for debugging tool calls
 app.post("/api/test-tools", async (req, res) => {
   const { question } = req.body;
