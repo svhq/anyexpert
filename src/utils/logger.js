@@ -34,22 +34,9 @@ const logger = pino({
   } : undefined
 });
 
-// Production file logging
-if (!isDevelopment) {
-  // Create file stream for production
-  const fileStream = pino.destination({
-    dest: path.join(logsDir, 'app.log'),
-    sync: false
-  });
-
-  // Override logger
-  module.exports = pino({
-    level: process.env.LOG_LEVEL || 'info',
-    timestamp: pino.stdTimeFunctions.isoTime
-  }, fileStream);
-} else {
-  module.exports = logger;
-}
+// In production, log to stdout (for Railway/cloud platforms)
+// File logging can be handled by the platform's log aggregation
+module.exports = logger;
 
 // Helper functions for structured logging
 module.exports.logRequest = (requestId, phase, data) => {
