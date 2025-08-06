@@ -275,8 +275,8 @@ Return ONLY valid JSON:
 
 Guidelines:
 - search: Current information, facts, recent events
-- code: Calculations, data analysis, algorithms
-- reason: Analysis using existing knowledge
+- code: Math problems (including simple arithmetic like "what is 2+2"), calculations, data analysis, algorithms
+- reason: Analysis using existing knowledge, definitions, explanations
 - synthesize: Final answer when sufficient information gathered
 - scrape: Extract full content from specific URLs when needed
 
