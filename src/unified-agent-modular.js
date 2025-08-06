@@ -495,10 +495,15 @@ Parallel execution:
       };
     }
     
+    // Model chose not to use tool - check if response is good enough
+    const hasGoodAnswer = response.content && response.content.length > 50 && 
+                          (response.content.includes('answer') || response.content.includes('result') || 
+                           response.content.includes('=') || response.content.match(/\d+/));
+    
     return {
       content: response.content,
       tokensUsed: response.usage?.total_tokens || 0,
-      confidence: 0.6
+      confidence: hasGoodAnswer ? 0.85 : 0.6
     };
   }
 
@@ -719,7 +724,7 @@ Parallel execution:
       prompt += `\n`;
     }
 
-    prompt += `Write Python code to solve this problem. Use the run_code tool.`;
+    prompt += `Write Python code to solve this problem. Use the run_code tool if computation is needed.`;
     return prompt;
   }
 
