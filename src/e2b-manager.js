@@ -166,35 +166,6 @@ class E2BManager {
       requestId = null
     } = options;
     
-    // Check if E2B is configured
-    if (!process.env.E2B_API_KEY) {
-      logger.warn({ 
-        requestId, 
-        message: 'E2B_API_KEY not set, returning mock result for code execution',
-        code: code.substring(0, 100)
-      });
-      
-      // For simple arithmetic, compute directly
-      if (code.includes('print') && /^\d+\s*[\+\-\*\/]\s*\d+$/.test(code.replace('print(', '').replace(')', '').trim())) {
-        try {
-          const result = eval(code.replace('print(', '').replace(')', '').trim());
-          return {
-            results: [{ text: String(result) }],
-            logs: { stdout: [String(result)], stderr: [] },
-            error: null
-          };
-        } catch (e) {
-          // Fall through to general mock
-        }
-      }
-      
-      return {
-        results: [{ text: 'E2B not configured - unable to execute code' }],
-        logs: { stdout: [], stderr: [] },
-        error: 'E2B_API_KEY not configured'
-      };
-    }
-    
     const startTime = Date.now();
     let lastError = null;
     
