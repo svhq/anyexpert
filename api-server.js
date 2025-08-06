@@ -67,6 +67,68 @@ app.get("/api/debug/e2b", async (req, res) => {
   res.json(diagnostics);
 });
 
+// Test endpoint for debugging tool calls
+app.post("/api/test-tools", async (req, res) => {
+  const { question } = req.body;
+  const config = require("./config");
+  
+  try {
+    // Direct OpenRouter call with tools
+    const response = await fetch(`${config.openrouter.baseUrl}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${config.openrouter.apiKey}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'https://askanyexpert.ai',
+        'X-Title': 'Ask Any Expert'
+      },
+      body: JSON.stringify({
+        model: config.openrouter.model,
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a helpful assistant. Use the run_code tool when calculations are needed.'
+          },
+          {
+            role: 'user',
+            content: question || 'What is 2+2?'
+          }
+        ],
+        tools: [{
+          type: 'function',
+          function: {
+            name: 'run_code',
+            description: 'Execute Python code',
+            parameters: {
+              type: 'object',
+              properties: {
+                code: { type: 'string', description: 'Python code to execute' }
+              },
+              required: ['code']
+            }
+          }
+        }],
+        tool_choice: 'auto',
+        max_tokens: 1000
+      })
+    });
+    
+    const data = await response.json();
+    
+    res.json({
+      model: config.openrouter.model,
+      hasToolCalls: !!(data.choices?.[0]?.message?.tool_calls),
+      toolCallsCount: data.choices?.[0]?.message?.tool_calls?.length || 0,
+      content: data.choices?.[0]?.message?.content,
+      toolCalls: data.choices?.[0]?.message?.tool_calls,
+      raw: data
+    });
+    
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Main ask endpoint
 app.post("/api/ask", async (req, res) => {
   const { question } = req.body;
