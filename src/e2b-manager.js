@@ -134,7 +134,7 @@ class E2BManager {
             };
           }
         } catch (e) {
-          // Sandbox is dead
+          logger.debug({ message: 'Warm sandbox health check failed', error: e.message });
         }
       }
       
@@ -147,16 +147,26 @@ class E2BManager {
     }
     
     // No warm sandbox available, create new one
-    const sandbox = await Sandbox.create({
-      template: this.templateId,
-      timeoutMs: this.sandboxTimeout
-    });
-    
-    return {
-      sandbox,
-      createdAt: Date.now(),
-      reuseCount: 0
-    };
+    try {
+      const sandbox = await Sandbox.create({
+        template: this.templateId,
+        timeoutMs: this.sandboxTimeout
+      });
+      
+      return {
+        sandbox,
+        createdAt: Date.now(),
+        reuseCount: 0
+      };
+    } catch (error) {
+      logger.error({ 
+        message: 'Failed to create E2B sandbox',
+        error: error.message,
+        templateId: this.templateId,
+        hasApiKey: !!process.env.E2B_API_KEY
+      });
+      throw error;
+    }
   }
 
   async executeCode(code, options = {}) {
@@ -240,6 +250,10 @@ finally:
           requestId, 
           attempt,
           error: error.message,
+          errorStack: error.stack,
+          errorCode: error.code,
+          templateId: this.templateId,
+          hasApiKey: !!process.env.E2B_API_KEY,
           message: 'Code execution failed' 
         });
         
