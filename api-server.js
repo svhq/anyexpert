@@ -23,6 +23,7 @@ app.get("/api/health", (req, res) => {
 app.get("/api/debug/e2b", async (req, res) => {
   const e2bManager = require("./src/e2b-manager-v3");
   const config = require("./config");
+  const agent = require("./src/unified-agent-modular");
   
   const diagnostics = {
     environment: {
@@ -32,8 +33,10 @@ app.get("/api/debug/e2b", async (req, res) => {
       NODE_ENV: process.env.NODE_ENV || "development",
       OPENROUTER_API_KEY: process.env.OPENROUTER_API_KEY ? "Set (hidden)" : "NOT SET",
       OPENROUTER_MODEL: process.env.OPENROUTER_MODEL || "Not set",
-      MAX_PLANNING_STEPS: process.env.MAX_PLANNING_STEPS || "6 (default)",
-      CONFIDENCE_THRESHOLD: process.env.CONFIDENCE_THRESHOLD || "0.85 (default)"
+      MAX_ROUNDS: process.env.MAX_ROUNDS || "Not set",
+      CONF_THRESHOLD: process.env.CONF_THRESHOLD || "Not set",
+      actualMaxSteps: agent.maxSteps,
+      actualConfThreshold: agent.confidenceThreshold
     },
     config: {
       templateId: e2bManager.templateId,

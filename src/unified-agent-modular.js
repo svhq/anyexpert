@@ -13,8 +13,10 @@ const e2bManager = require('./e2b-manager-v3');
 class ModularUnifiedAgent {
   constructor() {
     this.config = config;
-    this.maxSteps = parseInt(process.env.MAX_PLANNING_STEPS) || 6;
-    this.confidenceThreshold = parseFloat(process.env.CONFIDENCE_THRESHOLD) || 0.85;
+    // Use MAX_ROUNDS from env (your Railway config) or MAX_PLANNING_STEPS or default
+    this.maxSteps = parseInt(process.env.MAX_ROUNDS || process.env.MAX_PLANNING_STEPS) || 6;
+    // Use CONF_THRESHOLD from env (your Railway config) or CONFIDENCE_THRESHOLD or default
+    this.confidenceThreshold = parseFloat(process.env.CONF_THRESHOLD || process.env.CONFIDENCE_THRESHOLD) || 0.85;
     
     // Get current tool configuration
     this.toolConfig = getCurrentConfig();
