@@ -229,6 +229,15 @@ class ModularUnifiedAgent {
    * Plan the next action based on current state and available tools
    */
   async planNextAction(userQuery, steps, chatHistory) {
+    // For very simple arithmetic, skip complex planning
+    if (/^(what|What)\s+(is|are)\s+\d+\s*[\+\-\*\/]\s*\d+\??$/i.test(userQuery.trim())) {
+      return {
+        type: 'reason',
+        rationale: 'Simple arithmetic question - can be answered directly without code execution',
+        parallelActions: null
+      };
+    }
+    
     // Build context from previous steps
     const context = steps.length > 0 ? 
       `\n\nPrevious steps:\n${steps.map(s => `- ${s.action.type}: ${s.result.content.substring(0, 200)}...`).join('\n')}` : '';
@@ -803,12 +812,20 @@ Parallel execution:
   async assessProgress(userQuery, steps) {
     if (steps.length === 0) return 0;
     
+    // For simple arithmetic questions, high confidence after reasoning
+    if (/^(what|What)\s+(is|are)\s+\d+\s*[\+\-\*\/]\s*\d+\??$/i.test(userQuery.trim())) {
+      if (steps.length > 0 && steps[0].action.type === 'reason') {
+        return 0.95; // Very high confidence for simple math
+      }
+    }
+    
     // Simple confidence assessment based on step types and results
     const lastStep = steps[steps.length - 1];
     
     if (lastStep.action.type === 'synthesize') return 0.95;
     if (lastStep.action.type === 'code' && lastStep.result.executionResults) return 0.9;
     if (lastStep.action.type === 'search' && lastStep.result.sources) return 0.8;
+    if (lastStep.action.type === 'reason' && steps.length === 1) return 0.85; // Higher confidence for single reasoning step
     
     return Math.min(0.7 + (steps.length * 0.1), 0.9);
   }
