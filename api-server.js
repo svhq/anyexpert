@@ -29,7 +29,11 @@ app.get("/api/debug/e2b", async (req, res) => {
       E2B_API_KEY: process.env.E2B_API_KEY ? "Set (hidden)" : "NOT SET",
       E2B_TEMPLATE_ID: process.env.E2B_TEMPLATE_ID || "Not set (using default)",
       API_MODE: process.env.API_MODE || "full",
-      NODE_ENV: process.env.NODE_ENV || "development"
+      NODE_ENV: process.env.NODE_ENV || "development",
+      OPENROUTER_API_KEY: process.env.OPENROUTER_API_KEY ? "Set (hidden)" : "NOT SET",
+      OPENROUTER_MODEL: process.env.OPENROUTER_MODEL || "Not set",
+      MAX_PLANNING_STEPS: process.env.MAX_PLANNING_STEPS || "6 (default)",
+      CONFIDENCE_THRESHOLD: process.env.CONFIDENCE_THRESHOLD || "0.85 (default)"
     },
     config: {
       templateId: e2bManager.templateId,

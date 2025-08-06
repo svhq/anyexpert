@@ -834,16 +834,24 @@ Parallel execution:
     if (lastStep.action.type === 'synthesize') return 0.95;
     
     // Check if code execution was actually successful
-    if (lastStep.action.type === 'code' && lastStep.result.executionResults) {
+    if (lastStep.action.type === 'code') {
+      // Check if we have execution results at all
+      if (!lastStep.result.executionResults) {
+        // No execution results means model didn't make tool call
+        return 0.5;
+      }
+      
       // If E2B was skipped or failed, lower confidence
       if (lastStep.result.executionResults.skipped || !lastStep.result.executionResults.success) {
         return 0.5;
       }
-      // Successful code execution with output
-      if (lastStep.result.executionResults.stdout || lastStep.result.executionResults.stderr) {
+      
+      // Successful code execution - trust the success flag
+      if (lastStep.result.executionResults.success === true) {
         return 0.9;
       }
-      return 0.7;
+      
+      return 0.6;
     }
     
     if (lastStep.action.type === 'search' && lastStep.result.sources && lastStep.result.sources.length > 0) {
