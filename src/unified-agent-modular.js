@@ -419,7 +419,9 @@ Parallel execution:
       message: 'Model response for code execution',
       hasToolCalls: !!(response.tool_calls && response.tool_calls.length > 0),
       toolCallsCount: response.tool_calls?.length || 0,
-      contentLength: response.content?.length || 0
+      contentLength: response.content?.length || 0,
+      contentPreview: response.content?.substring(0, 100),
+      toolCalls: response.tool_calls ? JSON.stringify(response.tool_calls).substring(0, 200) : 'none'
     });
     
     if (response.tool_calls && response.tool_calls.length > 0) {
@@ -912,8 +914,8 @@ Parallel execution:
       headers: {
         'Authorization': `Bearer ${this.config.openrouter.apiKey}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': this.config.openrouter.httpReferer,
-        'X-Title': this.config.openrouter.xTitle
+        'HTTP-Referer': this.config.openrouter.headers?.['HTTP-Referer'] || 'https://askanyexpert.ai',
+        'X-Title': this.config.openrouter.headers?.['X-Title'] || 'Ask Any Expert'
       },
       body: JSON.stringify({
         model: this.config.openrouter.model,
@@ -926,10 +928,28 @@ Parallel execution:
     });
 
     if (!response.ok) {
-      throw new Error(`OpenRouter API error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      logger.error({
+        message: 'OpenRouter API error',
+        status: response.status,
+        statusText: response.statusText,
+        error: errorText,
+        model: this.config.openrouter.model
+      });
+      throw new Error(`OpenRouter API error: ${response.status} ${response.statusText} - ${errorText}`);
     }
 
     const data = await response.json();
+    
+    // Log if tool calls were requested but not returned
+    if (options.tools && !data.choices[0].message.tool_calls) {
+      logger.warn({
+        message: 'Tools provided but model did not use them',
+        model: this.config.openrouter.model,
+        toolsProvided: options.tools?.length || 0
+      });
+    }
+    
     return data.choices[0].message;
   }
 
