@@ -5,6 +5,8 @@ const { getCurrentConfig, generateLibraryDocumentation } = require('../config/to
 const webSearch = require('./web-search');
 const searchPlanner = require('./search-planner');
 const e2bManager = require('./e2b-manager-v3');
+const contextManager = require('./context-manager');
+const contextAnalyzer = require('./context-analyzer');
 
 /**
  * Modular Unified Agent - Dynamic tool loading based on API mode
@@ -613,7 +615,7 @@ Parallel execution:
       },
       {
         role: 'user',
-        content: this.buildReasoningPrompt(userQuery, steps, chatHistory)
+        content: await this.buildReasoningPrompt(userQuery, steps, chatHistory)
       }
     ];
 
@@ -684,48 +686,78 @@ Parallel execution:
   }
 
   buildCodePrompt(userQuery, steps, chatHistory) {
-    let prompt = `As an expert, solve this query using Python code: "${userQuery}"\n\n`;
+    // Get relevant context
+    const context = contextManager.selectRelevant(userQuery, chatHistory);
     
+    // Build base prompt
+    let basePrompt = `Write Python code to solve this problem. Use the run_code tool if computation is needed.`;
+    
+    // Add steps context if available
     if (steps.length > 0) {
-      prompt += `Context from previous steps:\n`;
+      basePrompt = `Context from previous steps:\n`;
       steps.forEach((step, i) => {
-        prompt += `${i + 1}. ${step.result.content.substring(0, 300)}...\n`;
+        basePrompt += `${i + 1}. ${step.result.content.substring(0, 300)}...\n`;
       });
-      prompt += `\n`;
+      basePrompt += `\n` + basePrompt;
     }
-
-    prompt += `Write Python code to solve this problem. Use the run_code tool if computation is needed.`;
-    return prompt;
+    
+    // Build contextual prompt
+    return contextManager.buildContextualPrompt(userQuery, context, basePrompt);
   }
 
-  buildReasoningPrompt(userQuery, steps, chatHistory) {
-    let prompt = `As an expert, provide a comprehensive answer to: "${userQuery}"\n\n`;
+  async buildReasoningPrompt(userQuery, steps, chatHistory) {
+    // Get relevant context (now async for semantic analysis)
+    const context = await contextManager.selectRelevant(userQuery, chatHistory);
     
+    // Build base prompt with steps
+    let basePrompt = '';
     if (steps.length > 0) {
-      prompt += `Context from previous analysis:\n`;
+      basePrompt += `Context from previous analysis:\n`;
       steps.forEach((step, i) => {
-        prompt += `${i + 1}. ${step.result.content.substring(0, 400)}...\n`;
+        basePrompt += `${i + 1}. ${step.result.content.substring(0, 400)}...\n`;
       });
-      prompt += `\n`;
+      basePrompt += `\n`;
     }
-
-    prompt += `Provide your expert analysis and answer based on your knowledge and any previous context.`;
-    return prompt;
+    
+    basePrompt += `Provide your expert analysis and answer based on your knowledge and any previous context.`;
+    
+    // Check if we should maintain expert persona
+    if (context.expertsUsed && context.expertsUsed.length > 0) {
+      const lastExpert = context.expertsUsed[context.expertsUsed.length - 1];
+      const shouldSwitch = contextAnalyzer.shouldSwitchExpert(userQuery, lastExpert);
+      
+      if (!shouldSwitch.shouldSwitch) {
+        basePrompt += `\nContinue as ${lastExpert} for consistency.`;
+      } else if (shouldSwitch.isRelated) {
+        basePrompt += `\nTransition smoothly from ${lastExpert} perspective to ${shouldSwitch.newDomain} expertise.`;
+      }
+    }
+    
+    // Build contextual prompt
+    return contextManager.buildContextualPrompt(userQuery, context, basePrompt);
   }
 
   buildSynthesisPrompt(userQuery, steps, chatHistory) {
-    let prompt = `Synthesize a final comprehensive answer for: "${userQuery}"\n\n`;
+    // Get relevant context
+    const context = contextManager.selectRelevant(userQuery, chatHistory);
     
-    prompt += `Based on the following analysis steps:\n`;
+    let basePrompt = `Based on the following analysis steps:\n`;
     steps.forEach((step, i) => {
-      prompt += `\nStep ${i + 1} (${step.action.type}):\n${step.result.content}\n`;
+      basePrompt += `\nStep ${i + 1} (${step.action.type}):\n${step.result.content}\n`;
       if (step.result.sources) {
-        prompt += `Sources: ${step.result.sources.map(s => s.url).join(', ')}\n`;
+        basePrompt += `Sources: ${step.result.sources.map(s => s.url).join(', ')}\n`;
       }
     });
 
-    prompt += `\nProvide a comprehensive final answer that synthesizes all the information above.`;
-    return prompt;
+    basePrompt += `\nProvide a comprehensive final answer that synthesizes all the information above.`;
+    
+    // Add persona continuity if relevant
+    if (context.expertsUsed && context.expertsUsed.length > 0) {
+      basePrompt += `\nMaintain the expert perspective established in this conversation.`;
+    }
+    
+    // Build contextual prompt
+    return contextManager.buildContextualPrompt(userQuery, context, basePrompt);
   }
 
   buildScrapePrompt(userQuery, steps, chatHistory) {
