@@ -275,8 +275,8 @@ Return ONLY valid JSON:
 
 Guidelines:
 - search: Current information, facts, recent events
-- code: Math problems (including simple arithmetic like "what is 2+2"), calculations, data analysis, algorithms
-- reason: Analysis using existing knowledge, definitions, explanations
+- code: Calculations, data analysis, algorithms
+- reason: Analysis using existing knowledge
 - synthesize: Final answer when sufficient information gathered
 - scrape: Extract full content from specific URLs when needed
 
@@ -385,18 +385,8 @@ Parallel execution:
   async executeCode(userQuery, steps, chatHistory, requestId) {
     // Support both code extraction and tool calling
     const useToolCalling = this.config.preferToolCalling ?? true;
-    const hasRunCode = this.hasToolAvailable('run_code');
     
-    logger.info({
-      requestId,
-      message: 'Code execution path selection',
-      preferToolCalling: this.config.preferToolCalling,
-      useToolCalling,
-      hasRunCode,
-      path: useToolCalling && hasRunCode ? 'tool_calling' : 'code_extraction'
-    });
-    
-    if (useToolCalling && hasRunCode) {
+    if (useToolCalling && this.hasToolAvailable('run_code')) {
       // Modern tool calling approach
       return await this.executeCodeViaTools(userQuery, steps, chatHistory, requestId);
     } else {
@@ -423,17 +413,6 @@ Parallel execution:
       max_tokens: 50000
     });
     
-    // Log if model made a tool call or not
-    logger.info({
-      requestId,
-      message: 'Model response for code execution',
-      hasToolCalls: !!(response.tool_calls && response.tool_calls.length > 0),
-      toolCallsCount: response.tool_calls?.length || 0,
-      contentLength: response.content?.length || 0,
-      contentPreview: response.content?.substring(0, 100),
-      toolCalls: response.tool_calls ? JSON.stringify(response.tool_calls).substring(0, 200) : 'none'
-    });
-    
     if (response.tool_calls && response.tool_calls.length > 0) {
       const toolCall = response.tool_calls[0];
       let code, timeout;
@@ -458,11 +437,6 @@ Parallel execution:
       
       // Check if code is actually present
       if (!code) {
-        logger.error({
-          requestId,
-          message: 'No code provided in tool call',
-          toolCallArgs: toolCall.function.arguments
-        });
         return {
           content: 'No code provided for execution',
           tokensUsed: response.usage?.total_tokens || 0,
@@ -475,8 +449,8 @@ Parallel execution:
         type: 'code_execution', 
         method: 'tool_calling',
         language: 'python',
-        code: code.substring(0, 100),
-        codeLength: code.length
+        codeLength: code.length,
+        success: true
       });
       
       const executionResult = await e2bManager.executeCode(code, { 
@@ -484,28 +458,8 @@ Parallel execution:
         userId: 'modular-agent'
       });
       
-      // Log execution result for debugging
-      logger.info({
-        requestId,
-        message: 'E2B execution result',
-        success: executionResult.success,
-        skipped: executionResult.skipped,
-        stdout: executionResult.stdout?.substring(0, 100),
-        stderr: executionResult.stderr?.substring(0, 100),
-        modelResponseContent: response.content?.substring(0, 200)
-      });
-      
       // If E2B was skipped or failed, adjust confidence
       const confidence = (executionResult.skipped || !executionResult.success) ? 0.6 : 0.9;
-      
-      logger.info({
-        requestId,
-        message: 'Code execution final result',
-        executionSuccess: executionResult.success,
-        executionSkipped: executionResult.skipped,
-        assignedConfidence: confidence,
-        hadToolCall: true
-      });
       
       return {
         content: response.content || `Code executed: ${code.substring(0, 50)}...`,
@@ -516,15 +470,10 @@ Parallel execution:
       };
     }
     
-    // Model chose not to use tool - check if response is good enough
-    const hasGoodAnswer = response.content && response.content.length > 50 && 
-                          (response.content.includes('answer') || response.content.includes('result') || 
-                           response.content.includes('=') || response.content.match(/\d+/));
-    
     return {
       content: response.content,
       tokensUsed: response.usage?.total_tokens || 0,
-      confidence: hasGoodAnswer ? 0.85 : 0.6
+      confidence: 0.6
     };
   }
 
@@ -893,38 +842,10 @@ Parallel execution:
     const lastStep = steps[steps.length - 1];
     
     if (lastStep.action.type === 'synthesize') return 0.95;
+    if (lastStep.action.type === 'code' && lastStep.result.executionResults) return 0.9;
+    if (lastStep.action.type === 'search' && lastStep.result.sources) return 0.8;
     
-    // Check if code execution was actually successful
-    if (lastStep.action.type === 'code') {
-      // Check if we have execution results at all
-      if (!lastStep.result.executionResults) {
-        // No execution results means model didn't make tool call
-        return 0.5;
-      }
-      
-      // If E2B was skipped or failed, lower confidence
-      if (lastStep.result.executionResults.skipped || !lastStep.result.executionResults.success) {
-        return 0.5;
-      }
-      
-      // Successful code execution - trust the success flag
-      if (lastStep.result.executionResults.success === true) {
-        return 0.9;
-      }
-      
-      return 0.6;
-    }
-    
-    if (lastStep.action.type === 'search' && lastStep.result.sources && lastStep.result.sources.length > 0) {
-      return 0.8;
-    }
-    
-    // For reasoning steps, check if we have meaningful content
-    if (lastStep.action.type === 'reason' && lastStep.result.content && lastStep.result.content.length > 100) {
-      return 0.85;
-    }
-    
-    return Math.min(0.5 + (steps.length * 0.1), 0.85);
+    return Math.min(0.7 + (steps.length * 0.1), 0.9);
   }
 
   async callModel(messages, options = {}) {
@@ -947,28 +868,10 @@ Parallel execution:
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
-      logger.error({
-        message: 'OpenRouter API error',
-        status: response.status,
-        statusText: response.statusText,
-        error: errorText,
-        model: this.config.openrouter.model
-      });
-      throw new Error(`OpenRouter API error: ${response.status} ${response.statusText} - ${errorText}`);
+      throw new Error(`OpenRouter API error: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
-    
-    // Log if tool calls were requested but not returned
-    if (options.tools && !data.choices[0].message.tool_calls) {
-      logger.warn({
-        message: 'Tools provided but model did not use them',
-        model: this.config.openrouter.model,
-        toolsProvided: options.tools?.length || 0
-      });
-    }
-    
     return data.choices[0].message;
   }
 
