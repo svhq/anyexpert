@@ -1,3 +1,0 @@
-# E2B Custom Template Configuration
-template_id = "askanyexpert-prod"
-dockerfile = "e2b.Dockerfile"
