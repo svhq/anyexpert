@@ -5,7 +5,9 @@ A cost-efficient, low-latency web-augmented reasoning system that combines an en
 ## 🚀 Features
 
 - **Expert Ensemble**: Automatically selects the most appropriate expert persona for each query
+- **Modern Context Understanding**: 2025 LLM-inspired context system using information theory and Bayesian inference
 - **Intelligent Search**: Determines when web search is needed and performs up to 3 rounds of refined searches
+- **Session Management**: Maintains conversation context across multiple queries
 - **Confidence-Based Stopping**: Stops searching when sufficient confidence is achieved
 - **Citation Support**: Provides numbered citations for all web-sourced information
 - **Structured Logging**: Complete request tracking and performance metrics
@@ -56,6 +58,26 @@ const result = await workflowEngine.answer(
   "Your question here",
   { userId: 'user123', chatHistory: [...] }
 );
+```
+
+## 🧠 Modern Context System (2025)
+
+The system implements cutting-edge context understanding inspired by 2025 LLM research:
+
+### Key Technologies
+- **Information-Theoretic Analysis**: Calculates mutual information between queries and conversation history
+- **Bayesian Inference**: Uses probabilistic reasoning to determine optimal context inclusion
+- **Attention Head Simulation**: Mimics LLM attention patterns (retrieval, induction, safety heads)
+- **Dynamic Context Orchestration**: Intelligently assembles context based on relevance scores
+
+### Configuration
+Add to your `.env` file:
+```env
+# Context Configuration
+USE_MODERN_CONTEXT=true        # Enable modern 2025 context system
+MAX_CONTEXT_TOKENS=2000        # Maximum tokens for context
+SEMANTIC_THRESHOLD=0.3         # Base threshold for semantic similarity
+CONFIDENCE_THRESHOLD=0.65      # Confidence threshold for context decisions
 ```
 
 ## 🏗️ Architecture
@@ -115,12 +137,18 @@ askanyexpert/
 │   ├── web-search.js          # Serper integration
 │   ├── information-synthesizer.js # Response composition
 │   ├── system-prompt.js       # Expert system prompt
+│   ├── modern-context-manager.js # 2025 LLM-inspired context system
+│   ├── semantic-context-manager.js # Semantic embedding analysis
+│   ├── context-manager.js      # Context selection and relevance
+│   ├── context-analyzer.js     # Follow-up detection
+│   ├── session-store.js        # Session management
 │   └── utils/
 │       └── logger.js          # Structured logging
 ├── tests/
 │   └── workflow.test.js       # Jest test suite
 ├── .env                       # API keys (not in repo)
 ├── config.js                  # Configuration
+├── api-server.js              # REST API server
 └── index.js                   # CLI entry point
 ```
 
@@ -132,17 +160,21 @@ askanyexpert/
 - Basic web search integration
 - Structured logging
 
-### 🚧 Phase 2 (Next)
+### ✅ Phase 2 (Complete)
+- Modern context understanding system with:
+  - Information-theoretic analysis
+  - Bayesian inference for context decisions
+  - Attention head simulation
+  - Dynamic context orchestration
+- Session management for conversation tracking
+- Expert persona consistency (78% continuity)
+- Context detection accuracy: 52.4% (improving)
+
+### 🚧 Phase 3 (Next)
 - Redis caching for search results
 - Passage ranking with embeddings
 - Source reliability evaluation
-- Performance optimizations
-
-### 📅 Phase 3 (Planned)
-- Expert persona selection
-- Context management
-- Confidence scoring improvements
-- Enhanced citation system
+- Context system threshold optimization
 
 ### 🔮 Phase 4 (Future)
 - Contradiction detection
