@@ -93,14 +93,13 @@
       pyarrow==16.1.0 \
       pulp==2.8.0
 
-  # Create verification script
+# Create verification script
   RUN cat > /tmp/verify_libraries.py << 'EOF'
   #!/usr/bin/env python3
   import sys
   import importlib
 
   def verify_library(name, import_name=None):
-      """Verify a library is installed and get its version"""
       import_name = import_name or name
       try:
           module = importlib.import_module(import_name)
@@ -115,60 +114,115 @@
   print("Ask Any Expert - E2B Template Library Verification")
   print("=" * 60)
 
-  # Core libraries
-  print("\n📊 Core Scientific Computing:")
+  print("\\n📊 Core Scientific Computing:")
   verify_library("numpy")
   verify_library("scipy")
   verify_library("pandas")
   verify_library("sympy")
   verify_library("mpmath")
 
-  print("\n💰 Financial & Statistical:")
+  print("\\n💰 Financial & Statistical:")
   verify_library("numpy_financial")
   verify_library("statsmodels")
   verify_library("yfinance")
   verify_library("QuantLib")
 
-  print("\n📈 Visualization:")
+  print("\\n📈 Visualization:")
   verify_library("matplotlib")
   verify_library("seaborn")
   verify_library("plotly")
   verify_library("PIL", "PIL")
 
-  print("\n🤖 Machine Learning & AI:")
+  print("\\n🤖 Machine Learning & AI:")
   verify_library("sklearn", "sklearn")
   verify_library("transformers")
   verify_library("sentence_transformers")
   verify_library("spacy")
 
-  print("\n🧬 Domain-Specific:")
+  print("\\n🧬 Domain-Specific:")
   verify_library("biopython", "Bio")
   verify_library("rdkit", "rdkit")
   verify_library("geopandas")
   verify_library("networkx")
 
-  print("\n🌐 Web & Data:")
+  print("\\n🌐 Web & Data:")
   verify_library("beautifulsoup4", "bs4")
   verify_library("requests")
   verify_library("lxml")
   verify_library("pdfminer", "pdfminer")
 
-  print("\n" + "=" * 60)
+  print("\\n" + "=" * 60)
   print("Template verification complete!")
   print("=" * 60)
   EOF
 
-  # Run verification
-  RUN python /tmp/verify_libraries.py
+  Or even simpler - just remove the verification script entirely and use this shorter version:
 
-  # Create a marker file with template information
-  RUN echo "Ask Any Expert E2B Template v2.0.0" > /tmp/template_info.txt && \
-      echo "Build Date: $(date)" >> /tmp/template_info.txt && \
-      echo "Python Version: $(python --version)" >> /tmp/template_info.txt && \
-      echo "Total Packages: $(pip list | wc -l)" >> /tmp/template_info.txt
+  # E2B Unified Template for Ask Any Expert
+  # Version: 2.0.0
 
-  # Set working directory
+  FROM e2bdev/code-interpreter:latest
+
+  ENV DEBIAN_FRONTEND=noninteractive
+  ENV PYTHONUNBUFFERED=1
+
+  # Install system dependencies
+  RUN apt-get update && apt-get install -y --no-install-recommends \
+      build-essential \
+      libxml2-dev \
+      libxslt-dev \
+      libgeos-dev \
+      libgdal-dev \
+      libproj-dev \
+      libspatialindex-dev \
+      libxrender1 \
+      libxext6 \
+      git \
+      && rm -rf /var/lib/apt/lists/*
+
+  # Upgrade pip
+  RUN python -m pip install --upgrade pip setuptools wheel
+
+  # Install all libraries
+  RUN pip install --no-cache-dir \
+      numpy==1.26.4 \
+      scipy==1.13.1 \
+      pandas==2.2.2 \
+      sympy==1.12.1 \
+      mpmath==1.3.0 \
+      numpy-financial==1.0.0 \
+      statsmodels==0.14.1 \
+      yfinance==0.2.40 \
+      pandas-datareader==0.10.0 \
+      matplotlib==3.9.0 \
+      seaborn==0.13.2 \
+      plotly==5.22.0 \
+      pillow==10.3.0 \
+      scikit-learn==1.5.0 \
+      transformers==4.42.0 \
+      sentence-transformers==3.0.0 \
+      spacy==3.7.4 \
+      biopython==1.83 \
+      rdkit \
+      geopandas==0.14.4 \
+      shapely==2.0.4 \
+      networkx==3.3 \
+      beautifulsoup4==4.12.3 \
+      requests==2.32.3 \
+      lxml==5.2.1 \
+      pdfminer.six==20241030 \
+      pypdf==4.3.0 \
+      QuantLib \
+      python-dateutil \
+      openpyxl \
+      xlrd \
+      polars==0.20.21 \
+      pyarrow==16.1.0 \
+      pulp==2.8.0
+
+  # Download spaCy model
+  RUN python -m spacy download en_core_web_sm
+
   WORKDIR /home/user
 
-  # Final message
   RUN echo "✅ Ask Any Expert E2B Template Ready!"
