@@ -50,7 +50,7 @@
       beautifulsoup4==4.12.3 \
       requests==2.32.3 \
       lxml==5.2.1 \
-      pdfminer.six==20241030 \
+      pdfminer.six==20231228 \
       pypdf==4.3.0 \
       QuantLib \
       python-dateutil \
