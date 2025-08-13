@@ -37,31 +37,29 @@
             e2b auth info || echo "Auth info not available, but continuing..."
 
         - name: Build E2B Template with Retry
-          working-directory: ./e2b-unified
-          env:
-            E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
-            DOCKER_CLIENT_TIMEOUT: 120
-            COMPOSE_HTTP_TIMEOUT: 120
-          run: |
-            echo "Building E2B template..."
+    working-directory: ./e2b-unified
+    env:
+      E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
+    run: |
+      echo "Building E2B template with startup command..."
 
-            # Try up to 3 times with increasing delays
-            for i in 1 2 3; do
-              echo "Attempt $i of 3..."
+      # Try up to 3 times with increasing delays
+      for i in 1 2 3; do
+        echo "Attempt $i of 3..."
 
-              if e2b template build; then
-                echo "Build succeeded!"
-                break
-              else
-                if [ $i -lt 3 ]; then
-                  echo "Build failed, waiting $(($i * 30)) seconds before retry..."
-                  sleep $(($i * 30))
-                else
-                  echo "Build failed after 3 attempts"
-                  exit 1
-                fi
-              fi
-            done
+        if e2b template build -c "python3"; then
+          echo "Build succeeded!"
+          break
+        else
+          if [ $i -lt 3 ]; then
+            echo "Build failed, waiting $(($i * 30)) seconds before retry..."
+            sleep $(($i * 30))
+          else
+            echo "Build failed after 3 attempts"
+            exit 1
+          fi
+        fi
+      done
 
         - name: Extract Template ID
           working-directory: ./e2b-unified
