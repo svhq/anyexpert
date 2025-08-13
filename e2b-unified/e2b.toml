@@ -1,6 +1,6 @@
 # E2B Template Configuration
-# This will create a new template with all libraries
+# This will update the existing prod-all template with all libraries
 
 dockerfile = "e2b.Dockerfile"
 template_name = "askanyexpert-ultimate"
-template_id = ""
+template_id = "izdx3u0apwnbdatk6pmh"
