@@ -24,17 +24,13 @@
         - name: Install E2B CLI
           run: npm install -g @e2b/cli@latest
 
-        - name: Authenticate with E2B
+        - name: Build E2B Template
+          working-directory: ./e2b-unified
           env:
             E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
           run: |
-            echo "Authenticating with E2B..."
-            e2b auth login --access-token $E2B_ACCESS_TOKEN
-
-        - name: Build E2B Template
-          working-directory: ./e2b-unified
-          run: |
-            echo "Building E2B template..."
+            echo "Building E2B template with authentication..."
+            # E2B CLI will use E2B_ACCESS_TOKEN from environment
             e2b template build
 
         - name: Extract Template ID
