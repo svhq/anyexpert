@@ -24,14 +24,44 @@
         - name: Install E2B CLI
           run: npm install -g @e2b/cli@latest
 
-        - name: Build E2B Template
-          working-directory: ./e2b-unified
+        - name: Test E2B Connection
           env:
             E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
           run: |
-            echo "Building E2B template with authentication..."
-            # E2B CLI will use E2B_ACCESS_TOKEN from environment
-            e2b template build
+            echo "Testing E2B connection..."
+            # Set longer timeout for Docker operations
+            export DOCKER_CLIENT_TIMEOUT=120
+            export COMPOSE_HTTP_TIMEOUT=120
+
+            # Test the token is valid
+            e2b auth info || echo "Auth info not available, but continuing..."
+
+        - name: Build E2B Template with Retry
+          working-directory: ./e2b-unified
+          env:
+            E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
+            DOCKER_CLIENT_TIMEOUT: 120
+            COMPOSE_HTTP_TIMEOUT: 120
+          run: |
+            echo "Building E2B template..."
+
+            # Try up to 3 times with increasing delays
+            for i in 1 2 3; do
+              echo "Attempt $i of 3..."
+
+              if e2b template build; then
+                echo "Build succeeded!"
+                break
+              else
+                if [ $i -lt 3 ]; then
+                  echo "Build failed, waiting $(($i * 30)) seconds before retry..."
+                  sleep $(($i * 30))
+                else
+                  echo "Build failed after 3 attempts"
+                  exit 1
+                fi
+              fi
+            done
 
         - name: Extract Template ID
           working-directory: ./e2b-unified
