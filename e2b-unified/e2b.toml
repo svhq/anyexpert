@@ -1,6 +1,8 @@
-# E2B Template Configuration
-# This will update the existing prod-all template with all libraries
+# E2B Sandbox Template Configuration
+# This will create a NEW template when built
 
-dockerfile = "e2b.Dockerfile"
-template_name = "askanyexpert-ultimate"
-template_id = "izdx3u0apwnbdatk6pmh"
+team_id = "12c04104-e2c1-42a2-92a0-7625ffcba73a"
+dockerfile = "e2b.Dockerfile" 
+# NOTE: template_id is intentionally commented out to create a NEW template
+# template_id will be auto-generated on first build
+# template_id = "WILL_BE_GENERATED"
