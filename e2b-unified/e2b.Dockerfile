@@ -1,4 +1,4 @@
-# E2B Unified Template for Ask Any Expert
+  # E2B Unified Template for Ask Any Expert
   # Version: 2.0.0
 
   FROM e2bdev/code-interpreter:latest
@@ -63,6 +63,41 @@
   # Download spaCy model
   RUN python -m spacy download en_core_web_sm
 
+  # Copy startup script (CRITICAL - THIS WAS MISSING!)
+  COPY startup.sh /root/startup.sh
+  RUN chmod +x /root/startup.sh
+
   WORKDIR /home/user
 
   RUN echo "Ask Any Expert E2B Template Ready!"
+
+  Critical Addition:
+
+  # Copy startup script (CRITICAL - THIS WAS MISSING!)
+  COPY startup.sh /root/startup.sh
+  RUN chmod +x /root/startup.sh
+
+  Also Need the startup.sh File:
+
+  Make sure you create e2b-unified/startup.sh with this content:
+
+  #!/bin/bash
+  # E2B Sandbox Startup Script
+
+  echo "🚀 Initializing Ask Any Expert E2B Sandbox..."
+
+  # Ensure Jupyter kernel is ready (for code-interpreter base)
+  if [ -f "/root/.jupyter/start-up.sh" ]; then
+      /root/.jupyter/start-up.sh
+  fi
+
+  # Quick verification
+  python3 << 'EOF'
+  import sys
+  print("=" * 60)
+  print("✅ Ask Any Expert Sandbox Ready!")
+  print(f"Python: {sys.version}")
+  print("=" * 60)
+  EOF
+
+  echo "✅ Sandbox initialization complete"
