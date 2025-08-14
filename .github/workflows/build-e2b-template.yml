@@ -80,7 +80,7 @@
             branch: ${{ github.ref }}
 
         - name: Upload Template ID as Artifact
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4  # UPDATED FROM v3 to v4
           with:
             name: template-id
             path: e2b-unified/template_id.txt
