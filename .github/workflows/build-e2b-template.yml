@@ -23,25 +23,33 @@
         - name: Install E2B CLI
           run: npm install -g @e2b/cli@latest
 
-        - name: Initialize E2B Template
+        - name: Setup E2B Template
           working-directory: ./e2b-unified
           env:
             E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
           run: |
-            echo "Initializing E2B template..."
+            echo "Setting up E2B template..."
 
-            # Remove old e2b.toml if it exists
-            rm -f e2b.toml
+            # Check if e2b.toml exists, if not create it
+            if [ ! -f e2b.toml ]; then
+              echo "Creating e2b.toml..."
 
-            # Initialize - this creates a NEW e2b.toml and basic Dockerfile
-            e2b template init
+              # Temporarily rename our Dockerfile
+              mv e2b.Dockerfile e2b.Dockerfile.custom
 
-            echo "Template initialized. e2b.toml created:"
+              # Initialize to create e2b.toml
+              e2b template init
+
+              # Move our custom Dockerfile back
+              mv e2b.Dockerfile.custom e2b.Dockerfile
+
+              echo "e2b.toml created"
+            else
+              echo "e2b.toml already exists"
+            fi
+
+            echo "Current e2b.toml:"
             cat e2b.toml
-
-            # The init creates e2b.Dockerfile, but we'll use our custom one
-            # Our custom Dockerfile is already in the repo
-            echo "Using our custom e2b.Dockerfile with all libraries..."
 
         - name: Build E2B Template
           working-directory: ./e2b-unified
@@ -50,7 +58,7 @@
           run: |
             echo "Building E2B template..."
 
-            # Build with the CORRECT Jupyter startup command (not our non-existent startup.sh)
+            # Build with the Jupyter startup command from base image
             e2b template build -c "/root/.jupyter/start-up.sh"
 
             echo "Build completed!"
@@ -95,7 +103,12 @@
             echo "**Template ID:** \`${{ env.TEMPLATE_ID }}\`" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### 📦 Included Libraries (26+):" >> $GITHUB_STEP_SUMMARY
-            echo "All libraries from our custom Dockerfile are included." >> $GITHUB_STEP_SUMMARY
+            echo "- numpy, scipy, pandas, sympy, mpmath" >> $GITHUB_STEP_SUMMARY
+            echo "- numpy-financial, statsmodels, yfinance, quantlib" >> $GITHUB_STEP_SUMMARY
+            echo "- scikit-learn, transformers, spacy" >> $GITHUB_STEP_SUMMARY
+            echo "- biopython, rdkit, geopandas" >> $GITHUB_STEP_SUMMARY
+            echo "- matplotlib, seaborn, plotly" >> $GITHUB_STEP_SUMMARY
+            echo "- And many more..." >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### 🔧 Next Steps:" >> $GITHUB_STEP_SUMMARY
             echo "1. **Pull the changes to Replit:**" >> $GITHUB_STEP_SUMMARY
