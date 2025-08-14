@@ -63,10 +63,6 @@
   # Download spaCy model
   RUN python -m spacy download en_core_web_sm
 
-  # Copy startup script
-  COPY startup.sh /root/startup.sh
-  RUN chmod +x /root/startup.sh
-
   WORKDIR /home/user
 
   RUN echo "Ask Any Expert E2B Template Ready!"
