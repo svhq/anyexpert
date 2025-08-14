@@ -30,26 +30,24 @@
           run: |
             echo "Setting up E2B template..."
 
-            # Check if e2b.toml exists, if not create it
+            # Create e2b.toml manually if it doesn't exist
             if [ ! -f e2b.toml ]; then
-              echo "Creating e2b.toml..."
-
-              # Temporarily rename our Dockerfile
-              mv e2b.Dockerfile e2b.Dockerfile.custom
-
-              # Initialize to create e2b.toml
-              e2b template init
-
-              # Move our custom Dockerfile back
-              mv e2b.Dockerfile.custom e2b.Dockerfile
-
+              echo "Creating e2b.toml manually..."
+              cat > e2b.toml << 'EOF'
+            # E2B Template Configuration
+            team_id = "12c04104-e2c1-42a2-92a0-7625ffcba73a"
+            dockerfile = "e2b.Dockerfile"
+            template_id = "askanyexpert-full-v3"
+            template_name = "Ask Any Expert Full"
+            EOF
               echo "e2b.toml created"
-            else
-              echo "e2b.toml already exists"
             fi
 
             echo "Current e2b.toml:"
             cat e2b.toml
+
+            echo "Current directory contents:"
+            ls -la
 
         - name: Build E2B Template
           working-directory: ./e2b-unified
@@ -97,18 +95,19 @@
 
         - name: Create Summary
           run: |
-            echo "## ✅ NEW E2B Template Built Successfully" >> $GITHUB_STEP_SUMMARY
+            echo "## ✅ E2B Template Built Successfully" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### 🎉 Fresh Template Created!" >> $GITHUB_STEP_SUMMARY
+            echo "### 🎉 Template Created/Updated!" >> $GITHUB_STEP_SUMMARY
             echo "**Template ID:** \`${{ env.TEMPLATE_ID }}\`" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### 📦 Included Libraries (26+):" >> $GITHUB_STEP_SUMMARY
-            echo "- numpy, scipy, pandas, sympy, mpmath" >> $GITHUB_STEP_SUMMARY
-            echo "- numpy-financial, statsmodels, yfinance, quantlib" >> $GITHUB_STEP_SUMMARY
-            echo "- scikit-learn, transformers, spacy" >> $GITHUB_STEP_SUMMARY
-            echo "- biopython, rdkit, geopandas" >> $GITHUB_STEP_SUMMARY
-            echo "- matplotlib, seaborn, plotly" >> $GITHUB_STEP_SUMMARY
-            echo "- And many more..." >> $GITHUB_STEP_SUMMARY
+            echo "### 📦 Included Libraries (30+):" >> $GITHUB_STEP_SUMMARY
+            echo "- **Core:** numpy, scipy, pandas, sympy, mpmath" >> $GITHUB_STEP_SUMMARY
+            echo "- **Financial:** numpy-financial, statsmodels, yfinance, quantlib" >> $GITHUB_STEP_SUMMARY
+            echo "- **ML/AI:** scikit-learn, transformers, sentence-transformers, spacy" >> $GITHUB_STEP_SUMMARY
+            echo "- **Bio/Chem:** biopython, rdkit" >> $GITHUB_STEP_SUMMARY
+            echo "- **Geo:** geopandas, shapely" >> $GITHUB_STEP_SUMMARY
+            echo "- **Viz:** matplotlib, seaborn, plotly" >> $GITHUB_STEP_SUMMARY
+            echo "- **Web:** beautifulsoup4, requests, lxml" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### 🔧 Next Steps:" >> $GITHUB_STEP_SUMMARY
             echo "1. **Pull the changes to Replit:**" >> $GITHUB_STEP_SUMMARY
@@ -124,4 +123,9 @@
             echo "3. **Update config/e2b-template-config.js:**" >> $GITHUB_STEP_SUMMARY
             echo "   \`\`\`javascript" >> $GITHUB_STEP_SUMMARY
             echo "   const CURRENT_TEMPLATE_ID = '${{ env.TEMPLATE_ID }}';" >> $GITHUB_STEP_SUMMARY
+            echo "   \`\`\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "4. **Test the new template:**" >> $GITHUB_STEP_SUMMARY
+            echo "   \`\`\`bash" >> $GITHUB_STEP_SUMMARY
+            echo "   node test-direct-sdk.js" >> $GITHUB_STEP_SUMMARY
             echo "   \`\`\`" >> $GITHUB_STEP_SUMMARY
