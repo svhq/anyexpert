@@ -1,4 +1,4 @@
- name: Build E2B Template
+  name: Build E2B Template
 
   on:
     workflow_dispatch:
