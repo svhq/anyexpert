@@ -5,7 +5,6 @@
     push:
       paths:
         - 'e2b-unified/e2b.Dockerfile'
-        - 'e2b-unified/e2b.toml'
         - '.github/workflows/build-e2b-template.yml'
 
   jobs:
@@ -24,55 +23,57 @@
         - name: Install E2B CLI
           run: npm install -g @e2b/cli@latest
 
-        - name: Test E2B Connection
-          env:
-            E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
-          run: |
-            echo "Testing E2B connection..."
-            e2b auth info || echo "Auth info not available, but continuing..."
-
-        - name: Initialize and Build E2B Template
+        - name: Initialize E2B Template
           working-directory: ./e2b-unified
           env:
             E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
           run: |
-            echo "Initializing NEW E2B template..."
+            echo "Initializing E2B template..."
 
-            # Method 1: Initialize first (creates proper e2b.toml)
+            # Remove old e2b.toml if it exists
+            rm -f e2b.toml
+
+            # Initialize - this creates a NEW e2b.toml and basic Dockerfile
             e2b template init
 
-            # Copy our Dockerfile over the default one
-            echo "Using our custom Dockerfile..."
+            echo "Template initialized. e2b.toml created:"
+            cat e2b.toml
 
-            # Now build with our startup command
-            echo "Building template with all libraries..."
-            e2b template build -c "/root/startup.sh"
+            # The init creates e2b.Dockerfile, but we'll use our custom one
+            # Our custom Dockerfile is already in the repo
+            echo "Using our custom e2b.Dockerfile with all libraries..."
+
+        - name: Build E2B Template
+          working-directory: ./e2b-unified
+          env:
+            E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
+          run: |
+            echo "Building E2B template..."
+
+            # Build with the CORRECT Jupyter startup command (not our non-existent startup.sh)
+            e2b template build -c "/root/.jupyter/start-up.sh"
 
             echo "Build completed!"
 
-        - name: Extract and Save Template ID
+            # Show the updated e2b.toml with template ID
+            echo "Final e2b.toml:"
+            cat e2b.toml
+
+        - name: Extract Template ID
           working-directory: ./e2b-unified
           run: |
-            echo "Extracting new template ID..."
-            # The template ID should now be in e2b.toml
-            if grep -q "template_id" e2b.toml; then
-              TEMPLATE_ID=$(grep "template_id" e2b.toml | cut -d'"' -f2)
-              echo "New Template ID: $TEMPLATE_ID"
-              echo "TEMPLATE_ID=$TEMPLATE_ID" >> $GITHUB_ENV
-              
-              # Save to a file for artifact
-              echo "$TEMPLATE_ID" > template_id.txt
-            else
-              echo "ERROR: Template ID not found in e2b.toml after build"
-              exit 1
-            fi
+            echo "Extracting template ID..."
+            TEMPLATE_ID=$(grep "template_id" e2b.toml | cut -d'"' -f2)
+            echo "New Template ID: $TEMPLATE_ID"
+            echo "TEMPLATE_ID=$TEMPLATE_ID" >> $GITHUB_ENV
+            echo "$TEMPLATE_ID" > template_id.txt
 
         - name: Commit Updated e2b.toml
           run: |
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
             git add e2b-unified/e2b.toml
-            git diff --staged --quiet || git commit -m "Update e2b.toml with new template ID: ${{ env.TEMPLATE_ID }}"
+            git diff --staged --quiet || git commit -m "Add e2b.toml with new template ID: ${{ env.TEMPLATE_ID }}"
 
         - name: Push changes
           uses: ad-m/github-push-action@master
@@ -90,16 +91,11 @@
           run: |
             echo "## ✅ NEW E2B Template Built Successfully" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### 🎉 New Template Created!" >> $GITHUB_STEP_SUMMARY
+            echo "### 🎉 Fresh Template Created!" >> $GITHUB_STEP_SUMMARY
             echo "**Template ID:** \`${{ env.TEMPLATE_ID }}\`" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### 📦 Included Libraries:" >> $GITHUB_STEP_SUMMARY
-            echo "- ✅ All 26+ scientific computing libraries" >> $GITHUB_STEP_SUMMARY
-            echo "- ✅ numpy, scipy, pandas, sympy, mpmath" >> $GITHUB_STEP_SUMMARY
-            echo "- ✅ numpy-financial, statsmodels, yfinance, quantlib" >> $GITHUB_STEP_SUMMARY
-            echo "- ✅ scikit-learn, transformers, spacy" >> $GITHUB_STEP_SUMMARY
-            echo "- ✅ biopython, rdkit, geopandas" >> $GITHUB_STEP_SUMMARY
-            echo "- ✅ matplotlib, seaborn, plotly" >> $GITHUB_STEP_SUMMARY
+            echo "### 📦 Included Libraries (26+):" >> $GITHUB_STEP_SUMMARY
+            echo "All libraries from our custom Dockerfile are included." >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### 🔧 Next Steps:" >> $GITHUB_STEP_SUMMARY
             echo "1. **Pull the changes to Replit:**" >> $GITHUB_STEP_SUMMARY
@@ -107,21 +103,12 @@
             echo "   git pull" >> $GITHUB_STEP_SUMMARY
             echo "   \`\`\`" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "2. **Update your \`.env\` file in Replit:**" >> $GITHUB_STEP_SUMMARY
+            echo "2. **Update .env in Replit:**" >> $GITHUB_STEP_SUMMARY
             echo "   \`\`\`" >> $GITHUB_STEP_SUMMARY
             echo "   E2B_TEMPLATE_ID=${{ env.TEMPLATE_ID }}" >> $GITHUB_STEP_SUMMARY
             echo "   \`\`\`" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "3. **Update \`config/e2b-template-config.js\`:**" >> $GITHUB_STEP_SUMMARY
+            echo "3. **Update config/e2b-template-config.js:**" >> $GITHUB_STEP_SUMMARY
             echo "   \`\`\`javascript" >> $GITHUB_STEP_SUMMARY
             echo "   const CURRENT_TEMPLATE_ID = '${{ env.TEMPLATE_ID }}';" >> $GITHUB_STEP_SUMMARY
             echo "   \`\`\`" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "4. **Test the new template:**" >> $GITHUB_STEP_SUMMARY
-            echo "   \`\`\`bash" >> $GITHUB_STEP_SUMMARY
-            echo "   node test-direct-sdk.js" >> $GITHUB_STEP_SUMMARY
-            echo "   \`\`\`" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### ⚠️ Important:" >> $GITHUB_STEP_SUMMARY
-            echo "This is a NEW template with all libraries pre-installed." >> $GITHUB_STEP_SUMMARY
-            echo "The old template \`izdx3u0apwnbdatk6pmh\` is still available if needed." >> $GITHUB_STEP_SUMMARY
