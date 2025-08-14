@@ -1,4 +1,4 @@
-  name: Build E2B Template
+ name: Build E2B Template
 
   on:
     workflow_dispatch:
@@ -31,22 +31,23 @@
             echo "Testing E2B connection..."
             e2b auth info || echo "Auth info not available, but continuing..."
 
-        - name: Build E2B Template
+        - name: Initialize and Build E2B Template
           working-directory: ./e2b-unified
           env:
             E2B_ACCESS_TOKEN: ${{ secrets.E2B_ACCESS_TOKEN }}
           run: |
-            echo "Building NEW E2B template with all libraries..."
-            echo "This will create a new template ID..."
+            echo "Initializing NEW E2B template..."
 
-            # Build the template with proper startup command for code-interpreter
-            # The -c flag specifies the startup command
+            # Method 1: Initialize first (creates proper e2b.toml)
+            e2b template init
+
+            # Copy our Dockerfile over the default one
+            echo "Using our custom Dockerfile..."
+
+            # Now build with our startup command
+            echo "Building template with all libraries..."
             e2b template build -c "/root/startup.sh"
 
-            # Alternative if startup.sh doesn't work:
-            # e2b template build -c "/root/.jupyter/start-up.sh"
-
-            # The build command will update e2b.toml with the new template_id
             echo "Build completed!"
 
         - name: Extract and Save Template ID
@@ -80,7 +81,7 @@
             branch: ${{ github.ref }}
 
         - name: Upload Template ID as Artifact
-          uses: actions/upload-artifact@v4  # UPDATED FROM v3 to v4
+          uses: actions/upload-artifact@v4
           with:
             name: template-id
             path: e2b-unified/template_id.txt
