@@ -1,8 +1,0 @@
-# E2B Sandbox Template Configuration
-# This will create a NEW template when built
-
-team_id = "12c04104-e2c1-42a2-92a0-7625ffcba73a"
-dockerfile = "e2b.Dockerfile" 
-template_id = "WILL_BE_GENERATED"
-# NOTE: template_id is intentionally commented out to create a NEW template
-# template_id will be auto-generated on first build
